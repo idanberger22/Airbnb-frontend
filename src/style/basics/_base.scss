@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Airbnb-Cereal-light;
+    // font-weight: 100;
+    
+}
+.material-icons{
+    display: flex;
+}
+
+h1 h2 a{
+    text-decoration: none;
+      color: inherit;
+}
+
+
+body {
+    background-color: $bgc;
+    // font-family: Cereal;
+.app{
+    margin-bottom: 6.9375rem
+}
+
+
+}
+
+.font-light{
+    font-family: Airbnb-Cereal-Light !important;
+
+}
+.font-bold{
+    font-family: Airbnb-Cereal-Bold !important;
+
+}
+.font-bolder{
+    font-family: Airbnb-Cereal-Extra-Bold !important;
+
+}
+.font-medium{
+    font-family: Airbnb-Cereal-Medium !important;
+
+}
+
+
+

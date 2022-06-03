@@ -1,0 +1,67 @@
+.main-host-page{
+
+    .flex{
+        li:nth-child(2){
+            margin-left: 1rem;
+        }
+    }
+
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+
+    table{
+        margin-top: 2rem;
+    }
+
+    th{
+        font-family: Airbnb-Cereal-Bold;
+
+    }
+
+
+   
+
+    .reservations-container{
+        display: flex;
+        justify-content: center;
+      
+        
+    }
+
+    
+        tr, td, th, table{
+            padding: 2px;
+            border: 1px lightgray solid;
+        }
+
+        th{
+            background-color: lightgray;
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+    td{
+        text-align: center;
+    }
+
+    
+
+
+    
+
+   
+
+    
+
+
+    .stock-margin-center{
+        margin-top: 170px;
+    }
+
+    img{
+        border-radius: 50%;
+    }
+}

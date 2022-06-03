@@ -1,0 +1,27 @@
+.stay-details-header-below {
+    display: flex;
+    justify-content: space-between;
+
+    img{
+        width: 3rem;
+aspect-ratio: 1/1;
+object-fit: cover;
+border-radius: 50%;
+    }
+    .below-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+
+    }
+
+    h1 {
+        overflow: clip;
+        text-overflow: ellipsis;
+    }
+
+    // margin-right: 5px;
+
+    
+}

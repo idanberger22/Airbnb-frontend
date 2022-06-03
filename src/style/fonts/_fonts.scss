@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Airbnb-font-normal;
+    font-weight: 100;
+    src: url("../../assets/fonts/brown-regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Airbnb-font-lite;
+    font-weight: 100;
+    src: url("../../assets/fonts/brown-regular.otf") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: Airbnb-Cereal-Black;
+    font-weight: 100;
+    src: url("../../assets/fonts/AirbnbCerealBlack.woff") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: Airbnb-Cereal-Bold;
+    font-weight: 100;
+    src: url("../../assets/fonts/AirbnbCerealBold.woff") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: Airbnb-Cereal-Book;
+    font-weight: 100;
+    src: url("../../assets/fonts/AirbnbCerealBook.woff") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: Airbnb-Cereal-Extra-Bold;
+    font-weight: 100;
+    src: url("../../assets/fonts/AirbnbCerealExtraBold.woff") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: Airbnb-Cereal-Light;
+    font-weight: 100;
+    src: url("../../assets/fonts/AirbnbCerealLight.woff") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: Airbnb-Cereal-Medium;
+    font-weight: 100;
+    src: url("../../assets/fonts/AirbnbCerealMedium.woff") format("woff");
+    font-style: normal;
+}
+
+
+
+// @font-face {
+//     font-family: 'Material Icons';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+//     src: local('Material Icons'),
+//       local('MaterialIcons-Regular'),
+//       url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+//       url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+//       url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+//   }

@@ -1,0 +1,87 @@
+.secondary-filter {
+    margin-top: 170px;
+    display: flex;
+    display: flex;
+    justify-content: flex-start;
+
+    .slider {
+        position: absolute;
+        margin-top: 50px;
+        padding: 21px;
+        background-color: $bgc;
+        z-index: 10;
+        border-radius: 12px;
+        width: 300px;
+        box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+        border: 1px solid #ddd;
+
+        li{
+            font-family: Airbnb-Cereal-Medium;
+            list-style-type: none
+        }
+    }
+
+    .room-type-filter {
+        position: absolute;
+        width: 400px;
+        margin-top: 60px;
+        padding: 10px;
+        background-color: $bgc;
+        z-index: 2;
+        border-radius: 12px;
+        width: max-content;
+        box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+        border: 1px solid #ddd;
+    }
+
+    span {
+        text-align: center;
+        margin-top: 4px !important;
+        margin-bottom: 4px !important;
+        font-size: 20px;
+        color: $clrBLACK;
+    }
+    label{
+        display: flex;
+        width: 18rem;
+        span{
+            text-align: left;
+        }
+        p{
+            color:$clrGRAY
+        }
+    }
+}
+
+.small-border {
+    outline: 1px $clrBLACK solid !important;
+}
+
+.mini-filter {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px lightgray solid;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px black solid;
+    }
+}
+
+.amn-container {
+    display: flex;
+    span{
+       align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+
+    }
+
+    .enity-filter:not(:first-child) {
+        margin-left: 10px;
+    }
+}

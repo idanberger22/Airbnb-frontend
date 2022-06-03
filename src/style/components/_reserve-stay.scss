@@ -1,0 +1,126 @@
+.reserve-stay-container{
+  box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+  border: 1px solid #ddd;
+  top: 115px;
+  margin-bottom: 1rem;
+  position: sticky;
+  background-color: #F7F7F7;
+  gap: 1rem;
+
+  a{
+    width: 100%;
+  }
+
+    // border: 1px solid $clrGRAY;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column; 
+    // justify-content: space-between;
+    align-items: center;
+    flex: 20%;
+    // height: 100%;
+    padding: 1rem;
+
+    .reserve-stay-header{
+
+      :nth-child(2){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      
+      :first-child:not(span){
+
+        font-size: 1.5rem;
+        font-weight: 800 !important;
+      }
+
+      :last-child{
+        :last-child{
+
+          
+          color: $lite-font-color;
+          text-decoration: underline;
+        }
+          
+     
+    }
+
+
+      width: 100%;
+      //padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+}
+
+.adults{
+  align-items: center;
+  text-align: center;
+}
+
+.reserve-button{
+  background-image: radial-gradient(circle at center,#ff385c 0,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100%);
+  background-position: calc((100 - var(--mouse-x, 0)) * 1%) calc((100 - var(--mouse-y, 0)) * 1%);;
+  background-size: 200% 200%;
+  // margin: 20px;
+      border-radius: 8px;
+      border: 0px;
+      // background-color: #de1663da;
+      color: white;
+      font-size: 1rem;
+      padding: 15px;
+      width: 100%;
+      cursor: pointer;
+      &:hover{
+          background-color: #DE1662;
+
+      }
+}
+
+  
+  .DateInput_input {
+    cursor: pointer;
+  }
+
+  .reserve-container{
+    height: 100%;
+    
+    right: 60px;
+
+}
+
+.price-section{
+  width: 100%;
+  // font-weight: 100;
+
+  h4{
+    text-align: center;
+  }
+  .flex-row-space-btw{
+
+    margin-top: 1rem;
+    h1{
+      font-size: 1rem;
+      // padding-left: 1.25rem;
+      // padding-right: 1.25rem;
+    }
+
+  }
+  .flex-row-space-btw:last-child{
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    h1{
+      font-weight: 900 !important;
+
+    }
+    }
+
+    .reserve-stay-price {
+      font-size: 50px;
+      
+    }
+
+}

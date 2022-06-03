@@ -1,0 +1,251 @@
+.main-header {
+
+    .left {
+        grid-column: 1;
+        background-color: var(--headerbackgroundColor);
+    }
+
+    .right {
+        background-color: var(--headerbackgroundColor);
+        grid-column: 3;
+    }
+
+
+
+
+}
+
+header {
+
+    &>* {
+        box-shadow: 0 1px rgba(0, 0, 0, .08) !important;
+    }
+
+    font-size: 0.875rem;
+    position: fixed;
+    width: 100%;
+    background-color: var(--headerbackgroundColor);
+    height: 70px;
+    z-index: 100;
+    font-family: Airbnb-Cereal-Book;
+
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.explore-filterr {
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgc);
+}
+
+.main-nav {
+    grid-row: 1;
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-filte-parent {
+
+    *:not(.material-symbols-sharp) {
+
+
+        font-size: 0.75rem !important;
+        font-family: Airbnb-Cereal-Medium !important;
+        color: #222222 !important;
+
+
+    }
+}
+
+.big {
+    grid-row: 2;
+    padding: 0 20%;
+    // 1.4375rem;
+
+    *:not(.material-symbols-sharp) {
+        font-size: 1rem;
+        font-family: Airbnb-Cereal-Medium !important;
+        // color: #222222;
+    }
+
+    .inpt-fillter:nth-child(2) {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+
+        .date-range-selector {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .DateRangePicker_1 {
+                width: 100%;
+
+                .DateInput_1 {
+                    display: flex;
+                    flex-direction: column;
+                    // width: 50%;
+                }
+            }
+        }
+    }
+
+    >div {
+        width: 35rem;
+    }
+
+    .total-filter {
+        height: 62px;
+        align-self: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        &:first-child {
+            input {
+
+                width: 100px;
+
+            }
+
+        }
+
+        &:nth-child(2) {
+            flex-direction: column;
+        }
+
+
+    }
+
+    .DateInput_input_1 {
+        width: unset !important;
+    }
+}
+
+
+:last-child {
+    margin-right: 0;
+}
+
+.small-filte-parent {
+    grid-column: 2;
+}
+
+.nav-link-parent {
+    grid-column: 3;
+    width: 18rem;
+    justify-content: end;
+}
+
+.logo {
+    a {
+        text-decoration: none;
+    }
+}
+
+.logo {
+    grid-column: 1;
+    font-weight: 500;
+    color: $clrRED;
+    font-size: 25px;
+    display: flex;
+    height: 100%;
+    width: 18rem;
+
+    img {
+        margin-right: 4px;
+    }
+
+    a {
+        width: 100%;
+        text-decoration: none;
+
+        li {
+            font-weight: bold;
+            margin: 0;
+        }
+        li:first-child{
+
+            padding:  0.7rem 0 0.7rem;
+        }
+    }
+
+    img {
+       width: 2rem;
+    }
+}
+
+nav {
+    position: relative;
+    display: flex;
+
+    div {
+        display: flex;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 10px;
+        position: relative;
+
+        a {
+            text-decoration: none;
+            color: var(--headerFontColor);
+        }
+    }
+}
+
+.noselect {
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+.user-menu {
+    gap: 7px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 30px;
+    outline: 1px solid rgba($color: $clrGRAY, $alpha: 0.6);
+    padding: 0;
+
+    span {
+        color: #595959;
+        font-size: 1.125rem;
+        font-weight: 800;
+        margin-right: 6px;
+        margin-left: 12px;
+
+    }
+
+    img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+}
+
+.user-menu:hover {
+    transition: 0.12s;
+    box-shadow: 0px 3px 5px -3px rgba($color: $clrBLACK, $alpha: 0.6);
+}

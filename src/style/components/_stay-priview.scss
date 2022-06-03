@@ -1,0 +1,127 @@
+.stay-card {
+    position: relative;
+    border: 0px black solid;
+    border-radius: 12px;
+    text-align-last: auto;
+    cursor: pointer;
+
+    .img-container{
+        position: relative;
+    }
+
+
+    &:hover .right-arr,
+     &:hover .left-arr {
+        // &:hover
+
+        text-align: center;
+
+        span {
+
+            border-radius: 50%;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            visibility: visible;
+            text-align: center;
+        }
+    }
+
+    .arr {
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: fit-content;
+
+        span {
+            font-size: 10px;
+        }
+    }
+
+    .right-arr {
+        right: 2px;
+    }
+
+    .left-arr {
+        left: 2px;
+    }
+
+    h1 {
+        font-size: 15px;
+        overflow: clip;
+        font-weight: 100;
+        color: #222;
+        text-overflow: ellipsis;
+        
+    }
+
+
+    img {
+        border-radius: 12px;
+        aspect-ratio: 1/1;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    .stay-preiview-details {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .location-rate{
+        font-family: Airbnb-Cereal-Book,  sans-serif;
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    li {
+        list-style: none;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .propery-price {
+        margin-top: 30px;
+
+       
+
+        li {
+            display: flex;
+            
+
+
+            span {
+                font-size: 15px;
+                font-family: Airbnb-Cereal-Light;
+            }
+        }
+    }
+
+    .propery-description {
+        margin-top: 5px;
+
+        h1 {
+            font-family: Airbnb-Cereal-Light, sans-serif;
+            color: $lite-font-color;
+        }
+    }
+}
+
+.heart {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    z-index: 2;
+    opacity: 0.85;
+    span {
+        font-size: 30px; 
+    }
+}
+
+

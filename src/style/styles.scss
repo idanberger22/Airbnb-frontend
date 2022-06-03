@@ -1,0 +1,44 @@
+
+
+// SETUP
+@import 'setup/variables';
+@import './fonts/fonts';
+
+@import 'setup/mixins';
+@import 'setup/functions';
+
+// BASICS
+@import 'basics/helpers';
+@import 'basics/base';
+@import './responsive/mq';
+
+//CMPS
+@import '/src/style/components/stay-priview';
+@import '/src/style/components/reserve-stay';
+@import '/src/style/components/stay-priview';
+@import './components/header';
+@import './components/footer';
+@import './components/main-filter';
+@import './components/secondary_filter';
+@import '/src/style/components/details-gallery';
+@import '/src/style/components/stay-details-bellow';
+@import '/src/style/components/date-range-selector';
+@import '/src/style/components/guest-picker';
+@import '/src/style/components/review-line';
+@import '/src/style/components/date-picker';
+@import '/src/style/components/price-slider';
+@import '/src/style/components/sign-up';
+@import '/src/style/components/user-menu';
+@import '/src/style/components/map';
+@import '/src/style/components/trips-header.scss';
+@import '/src/style/components/trip-card';
+@import '/src/style/components/confirmed-res-modal';
+
+
+//pages
+@import '/src/style/pages/home';
+@import '/src/style/pages/Explore';
+@import '/src/style/pages/Trips';
+@import '/src/style/pages/stay-details';
+@import '/src/style/basics/for-all';
+@import '/src/style/pages//host';

@@ -1,0 +1,45 @@
+.dates-grid {
+    padding: 60px;
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+        "a b"
+        "c c";
+
+    .cell {
+        input {
+            outline: none;
+            -webkit-appearance: none;
+            -webkit-appearance: none;
+            box-shadow: none !important;
+            box-shadow: none;
+            border: 0px;
+            background-color: unset;
+        }
+
+        padding: 10px;
+        border: 1px lightgray solid;
+        width: 100%;
+        height: 100%;
+        background-color: unset;
+
+    }
+
+    .top-left {
+        border-top-left-radius: 12px;
+        grid-area: a
+    }
+
+    .top-right {
+        border-top-right-radius: 12px;
+        grid-area: b
+    }
+
+    .middle {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        grid-area: c
+    }
+
+    
+}

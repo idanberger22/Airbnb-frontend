@@ -1,0 +1,29 @@
+
+
+.rc-slider-handle {
+    background-color: $clrBLACK !important;
+    border: solid 1px $clrBLACK !important;
+}
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+    box-shadow: 0 0 0 2px $clrRED !important;
+}
+.rc-slider-handle:focus-visible {
+    border-color: $clrGRAY !important;
+    box-shadow: 0 0 0 2px $clrBLACK !important;
+}
+.rc-slider-handle-click-focused:focus {
+    border-color: $clrGRAY !important;
+}
+.rc-slider-handle:hover {
+    border-color: $clrGRAY !important;
+}
+.rc-slider-handle:active {
+    border-color: $clrGRAY !important;
+    box-shadow: 0 0 5px $clrGRAY !important;
+}
+.rc-slider-dot-active {
+    border-color: $clrBLACK !important;
+}
+.rc-slider-track {
+    background-color: $clrGRAY !important;
+}

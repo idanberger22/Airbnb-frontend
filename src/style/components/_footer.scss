@@ -1,0 +1,49 @@
+.main-footer{
+    display: grid;
+
+    grid-template-columns: 60px 1fr 60px;
+
+
+    >div{
+    }
+}
+
+.footer{
+    grid-column: 2;
+
+
+    bottom: 0;
+    height: 2.9375rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-top: 2px var(--verylightgray) solid;
+    width: 100%;
+    background-color: $headerbackgroundColor;
+
+    h1{
+        font-size: 1rem;
+        align-self: center;
+    }
+    
+    li{
+        align-self: center;
+        font-family: Airbnb-Cereal-Book;
+        list-style-type: none;
+        list-style: none;
+        font-family: Airbnb-Cereal-Book;
+        span{
+            align-self: center;
+            font-size: 1rem;
+        }
+        margin: 5px;
+        
+    }
+}
+
+.left-side{
+    display: flex;
+}
+.right-side{
+    display: flex;
+}

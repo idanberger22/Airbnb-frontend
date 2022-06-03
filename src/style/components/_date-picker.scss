@@ -1,0 +1,22 @@
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+    background: $clrRED !important; 
+    border: 1px double $clrGRAY !important;
+}
+
+.CalendarDay__hovered_span, .CalendarDay__hovered_span:hover {
+    background: lighten($clrRED,15%) !important;
+    border: 1px double $clrGRAY !important;
+}
+
+.CalendarDay__selected_span {
+    background: $clrRED !important; 
+    border: 1px double $clrGRAY !important;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight::before {
+    border-right: 33px solid $clrRED !important;
+}
+
+.DateRangePickerInput_arrow_svg {
+    display: none !important;
+}

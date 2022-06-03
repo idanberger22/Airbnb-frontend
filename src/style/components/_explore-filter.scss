@@ -1,0 +1,18 @@
+.amn-container{
+    width: 300px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.explore-filter-amn{
+    width:65px;
+    height:40px;
+    border-radius: 10px;
+
+}
+
+.small-border{
+    border: 2px solid $clrBLACK
+}

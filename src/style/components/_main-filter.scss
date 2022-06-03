@@ -1,0 +1,117 @@
+.filterr {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     z-index: 10;
+     // padding-bottom: 5px;
+
+     input {
+          outline: none;
+          border: 0px;
+          background-color: unset;
+          
+     }
+
+     .inpt-fillter:first-child{
+          input{
+
+               margin-left: 10px ;
+          }
+     }
+
+     .inpt-fillter {
+
+          
+          // padding: 1rem;
+          height: 100%;
+          display: flex;
+          align-self: center;
+          cursor: pointer;
+          text-decoration: none;
+          // width: 30%;
+     }
+
+     .navlink {
+          text-decoration: inherit;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          div {
+
+               padding: 0.5rem;
+          }
+
+     }
+}
+
+.small {
+     .navlink{
+          div{
+               padding: 0.3rem;
+          }
+     }
+}
+
+.filterr.big {
+     // padding-bottom: 23px;
+     justify-content: center;
+}
+
+
+.home-filterr {
+     
+
+          // &:first-child {
+
+          //      top: 30%;
+          // }
+
+          // &:last-child {
+          //      top: 30%;
+
+          // }
+     
+}
+
+
+
+.search-symbol {
+     cursor: pointer;
+     border-radius: 50%;
+     background-color: $clrRED;
+     color: white;
+     height: 100%;
+     display: flex;
+     text-decoration: inherit;
+}
+
+.white {
+     text-decoration: none;
+     text-decoration: inherit;
+     color: white;
+}
+
+.inpt-fillter:nth-child(2){
+     flex-direction: column;
+     justify-content: center;
+ }
+
+.total-filter {
+     padding-left: 1rem;
+     // padding-right: 1rem;
+     display: flex;
+     box-shadow: inset 0 0 0 1px lightgray;
+     background-color: $bgc;
+     border-radius: 42px;
+     // height: 62px;
+
+     
+
+     &:hover {
+          box-sizing: border-box;
+          box-shadow: inset 0 0 0 2px lightgray;
+     }
+}

@@ -1,0 +1,55 @@
+.review-line-card {
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+        z-index: -1;
+
+        img {
+            border-radius: 50%;
+            border: 1px lightgray solid  ;
+            width: 3rem;
+            object-fit: cover;
+            // @include aspect-ratio(16, 9)
+            aspect-ratio: 1/1;
+            
+        }
+    }
+
+    .aside {
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        // justify-content: space-around;
+    }
+
+
+    .name {
+        font-size: 15px;
+        margin-top: 0;
+    }
+
+    .at {
+        font-family: Airbnb-Cereal-Book;
+        color: rgb(113,113,113);
+        font-size: 12px;
+    }
+
+    .content {
+        font-family: Airbnb-Cereal-Book;
+        font-size: 15px;
+        line-height: 1.5;
+        // width: 450px;
+        color: rgb(34,34,34);
+    }
+
+    .review-more {
+        margin-top: 5px;
+        font-size: 15px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

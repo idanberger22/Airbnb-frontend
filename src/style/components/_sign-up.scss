@@ -1,0 +1,55 @@
+.form-container {
+    width: 568px;
+    form {
+        min-width: max-content;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        border: 1px solid $clrGRAY;
+        border-radius: 10px;
+        background-color: white;
+        .error {
+            color: $clrRED;
+            height: 25px;
+            font-size: 0.8rem;
+        }
+        h3 {
+            margin: -12px auto 12px;
+        }
+        h5 {
+            font-size: 1em;
+            margin: 12px auto -12px;
+        }
+    }
+}
+
+.modal-center{
+    z-index: 3;
+    position:fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding:2px
+}
+
+.modal-blur{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 99vw;
+    opacity: 0.75;
+    background-color: $clrBLACK;
+    z-index: 2;
+}
+
+.close-button{
+    position: absolute;
+    top:12px;
+    right:8px;
+    background-color: white;
+    font-size: 120%;
+    font-weight: 800;
+    z-index: 3;
+    border:0;
+}

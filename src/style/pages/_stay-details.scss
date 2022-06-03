@@ -1,0 +1,181 @@
+.main-stay-details-container{
+    width:100%
+}
+
+.details-container{  
+    .secondary-header-stay-details, .reserve-stay-header{
+        span{
+                font-size: 0.875rem;
+            }
+
+    }
+    font-family: Airbnb-font-normal, sans-serif;  
+    li{
+        list-style-type: none;
+        h4{
+            font-size: 0.875rem;
+        }
+    }
+}
+
+
+
+.details-header{
+    justify-content: space-between;
+    margin-top: 140px;
+    gap: 10px;
+}
+
+.details-features {
+    border-bottom: 1px solid rgb(221,221,221);
+    padding-bottom: 20px;
+}
+
+.features-container {
+    padding-right: 15%;
+    flex: 80%;
+    border-bottom: 1px solid rgb(221,221,221);
+
+}
+
+.feature-logo {
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-block {
+    .paragraph{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature-text {
+    font-family: Airbnb-Cereal-Book;
+    color :rgb(113, 113, 113);
+}
+
+.decription-stay-priview{
+    font-family: Airbnb-Cereal-Book;
+    display: flex;
+    width: 100%;
+}
+
+.secondary-header-stay-details{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-side{
+    display: flex;
+    font-family: Airbnb-Cereal-Book;
+    font-size: 5px;
+    gap: 5px;
+    align-items: center;
+}
+.right-side{
+    align-items: center;
+    display: flex;
+   
+    
+}
+
+.right-side-share {
+    padding-right: 10px;
+}
+
+
+
+.header-stay-details-reviews {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.header-stay-details-address {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.stay-bellow-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+
+.main-reviews{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    gap: 1rem;
+
+}
+
+
+.stay-cover {
+    margin-top: 25px ;
+    font-size: 22px;
+    border-bottom: 1px solid rgb(221,221,221);
+    padding-bottom: 30px;
+    h1{
+        font-size: 22px;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.stay-cover-text {
+    font-size: 15px;
+}
+
+.stay-cover-logo {
+    font-size: 30px;
+    color:red ;
+}
+
+.stay-description {
+    margin-top: 50px;
+    border-bottom: 1px solid rgb(221,221,221);
+    padding-bottom: 30px;
+}
+
+.stay-cover-more {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.stay-amenities {
+    display: grid;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    // width: 70%;
+}
+
+.amenities-list {
+    display: grid;
+    grid-template-columns: auto auto ;
+    gap: 20px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.amenity-container {
+    display: flex;
+    margin-top: 10px;
+    line-height: 1.5;
+    gap: 10px;
+    font-size: 20px;
+    // width: 300px;
+}
+
