@@ -27,7 +27,7 @@ export const Trips = () => {
             <div className="stock-margin-center">
             <div className="flex">
                 <li>
-                    <img src={loggedinUser.imgUrl} alt="" />
+                    <img className="user-name-img" src={loggedinUser.imgUrl} alt="" />
                 </li>
                 <li>
                     <h1>
