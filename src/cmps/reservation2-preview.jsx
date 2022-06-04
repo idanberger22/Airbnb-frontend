@@ -3,14 +3,18 @@ import { utilService } from "../services/util.service"
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from "react"
 import { reservationService } from "../services/reservation.service"
+import { userService } from "../services/user.service"
 
 export function ReservationPreview2({ reservation, getReservations }) {
 
     // var date = reservation.checkIn
 
     const onRemove = async () => {
+        let loggedinUser = userService.getLoggedinUser()
+
         const deletedRes = await reservationService.removeReservation(reservation)
-        if(deletedRes) console.log('reservation has been deleted')
+        if(deletedRes) console.log('reservation has been deleted: ', reservation)
+        if(deletedRes) console.log('loggedinUser: ',loggedinUser)
         else console.log('couldnt delete a reservation')
         getReservations()
     }

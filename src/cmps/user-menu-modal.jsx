@@ -24,7 +24,7 @@ export const UserMenuModal = (props) => {
         closeSelf()
     }
 
-    return (<section className="user-menu-container">
+    return (<section onClick={closeSelf} className="user-menu-container">
         {!loggedinUser && <><li onClick={() => toggleModal(false)} className="clickable noselect">
             <p >Sign up</p>
         </li>
@@ -32,7 +32,7 @@ export const UserMenuModal = (props) => {
                 <p  >Log in</p>
             </li></>}
         {props.loggedinUser &&<li>
-            <NavLink className='undecorate'  to='/trips' >Trips</NavLink>
+            <NavLink className='undecorate'   to='/trips' >Trips</NavLink>
         </li>}
         <li>
             <NavLink className='undecorate' onClick={closeSelf} to='/login' >Host your home</NavLink>

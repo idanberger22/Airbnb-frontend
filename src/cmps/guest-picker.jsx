@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 
 export const GuestPicker = (props) => {
 
-    const [adultsQty, setAdultsQty] = useState(0)
+    const [adultsQty, setAdultsQty] = useState(1)
     const [childsQty, setChildsQty] = useState(0)
     
     const onUpdateQty = (type,dif) => {

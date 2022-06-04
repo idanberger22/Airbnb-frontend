@@ -7,7 +7,7 @@ export const reservationService = {
 }
 window.cs = reservationService;
 
-async function query(ev,Id) {
+async function query(ev, Id) {
     let reservations = await httpService.get('reservation',Id)
     
     return reservations
@@ -18,8 +18,8 @@ async function addReservation(reservation) {
     return addReservation
 }
 
-async function removeReservation(Id) {
-    const deletedReservation = await httpService.delete('reservation', Id)
+async function removeReservation(reservation) {
+    const deletedReservation = await httpService.delete('reservation', reservation)
     return deletedReservation
 }
 
