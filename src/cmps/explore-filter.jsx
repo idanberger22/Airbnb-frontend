@@ -60,7 +60,7 @@ export const ExploreFilter = (props) => {
 
     const handlePriceRange = (value) => {
         if (timeOutId.current) clearTimeout(timeOutId.current)
-        timeOutId.current = setTimeout(setExploreFilterBy, 500, { ...exploreFilterBy, minPrice: value[0], maxPrice: value[1] })
+        timeOutId.current = setTimeout(setExploreFilterBy, 250, { ...exploreFilterBy, minPrice: value[0], maxPrice: value[1] })
     }
 
     const handleRoomType = (roomType, type) => {
