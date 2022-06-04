@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from "react"
+import { ImgUploader } from "../cmps/img-uploader"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
+import { UploadStay } from "../cmps/upload-stay"
 import { reservationService } from "../services/reservation.service"
 import { userService } from "../services/user.service"
 
@@ -10,7 +12,10 @@ export const Host = () => {
     const [reservations, setreservations] = useState(null)
 
 
+   
 
+
+    
 
     useEffect(() => {
         getReservations()
@@ -18,8 +23,8 @@ export const Host = () => {
 
     let loggedinUser = userService.getLoggedinUser()
     const getReservations = async () => {
-        const reservatios = await reservationService.query({hostId:loggedinUser._id})
-        const sortedReservatios = reservatios.sort((a,b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
+        const reservatios = await reservationService.query({ hostId: loggedinUser._id })
+        const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
         // {hostId:loggedinUser._id}
 
@@ -33,6 +38,7 @@ export const Host = () => {
     { if (!reservations) return <h1>loading</h1> }
 
     return (<div className="stock-margin main-host-page">
+        
         <div className="stock-margin-center">
             <div className="flex">
                 <li>
@@ -45,32 +51,35 @@ export const Host = () => {
                 </li>
             </div>
             <div className="header">
-          
-                    
+
+
             </div>
             <div>
-                    <div className="reservations-container">
-                <table className="reservations-table" >
+                <div className="reservations-container">
+                    <table className="reservations-table" >
 
-                    <tr>
-                    <th>Guest Name</th>
-                    <th>Property</th>
-                    <th>Guests qty</th>
-                    <th>Check-in</th>
-                    <th>Check-out</th>
-                    <th>Total price</th>
-                    <th>Add a review</th>
-                    <th>Cancel</th>
-                    </tr>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Property</th>
+                            <th>Guests qty</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Total price</th>
+                            <th>Add a review</th>
+                            <th>Cancel</th>
+                        </tr>
 
-                    {reservations.map(reservation =>
-                    <tr>
+                        {reservations.map(reservation =>
+                            <tr>
 
-                        <ReservationPreview2 getReservations={getReservations}   reservation={reservation} key={reservation._id} />
-                    </tr>
-                    )}
-                </table>
-                    </div>
+                                <ReservationPreview2 getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                            </tr>
+                        )}
+                    </table>
+                    <UploadStay/>
+                   
+
+                </div>
             </div>
         </div>
     </div>

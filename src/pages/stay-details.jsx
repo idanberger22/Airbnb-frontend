@@ -37,6 +37,7 @@ export const StayDetails = () => {
     const getStay = async () => {
         const stay = await stayService.getById(stayId)
         setStay(stay)
+        
     }
 
     { if (!stay) return (<h1>loading</h1>) }
