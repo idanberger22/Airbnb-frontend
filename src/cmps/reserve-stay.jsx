@@ -78,8 +78,6 @@ export function ReserveStay(props) {
         else {
             setResModalIsOpen(true)
             const newRes = await reservationService.addReservation(reservation)
-            if(newRes) console.log('new reservation has been added')
-            else console.log('couldnt add a reservation')
             dispatchReservation(reservation)
             tripsService.addTrip(reservation)
         }
