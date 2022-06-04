@@ -39,7 +39,7 @@ function App() {
               <Route path='/host' element={<Host />} />
               <Route path='/' element={<Home />} />
             </Routes>
-            <LoginSignup />
+            <LoginSignup/>
           </main>
           <AppFooter />
         </div>
