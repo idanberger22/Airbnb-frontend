@@ -149,6 +149,7 @@ export const AppHeader = () => {
                                 </div>
                             </div>
                             <div style={{ display: menuModalShow }}>
+                                <div className="screen" onClick={toggleModal}></div>
                                 <UserMenuModal toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser}/>
                             </div>
                         </li>
@@ -157,7 +158,6 @@ export const AppHeader = () => {
                 <div className="explore-filterr filterr big">
                     <div>
                         {LargeFilterShow && <MainFilter />}
-                        {/* style={bigFilterStyle} */}
                     </div>
                 </div>
 

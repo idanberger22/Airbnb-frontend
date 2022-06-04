@@ -82,8 +82,10 @@ export const ExploreFilter = (props) => {
     // if (!pricesData) return <h1>loading</h1>
     return (
         <div className='secondary-filter'>
-            {priceIsShown&&<PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/>}
+            {priceIsShown&&<><div className="screen" onClick={()=>setPriceIsShown(false)}></div>
+            <PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/></>}
             {typeIsShown && <div className='room-type-filter noselect'>
+            <div className="screen" onClick={()=>setTypeIsShown(false)}></div>
                 <FormGroup>
                     <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
                         onChange={() => handleRoomType('Entire home/apt', 'entire')} checked={checked.entire} inputProps={{ 'aria-label': 'controlled' }} />
