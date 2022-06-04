@@ -16,34 +16,54 @@ export function PriceModal(props) {
 
     const options = {
         responsive: true,
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
+            y: {
+                grid: {
+                    display: false
+                }
+            }
+        },
         plugins: {
             legend: {
-                // position: 'top' as const,
+                display: false
             },
             title: {
                 display: true,
-                text: 'Chart.js Bar Chart',
+                text: 'Stays per price range',
             },
         },
     }
 
-    const labels = ['200', '300', '400', '500', '600', '700', '800', '900', '1000', '1100', '1200']
+    const labels = ['', '', '', '', '', '', '', '', '', '', '','']
+    const stays = props.stays
+    let dataToDisplay = [0,0,0,0,0,0,0,0,0,0,0]
+    stays.forEach(stay=>{
+        if(stay.price<=200) dataToDisplay[0]++
+        else if(stay.price>1200) dataToDisplay[dataToDisplay.length-1]++
+        else dataToDisplay[Math.floor(stay.price/100)-1]++
+    })
+
     const data = {
         labels,
         datasets: [
             {
                 label: '',
-                data: [7, 8, 9,10,9,3,5,6,7,8,9,3,2.5,7,7,7,7,7,7,7,7],
+                data: dataToDisplay,
                 backgroundColor: 'rgb(176, 176, 176)',
             },
         ],
-    };
-
-    console.log(props.stays)
+    }
 
     return (
         <div className='slider'>
-            <Bar options={options} data={data} />
+            <div>
+                <Bar options={options} data={data} height='180px' />
+            </div>
             <Slider range allowCross={false} defaultValue={[0, 1200]} min={0} max={1200} onChange={props.handlePriceRange} />
             <div className='flex-row-space-btw'>
                 <li>
@@ -53,7 +73,7 @@ export function PriceModal(props) {
                     -
                 </li>
                 <li>
-                    ${utilService.getUsPrice(props.exploreFilterBy.maxPrice)}
+                    ${utilService.getUsPrice(props.exploreFilterBy.maxPrice)}{props.exploreFilterBy.maxPrice===1200 && <span>+</span>}
                 </li>
             </div>
         </div>
