@@ -4,15 +4,15 @@ import { uploadService } from '../services/upload.service'
 export class ImgUploader extends Component {
   state = {
     imgUrl: null,
-    height: 500,
-    width: 500,
+    height: 100,
+    width: 100,
     isUploading: false
   }
   uploadImg = async (ev) => {
     this.setState({ isUploading: true })
     const { secure_url, height, width } = await uploadService.uploadImg(ev)
     this.setState({ isUploading: false, imgUrl: secure_url, height, width })
-    this.props.onUploaded && this.props.onUploaded(secure_url)
+    this.props.onUploaded && this.props.onUploaded(secure_url,this.props.idx)
   }
   get uploadMsg() {
     const { imgUrl, isUploading } = this.state
@@ -28,9 +28,9 @@ export class ImgUploader extends Component {
 
     return (
       <div className="upload-preview"  >
-        {imgUrl && <img src={imgUrl} style={{maxWidth: '200px', float: 'right'}} />}
-        <label htmlFor="imgUpload">{ this.uploadMsg }</label>
-        <input type="file" onChange={ this.uploadImg } accept="img/*" id="imgUpload" />
+        {imgUrl && <img src={imgUrl} style={{maxWidth: '100px', float: 'right'}} />}
+        {/* <label htmlFor="imgUpload">{ this.uploadMsg }</label> */}
+        {!imgUrl && <input type="file" onChange={ this.uploadImg } accept="img/*" id="imgUpload" />}
       </div>
     )
   }

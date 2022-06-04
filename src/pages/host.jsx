@@ -10,11 +10,15 @@ import { userService } from "../services/user.service"
 export const Host = () => {
 
     const [reservations, setreservations] = useState(null)
+    const [uploadStyling, setUploadStyling] = useState(false)
 
 
    
 
-
+const showUploadStayTogle = () => {
+    
+    setUploadStyling(!uploadStyling)
+}
     
 
     useEffect(() => {
@@ -27,16 +31,16 @@ export const Host = () => {
         const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
         // {hostId:loggedinUser._id}
-
+        
     }
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
     { if (!reservations) return <h1>loading</h1> }
-
+    
     return (<div className="stock-margin main-host-page">
         
         <div className="stock-margin-center">
@@ -51,9 +55,17 @@ export const Host = () => {
                 </li>
             </div>
             <div className="header">
+            <button onClick={showUploadStayTogle}>add a listing</button>
 
 
             </div>
+            <section >
+                    <div className="card-container" >
+                        {stays.map(stay =>
+                            <StayPreview stay={stay} key={stay._id} />
+                        )}
+                    </div>
+                </section>
             <div>
                 <div className="reservations-container">
                     <table className="reservations-table" >
@@ -76,9 +88,9 @@ export const Host = () => {
                             </tr>
                         )}
                     </table>
-                    <UploadStay/>
                    
 
+                       {uploadStyling && <UploadStay showUploadStayTogle={showUploadStayTogle} />}
                 </div>
             </div>
         </div>
