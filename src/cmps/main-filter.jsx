@@ -39,11 +39,8 @@ export const MainFilter = () => {
     return (
         <div className="total-filter">
             <div className="inpt-fillter">
-                <input name="location" value={filterBy.location} type="text" placeholder="Anywhere" onChange={handleChange} />
+                <input name="location" value={filterBy.location} type="text" placeholder="Search destination" onChange={handleChange} autoComplete='off'/>
             </div>
-            {/* <div className="inpt-fillter">
-                <button onClick={clearFilterBy} style={{borderWidth:0, background:'white'}}>x</button>
-            </div> */}
             <div className="inpt-fillter">
                     <DateRangeSelector place={'filter'} handleDate={handleDate} startDate={loadedFilter.from} endDate={loadedFilter.to}/>
             </div>

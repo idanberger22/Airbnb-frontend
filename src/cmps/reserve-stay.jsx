@@ -5,7 +5,7 @@ import { GuestPicker } from "./guest-picker"
 import { utilService } from "../services/util.service"
 import { userService } from "../services/user.service"
 import { tripsService } from "../services/trips.service"
-import { ConfirmedResModal } from "./confirmed-res-modal"
+import { openModal } from "../store/actions/userActions"
 import { reservationService } from "../services/reservation.service"
 import { ReservationConfirmed } from "../store/actions/reservation.action"
 import { NavLink } from "react-router-dom"
@@ -74,7 +74,7 @@ export function ReserveStay(props) {
         reservation.user = userService.getLoggedinUser()
         reservation.userId = userService.getLoggedinUser()._id
         if (!reservation.checkIn || !reservation.checkOut || (reservation.adults + reservation.childrens) === 0) console.log('fill all details')
-        else if (!reservation.user) console.log('u have to be logged in')
+        else if (!reservation.user) dispatch(openModal(true))
         else {
             setResModalIsOpen(true)
             const newRes = await reservationService.addReservation(reservation)

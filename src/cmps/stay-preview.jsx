@@ -28,7 +28,7 @@ export function StayPreview({ stay }) {
                             <span className="material-icons">favorite</span>
                         </div>
                         <div onClick={(ev) => switchImg(ev)}>
-                            <Carousel showArrows={true} showThumbs={false} infiniteLoop={true}>
+                            <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} showStatus={false}>
                                 {stay.imgUrls.map((img, index) => {
                                     return <div key={index}>
                                         <img src={img}></img>

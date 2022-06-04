@@ -5,13 +5,14 @@ import { createTheme } from "@material-ui/core/styles"
 import { MuiThemeProvider } from "@material-ui/core/styles"
 import { connect } from 'react-redux'
 import { closeModal, openModal } from '../store/actions/userActions'
-import {userService} from '../services/user.service'
+import { userService } from '../services/user.service'
 export class _LoginSignup extends React.Component {
 
     state = {
         mouseX: '',
         mouseY: '',
-        isLogin: true
+        isLogin: true,
+        invalidMsg: false
     }
 
     signupInitialValues = {
@@ -49,14 +50,21 @@ export class _LoginSignup extends React.Component {
 
     onSignup = async (user) => {
         const newUser = await userService.signup(user)
-        if(newUser) this.onCloseModal()   
+        if (newUser) this.onCloseModal()
     }
 
     onLogin = async (credentials) => {
-        const user = await userService.login(credentials)
-        if(user.username) this.onCloseModal() //todo: show msg connected successfully
+        try {
+            await userService.login(credentials)
+            this.onCloseModal() //todo: show msg connected successfully
+        }
+        catch {
+            this.setState({ ...this.state, invalidMsg: true }, this.resetMsg)
+        }
     }
-
+    resetMsg = () => {
+        setTimeout(() => { this.setState({ invalidMsg: false }) }, 2500)
+    }
     onMousMove = (e) => {
         this.setState({ ...this.state, mouseX: e.screenX, mouseY: e.screenY })
     }
@@ -94,7 +102,7 @@ export class _LoginSignup extends React.Component {
                             close
                         </span>
                     </button>
-                    
+
                     {!isLogin &&
                         <Formik validateOnChange={false} validateOnBlur={false} validate={this.onValidate} initialValues={this.signupInitialValues} onSubmit={this.onSignup}>
                             {({ errors }) => (
@@ -113,11 +121,14 @@ export class _LoginSignup extends React.Component {
                                         {<span className="error">{errors.email}</span>}
                                         <Field name="imgUrl" type="text" as={TextField} variant="outlined" label="your image URL" fullWidth InputLabelProps={{ style: { color: '#222222' } }} />
                                     </MuiThemeProvider>
+                                    <div className='center' style={{ height: '1.5rem', marginTop: '0.5rem' }}>
+                                        <p className='font-light'>*This website uses cookies. by signing up, you accept all Cookies.</p>
+                                    </div>
                                     <button className='reserve-button' style={{ '--mouse-x': this.state.mouseX, '--mouse-y': this.state.mouseY, margin: 'auto', marginTop: '12px' }}
-                                     onMouseMove={this.onMousMove} onClick={this.onV}>
+                                        onMouseMove={this.onMousMove} onClick={this.onV}>
                                         Continue
                                     </button>
-                                    <h5 className='clickable' onClick={()=>this.toggleModal(true)}>i already have an account</h5>
+                                    <h5 className='clickable' onClick={() => this.toggleModal(true)}>i already have an account</h5>
                                 </Form>
                             )}
                         </Formik>
@@ -128,10 +139,13 @@ export class _LoginSignup extends React.Component {
                             <MuiThemeProvider theme={this.theme}>
                                 <Field name="username" type="text" as={TextField} variant="outlined" label="Username" fullWidth InputLabelProps={{ style: { color: '#222222' } }} />
                                 <Field name="password" type="password" as={TextField} variant="outlined" label="Password" fullWidth style={{ marginTop: '12px' }} InputLabelProps={{ style: { color: '#222222' } }} />
+                                <div className='center' style={{ height: '1.5rem', marginTop: '0.5rem' }}>
+                                    {this.state.invalidMsg && <p className='red font-light'>Invalid username/password</p>}
+                                </div>
                                 <button className='reserve-button' style={{ '--mouse-x': this.state.mouseX, '--mouse-y': this.state.mouseY, margin: 'auto', marginTop: '12px' }} onMouseMove={this.onMousMove}>
-                                Continue
+                                    Continue
                                 </button>
-                                <h5 className='clickable' onClick={()=>this.toggleModal(false)}>New user</h5>
+                                <h5 className='clickable' onClick={() => this.toggleModal(false)}>New user</h5>
                             </MuiThemeProvider>
                         </Form>
                     </Formik>}
