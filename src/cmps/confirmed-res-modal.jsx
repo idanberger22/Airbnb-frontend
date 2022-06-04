@@ -111,6 +111,8 @@ export const ConfirmedResModal = (props) => {
                 <h3>
                     {props.reservation.stay.address.street}
                 </h3>
+                </div>
+                <div className="price">
                 <h2>
                     Total Price
                 </h2>
@@ -119,11 +121,14 @@ export const ConfirmedResModal = (props) => {
                 </h3>
 
             </div>
+            <div>
+
             <NavLink className='' to='/trips' >
             <button onClick={()=>closeModal()} className="reserve-button" onMouseMove={onMousMove} style={{ '--mouse-x' :mouse.mouseX, '--mouse-y': mouse.mouseY}}>
                 Your trips
                 </button>
             </NavLink>
+            </div>
 
         </div>
         
