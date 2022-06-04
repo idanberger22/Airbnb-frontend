@@ -26,8 +26,8 @@ export class DateRangeSelector extends Component {
   render = () => {
     return <section className="date-range-selector">
       <DateRangePicker
-        startDatePlaceholderText={'check-in'}
-        endDatePlaceholderText={'check-out'}
+        startDatePlaceholderText={'add date'}
+        endDatePlaceholderText={'add date'}
         noBorder={true}
         endDate={this.state.endDate}
         endDateId="endDate"
@@ -36,6 +36,7 @@ export class DateRangeSelector extends Component {
         onFocusChange={this.handleFocusChange}
         startDate={this.state.startDate}
         startDateId="startDate"
+        
       />
     </section>
   }
