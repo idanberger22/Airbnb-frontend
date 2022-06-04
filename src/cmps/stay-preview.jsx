@@ -39,7 +39,7 @@ export function StayPreview({ stay }) {
                         <div className={`heart ${heartClass}`} onClick={changeHeartColor}>
                             <span className="material-icons">favorite</span>
                         </div>
-                        <img src={stay.imgUrls[imgIdx]}></img>
+                        {stay.imgUrls[imgIdx] &&  <img src={stay.imgUrls[imgIdx]}></img> || <img src="https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg" ></img>}
                         <div onClick={(event) => switchImg(event, 'up')} className="arr right-arr">
                             <span className="material-icons">arrow_forward_ios</span>
                         </div>

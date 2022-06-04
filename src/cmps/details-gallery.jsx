@@ -16,19 +16,14 @@ export const DetailsGallery = ({stay}) => {
 
     return <section className="gallery-grid" >
        
-        <img src={stay.imgUrls[0]}></img>
+        {stay.imgUrls[0] ? <img src={stay.imgUrls[0]}></img> : <img src="https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg" ></img>}
+        {stay.imgUrls[1] ? <img src={stay.imgUrls[1]}></img> : <img src="https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg" ></img>}
+        {stay.imgUrls[2] ? <img src={stay.imgUrls[2]}></img> : <img src="https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg" ></img>}
+        {stay.imgUrls[3] ? <img src={stay.imgUrls[3]}></img> : <img src="https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg" ></img>}
+        {stay.imgUrls[4] ? <img src={stay.imgUrls[4]}></img> : <img src="https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg" ></img>}
         
        
-        <img src={stay.imgUrls[1]}></img>
-        
-        
-        <img src={stay.imgUrls[2]}></img>
        
-        
-        <img src={stay.imgUrls[3]}></img>
-       
-       
-        <img src={stay.imgUrls[4]}></img>
         
         
         
