@@ -10,7 +10,7 @@ import { utilService } from "../services/util.service"
 import { stayService } from "../services/stay.service"
 
 
-export const UploadStay = () => {
+export const UploadStay = (props) => {
 
     var loggedinUser = userService.getLoggedinUser()
 
@@ -27,7 +27,13 @@ export const UploadStay = () => {
                 pictureUrl: loggedinUser.imgUrl,
                 isSuperhost: true,
                 id: utilService.makeId()
-            }, imgUrls: [],
+            }, imgUrls: [
+                'https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg',
+                'https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg',
+                'https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg',
+                'https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg',
+                'https://res.cloudinary.com/dhy6ndeij/image/upload/v1654355077/yehorlisnyi210400016_hovpjv.jpg'
+            ],
             amenities: [],
             address: {
                 street: "Queens, NY, United States",
@@ -69,9 +75,9 @@ export const UploadStay = () => {
         console.log(newStay)
     }, [newStay])
 
-    const onUploaded = (imgUrl) => {
+    const onUploaded = (imgUrl, idx) => {
         const imgs = newStay.imgUrls
-        imgs.push(imgUrl)
+        imgs[idx] = imgUrl
         setNewStay({ ...newStay, imgUrls: imgs });
     }
 
@@ -106,10 +112,15 @@ export const UploadStay = () => {
     const handleTypeChange = ({ target }) => {
         console.log('taget.name', target.value)
         const type = target.value
-       
-            setNewStay({ ...newStay, type: type })
-       
-        
+
+        setNewStay({ ...newStay, type: type })
+
+
+    }
+
+    const onClose = () => {
+        console.log('im here in props')
+        props.showUploadStayTogle()
     }
 
 
@@ -132,52 +143,83 @@ export const UploadStay = () => {
 
     return (
         <div className="main-upload-stay">
+            <h1>upload a stay to host</h1>
+            <div onClick={onClose}>
+
+            <span  class="material-icons">close</span>
+            </div>
+            
             <div className="container">
+                <div className="details-form">
 
-                <h1>upload a stay to host</h1>
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" />
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" />
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" />
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" />
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" />
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" />
-                <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" />
-                <h1>Amneties:</h1>
 
-                <div className="emnities">
-                    <FormGroup>
-                        <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="TV" label="TV" />
-                        <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Wifi" label="Wifi" />
-                        <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Kitchen" label="Kitchen" />
-                        <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Air conditioning" label="Air conditioning" />
-                       
-                    </FormGroup>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" />
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" />
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" />
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" />
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" />
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" />
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" />
                 </div>
-                <h1>Type of Place:</h1>
-                <div className="type">
-                    <FormControl>
-                        <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="female"
-                            name="radio-buttons-group"
-                        >
-                            <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Entire home/apt" label="Entire home/apt" />
-                            <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Hotel room" label="Hotel room" />
-                            <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
-                            <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
-                            
-                        </RadioGroup>
-                    </FormControl>
-                    
+                <div className="checkboxes">
+
+                    <h1>Amneties:</h1>
+
+                    <div className="emnities">
+                        <FormGroup>
+                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="TV" label="TV" />
+                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Wifi" label="Wifi" />
+                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Kitchen" label="Kitchen" />
+                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Air conditioning" label="Air conditioning" />
+
+                        </FormGroup>
+                    </div>
+                    <h1>Type of Place:</h1>
+                    <div className="type">
+                        <FormControl>
+                            <RadioGroup
+                                aria-labelledby="demo-radio-buttons-group-label"
+                                defaultValue="female"
+                                name="radio-buttons-group"
+                            >
+                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Entire home/apt" label="Entire home/apt" />
+                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Hotel room" label="Hotel room" />
+                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
+                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
+
+                            </RadioGroup>
+                        </FormControl>
+
+                    </div>
+
                 </div>
+                <div className="img-upload-gallery">
+                    <li><ImgUploader onUploaded={onUploaded} idx={1} /></li>
+                    <li>
+                        <ImgUploader onUploaded={onUploaded} idx={2} />
+                    </li>
+                    <li>
+                        <ImgUploader onUploaded={onUploaded} idx={3} />
+                    </li>
+                    <li>
+                        <ImgUploader onUploaded={onUploaded} idx={4} />
+                    </li>
+                    <li>
+                        <ImgUploader onUploaded={onUploaded} idx={5} />
+                    </li>
+                </div>
+                
 
 
 
 
             </div>
 
+            <div className="upload-btn-container" >
+            <button className="reserve-button" onClick={uploadStay} >upload</button>
+            </div>
 
-            <button onClick={uploadStay} >upload</button>
+
 
 
         </div>
