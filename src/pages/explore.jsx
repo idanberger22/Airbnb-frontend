@@ -50,9 +50,6 @@ export function Explore() {
     return (
         <div className="stock-margin">
             <div className="stock-margin-center">
-                {/* <div className="explore-filterr filterr">
-                    <MainFilter />
-                </div> */}
                 <div>
                     <ExploreFilter stays={stays} onChangeExploreFilter={onChangeExploreFilter} />
                 </div>

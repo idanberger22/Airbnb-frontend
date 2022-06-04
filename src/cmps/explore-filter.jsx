@@ -1,13 +1,9 @@
 import React from 'react'
 import 'rc-slider/assets/index.css'
-import Slider from 'rc-slider'
 import { useEffect, useRef, useState } from "react"
-import { useDispatch } from 'react-redux'
-import { utilService } from '../services/util.service'
-import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from 'recharts'
 import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { PriceModal } from './price-modal'
 
 export const ExploreFilter = (props) => {
     const timeOutId = useRef()
@@ -25,10 +21,10 @@ export const ExploreFilter = (props) => {
     const [pricesData, setPricesData] = useState(null)
     const amenities = ['Wifi', 'TV', 'Kitchen', 'Air conditioning']
 
-    useEffect(() => {
-        getPricesData()
+    // useEffect(() => {
+    //     getPricesData()
 
-    }, [props.stays])
+    // }, [props.stays])
 
     const onShown = (type) => {
         setPriceIsShown(false)
@@ -41,15 +37,15 @@ export const ExploreFilter = (props) => {
         }
     }
 
-    const getPricesData = () => {
-        const data = props.stays.map(stay => {
-            return { price: stay.price }
-        })
-        data.sort(function (a, b) {
-            return a.price - b.price;
-        });
-        setPricesData(data)
-    }
+    // const getPricesData = () => {
+    //     const data = props.stays.map(stay => {
+    //         return { price: stay.price }
+    //     })
+    //     data.sort(function (a, b) {
+    //         return a.price - b.price;
+    //     });
+    //     setPricesData(data)
+    // }
 
     useEffect(() => {
         props.onChangeExploreFilter(exploreFilterBy)
@@ -83,35 +79,10 @@ export const ExploreFilter = (props) => {
         return className
     }
 
-    if (!pricesData) return <h1>loading</h1>
+    // if (!pricesData) return <h1>loading</h1>
     return (
         <div className='secondary-filter'>
-            {priceIsShown && <div className='slider'>
-
-                
-
-                <BarChart width={240} height={120} data={pricesData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="price" fill="#82ca9d" />
-                </BarChart>
-                <Slider range allowCross={false} defaultValue={[0, 1200]} min={0} max={1200} onChange={handlePriceRange} />
-                <div className='flex-row-space-btw'>
-                    <li>
-                        ${utilService.getUsPrice(exploreFilterBy.minPrice)}
-                    </li>
-                    <li>
-                        -
-                    </li>
-                    <li>
-                        ${utilService.getUsPrice(exploreFilterBy.maxPrice)}
-                    </li>
-                </div>
-            </div>}
-
+            {priceIsShown&&<PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/>}
             {typeIsShown && <div className='room-type-filter noselect'>
                 <FormGroup>
                     <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}

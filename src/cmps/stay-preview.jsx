@@ -61,7 +61,7 @@ export function StayPreview({ stay }) {
                 </div>
               
                 <div className="stay-preiview-details propery-price">
-                    <li><h1 className="font-bold">${utilService.getUsPrice(stay.price)} <span className="font-medium">night</span></h1></li>
+                    <li><h1 className="font-bold">${utilService.getUsPrice(stay.price)} <span className="font-light">night</span></h1></li>
                 </div>
             </div>
         </Link>
