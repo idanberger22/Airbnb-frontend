@@ -38,6 +38,7 @@ export function Explore() {
     const getStays = async () => {
         const stays = await stayService.query(filterBy)
         setStays(stays)
+        console.log('stays',stays)
     }
 
     const onChangeExploreFilter = async (exploreFilterBy) => {

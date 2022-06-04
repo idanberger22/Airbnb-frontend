@@ -9,6 +9,7 @@ export const stayService = {
     getById,
     getTopRated,
     getRandomStayId,
+    addStay
 }
 window.cs = stayService
 
@@ -34,8 +35,10 @@ async function getById(stayId) {
 }
 
 async function addStay(stay) {
-    // const addedStay = await httpService.post('stay', stay)
-    // return addedStay
+    const addedStay = await httpService.post('stay', stay)
+    return addedStay
+
+  
 }
 
 
