@@ -61,9 +61,9 @@ const showUploadStayTogle = () => {
             </div>
             <section >
                     <div className="card-container" >
-                        {stays.map(stay =>
-                            <StayPreview stay={stay} key={stay._id} />
-                        )}
+                        {/* {stays.map(stay =>
+                            // <StayPreview stay={stay} key={stay._id} />
+                        )} */}
                     </div>
                 </section>
             <div>
