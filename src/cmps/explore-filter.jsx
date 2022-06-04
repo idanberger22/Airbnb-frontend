@@ -79,10 +79,10 @@ export const ExploreFilter = (props) => {
         return className
     }
 
-    if (!pricesData) return <h1>loading</h1>
+    // if (!pricesData) return <h1>loading</h1>
     return (
         <div className='secondary-filter'>
-            {/* {priceIsShown&&<PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/>} */}
+            {priceIsShown&&<PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/>}
             {typeIsShown && <div className='room-type-filter noselect'>
                 <FormGroup>
                     <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
