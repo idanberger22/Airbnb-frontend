@@ -21,10 +21,10 @@ export const ExploreFilter = (props) => {
     const [pricesData, setPricesData] = useState(null)
     const amenities = ['Wifi', 'TV', 'Kitchen', 'Air conditioning']
 
-    useEffect(() => {
-        getPricesData()
+    // useEffect(() => {
+    //     getPricesData()
 
-    }, [props.stays])
+    // }, [props.stays])
 
     const onShown = (type) => {
         setPriceIsShown(false)
@@ -37,15 +37,15 @@ export const ExploreFilter = (props) => {
         }
     }
 
-    const getPricesData = () => {
-        const data = props.stays.map(stay => {
-            return { price: stay.price }
-        })
-        data.sort(function (a, b) {
-            return a.price - b.price;
-        });
-        setPricesData(data)
-    }
+    // const getPricesData = () => {
+    //     const data = props.stays.map(stay => {
+    //         return { price: stay.price }
+    //     })
+    //     data.sort(function (a, b) {
+    //         return a.price - b.price;
+    //     });
+    //     setPricesData(data)
+    // }
 
     useEffect(() => {
         props.onChangeExploreFilter(exploreFilterBy)
@@ -82,7 +82,7 @@ export const ExploreFilter = (props) => {
     if (!pricesData) return <h1>loading</h1>
     return (
         <div className='secondary-filter'>
-            {priceIsShown&&<PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange}/>}
+            {/* {priceIsShown&&<PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/>} */}
             {typeIsShown && <div className='room-type-filter noselect'>
                 <FormGroup>
                     <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
