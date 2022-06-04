@@ -5,13 +5,13 @@
     text-align-last: auto;
     cursor: pointer;
 
-    .img-container{
+    .img-container {
         position: relative;
     }
 
 
     &:hover .right-arr,
-     &:hover .left-arr {
+    &:hover .left-arr {
         // &:hover
 
         text-align: center;
@@ -46,13 +46,55 @@
         left: 2px;
     }
 
+    .carousel.carousel-slider {
+        .control-next {
+            &:before {
+                margin: 0px 4px 5px 6px;
+                border-left: 6px solid #222;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+            }
+        }
+
+        .control-prev {
+            &:before {
+                margin: 0px 6px 5px 4px;
+                border-right: 6px solid #222;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+            }
+        }
+
+        &:hover .control-arrow {
+            opacity: .4;
+        }
+
+        .control-arrow {
+            border-radius: 50% !important;
+            border: 1px solid rgba(0, 0, 0, .08) !important;
+            outline: none !important;
+            margin: auto 15px !important;
+            padding: 0 !important;
+            color: #222 !important;
+            background-color: hsla(0, 0%, 100%, .9) !important;
+            box-shadow: 0 0 0 1px transparent, 0 0 0 4px transparent, 0 2px 4px rgba(0, 0, 0, .18) !important;
+            width: 32px !important;
+            height: 32px !important;
+            opacity: .0;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
     h1 {
         font-size: 15px;
         overflow: clip;
         font-weight: 100;
         color: #222;
         text-overflow: ellipsis;
-        
+
     }
 
 
@@ -71,9 +113,11 @@
         justify-content: space-between;
 
     }
-    .location-rate{
-        font-family: Airbnb-Cereal-Book,  sans-serif;
-        li{
+
+    .location-rate {
+        font-family: Airbnb-Cereal-Book, sans-serif;
+
+        li {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -89,11 +133,11 @@
     .propery-price {
         margin-top: 30px;
 
-       
+
 
         li {
             display: flex;
-            
+
 
 
             span {
@@ -119,9 +163,8 @@
     right: 4%;
     z-index: 2;
     opacity: 0.85;
+
     span {
-        font-size: 30px; 
+        font-size: 30px;
     }
 }
-
-
