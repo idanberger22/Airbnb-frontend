@@ -21,9 +21,7 @@ export function ReservationPreview2({ reservation, getReservations }) {
 
 
     return (<>
-        
-                    
-                    <td>{reservation.user.username}</td>
+                    <td>{reservation.user.fullName}</td>
                    
                     <td style={{ textAlign: 'left'}}>
                         {reservation.stay.name}

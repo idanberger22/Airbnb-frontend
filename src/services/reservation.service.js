@@ -7,7 +7,8 @@ export const reservationService = {
 }
 window.cs = reservationService;
 
-async function query(ev, Id) {
+async function query(Id) {
+    console.log('im inside fronend service query')
     let reservations = await httpService.get('reservation',Id)
     
     return reservations

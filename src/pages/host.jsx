@@ -18,7 +18,7 @@ export const Host = () => {
 
     let loggedinUser = userService.getLoggedinUser()
     const getReservations = async () => {
-        const reservatios = await reservationService.query({userId:loggedinUser._id})
+        const reservatios = await reservationService.query({hostId:loggedinUser._id})
         const sortedReservatios = reservatios.sort((a,b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
         // {hostId:loggedinUser._id}

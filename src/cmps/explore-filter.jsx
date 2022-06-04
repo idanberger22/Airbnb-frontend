@@ -18,6 +18,7 @@ export const ExploreFilter = (props) => {
         roomTypes: ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room'],
         amenities: []
     })
+    
     const [checked, setChecked] = useState({ entire: true, hotel: true, private: true, shared: true });
     const [priceIsShown, setPriceIsShown] = useState(false)
     const [typeIsShown, setTypeIsShown] = useState(false)
@@ -86,6 +87,9 @@ export const ExploreFilter = (props) => {
     return (
         <div className='secondary-filter'>
             {priceIsShown && <div className='slider'>
+
+                
+
                 <BarChart width={240} height={120} data={pricesData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
