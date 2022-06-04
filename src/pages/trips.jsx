@@ -13,6 +13,8 @@ export const Trips = () => {
 
     const [trips, setTrips] = useState(null)
     useEffect(() => {
+        document.documentElement.style.setProperty('--headerFontColor', '#000');
+        document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
         getTrips(loggedinUser)
     },[])
     

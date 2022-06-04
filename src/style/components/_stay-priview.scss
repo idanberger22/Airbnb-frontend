@@ -46,6 +46,10 @@
         left: 2px;
     }
 
+    .carousel *{
+        border-radius: 12px;
+    }
+
     .carousel.carousel-slider {
         .control-next {
             &:before {

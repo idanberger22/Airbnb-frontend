@@ -9,7 +9,8 @@ export const stayService = {
     getById,
     getTopRated,
     getRandomStayId,
-    addStay
+    addStay,
+    getByHOstId
 }
 window.cs = stayService
 
@@ -32,6 +33,11 @@ async function query(filterBy, exploreFilterBy) {
 async function getById(stayId) {
     const stay= await httpService.get(STAY_KEY+`/${stayId}`)
     return stay
+}
+async function getByHOstId(Id) {
+    let stays = await httpService.get('stay',Id)
+    
+    return stays
 }
 
 async function addStay(stay) {

@@ -4,13 +4,21 @@ import { ImgUploader } from "../cmps/img-uploader"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
 import { UploadStay } from "../cmps/upload-stay"
 import { reservationService } from "../services/reservation.service"
+import { stayService } from "../services/stay.service"
 import { userService } from "../services/user.service"
 
 
 export const Host = () => {
-
+    
     const [reservations, setreservations] = useState(null)
     const [uploadStyling, setUploadStyling] = useState(false)
+    
+    let loggedinUser = userService.getLoggedinUser()
+
+    const getStays = async () => {
+        const stays = await stayService.query({hostId: loggedinUser._id})
+        console.log(stays)
+    }
 
 
    
@@ -22,10 +30,12 @@ const showUploadStayTogle = () => {
     
 
     useEffect(() => {
+        document.documentElement.style.setProperty('--headerFontColor', '#000');
+        document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
         getReservations()
+        getStays()
     }, [])
 
-    let loggedinUser = userService.getLoggedinUser()
     const getReservations = async () => {
         const reservatios = await reservationService.query({ hostId: loggedinUser._id })
         const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
