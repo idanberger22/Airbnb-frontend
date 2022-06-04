@@ -72,9 +72,12 @@ export function ReserveStay(props) {
 
     const reserveStay = async () => {
         reservation.user = userService.getLoggedinUser()
+        if(!reservation.user){
+            dispatch(openModal(true))
+            return
+        } 
         reservation.userId = userService.getLoggedinUser()._id
         if (!reservation.checkIn || !reservation.checkOut || (reservation.adults + reservation.childrens) === 0) console.log('fill all details')
-        else if (!reservation.user) dispatch(openModal(true))
         else {
             setResModalIsOpen(true)
             const newRes = await reservationService.addReservation(reservation)
@@ -115,13 +118,8 @@ export function ReserveStay(props) {
                     <GuestPicker className="guest-picker" onUpdateGuestsQty={onUpdateGuestsQty} />
                 </div>
                 }
-            </div>
-            <NavLink className='' to='/home' >
-            <div>
-
+            </div> 
             <button onClick={reserveStay} onMouseMove={(e) => onMousMove(e)} style={reservedBtnBc} className='reserve-button'>Reserve</button>
-            </div>
-            </NavLink>
            {!resModalIsOpen &&  <section className="price-section">
                 {(reservation.adults!=0 || reservation.childrens!=0) && reservation.checkIn && reservation.checkOut && <div>
                     <h4>You won't be charged yet</h4>
