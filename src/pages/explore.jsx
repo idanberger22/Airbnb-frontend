@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
 // import { stayService } from "../services/stay.service"
 import { ExploreFilter } from "../cmps/explore-filter"
-import { showLargeFilter, showSmallFilter, LogoChangeToWhite } from "../store/actions/headerAction"
+import { LogoChangeToWhite } from "../store/actions/headerAction"
 import { useDispatch, useSelector } from 'react-redux'
 
 export function Explore() {
@@ -38,7 +38,6 @@ export function Explore() {
     const getStays = async () => {
         const stays = await stayService.query(filterBy)
         setStays(stays)
-        console.log('stays',stays)
     }
 
     const onChangeExploreFilter = async (exploreFilterBy) => {
