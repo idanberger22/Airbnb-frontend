@@ -64,13 +64,6 @@ export const UploadStay = (props) => {
     const [newAddress, setNewAddress] = useState(null)
     const [type, setType] = useState({ entire: true, hotel: true, private: true, shared: true });
     const [amenities, setAmenities] = useState('Wifi');
-
-
-
-
-
-
-
     useEffect(() => {
         console.log(newStay)
     }, [newStay])
@@ -124,22 +117,11 @@ export const UploadStay = (props) => {
     }
 
 
-
-
-
-
-
-
-
-
-
     const uploadStay = async () => {
         const stayToUpload = await stayService.addStay(newStay)
         if (stayToUpload) console.log('new stay has been added')
         else console.log('couldnt add a stay')
     }
-
-
 
     return (
         <div className="main-upload-stay">
@@ -151,8 +133,6 @@ export const UploadStay = (props) => {
             
             <div className="container">
                 <div className="details-form">
-
-
                     <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" />
                     <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" />
                     <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" />
@@ -163,7 +143,7 @@ export const UploadStay = (props) => {
                 </div>
                 <div className="checkboxes">
 
-                    <h1>Amneties:</h1>
+                    <h1 style={{marginBottom:'0.8rem'}}>Amenities:</h1>
 
                     <div className="emnities">
                         <FormGroup>
@@ -174,7 +154,7 @@ export const UploadStay = (props) => {
 
                         </FormGroup>
                     </div>
-                    <h1>Type of Place:</h1>
+                    <h1 style={{marginBottom:'0.8rem', marginTop:'0.8rem'}}>Type of Place:</h1>
                     <div className="type">
                         <FormControl>
                             <RadioGroup
@@ -208,20 +188,10 @@ export const UploadStay = (props) => {
                         <ImgUploader onUploaded={onUploaded} idx={5} />
                     </li>
                 </div>
-                
-
-
-
-
             </div>
-
             <div className="upload-btn-container" >
             <button className="reserve-button" onClick={uploadStay} >upload</button>
             </div>
-
-
-
-
         </div>
     )
 }
