@@ -17,6 +17,8 @@ export const Host = () => {
     const [hostStays, setHostStays] = useState(false)
     const dispatch = useDispatch()
 
+
+
     useEffect(() => {
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
@@ -60,19 +62,21 @@ export const Host = () => {
                     </h1>
                 </li>
             </div>
-            <div className="header">
-                <button onClick={showUploadStayTogle}>add a listing</button>
+            {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
+            {!uploadStyling && <div className="header">
+                <button className="reserve-button" onClick={showUploadStayTogle}>Add a listing</button>
 
 
-            </div>
-            <section >
+            </div>}
+            {!uploadStyling &&<section >
                 <div className="card-container" >
                     {hostStays.map(stay =>
                         <StayPreview stay={stay} key={stay._id} />
-                    )}
+                        )}
                 </div>
-            </section>
-            <div>
+            </section>}
+
+            {!uploadStyling &&<div>
                 <div className="reservations-container">
                     <table className="reservations-table" >
 
@@ -94,9 +98,8 @@ export const Host = () => {
                             </tr>
                         )}
                     </table>
-                    {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
                 </div>
-            </div>
+            </div>}
         </div>
     </div>
     )
