@@ -108,7 +108,7 @@ export const Home = () => {
             <div className="become-a-host">
                 <div>
                     <h1>Become a host!</h1>
-                    <button className="clickable">learn more</button>
+                    <NavLink to='/host'><button className="clickable">learn more</button></NavLink>
                 </div>
             </div>
         </article>

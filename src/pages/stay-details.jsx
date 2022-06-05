@@ -64,11 +64,7 @@ export const StayDetails = () => {
             </section>
             <section className="map">
                 <MapCmp stay={stay} />
-
             </section>
         </div>
     </div>
-
-
-
 }
