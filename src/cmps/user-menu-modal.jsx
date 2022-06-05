@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { useDispatch } from 'react-redux'
-import { openModal } from "../store/actions/userActions"
+import { openModal,logOut } from "../store/actions/userActions"
 import { userService } from "../services/user.service"
-
 
 export const UserMenuModal = (props) => {
 
@@ -18,8 +17,8 @@ export const UserMenuModal = (props) => {
         props.toggleModal()
     }
 
-    const onLogout = () => {
-        userService.logout()
+    const  onLogout = async() => {
+        dispatch(logOut())
         props.removeOnLogout()
         closeSelf()
     }
