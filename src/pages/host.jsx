@@ -83,6 +83,9 @@ const showUploadStayTogle = () => {
                         )}
                     </div>
                 </section>
+
+                <section>
+                </section>
             <div>
                 <div className="reservations-container">
                     <table className="reservations-table" >
