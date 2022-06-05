@@ -40,7 +40,7 @@ export const MainFilter = () => {
         <div className="total-filter">
             <div className="inpt-fillter">
                 <div className="center" style={{alignItems:'flex-start'}}>
-                    <label for='main-input' className="main-filter-label font-bold clickable">Where</label>
+                    <label htmlFor='main-input' className="main-filter-label font-bold clickable">Where</label>
                     <input name="location" value={filterBy.location} type="text" placeholder="Search destination" onChange={handleChange} autoComplete='off' id='main-input'/>
                 </div>
             </div>

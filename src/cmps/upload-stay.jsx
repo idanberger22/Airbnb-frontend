@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom"
 import { DateRangeSelector } from "./date-picker"
 import { ImgUploader } from "./img-uploader"
 import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField } from "@material-ui/core"
+import { createTheme } from "@material-ui/core/styles"
+import { MuiThemeProvider } from "@material-ui/core/styles"
 import { userService } from "../services/user.service"
 import { utilService } from "../services/util.service"
 import { stayService } from "../services/stay.service"
@@ -64,13 +66,6 @@ export const UploadStay = (props) => {
     const [newAddress, setNewAddress] = useState(null)
     const [type, setType] = useState({ entire: true, hotel: true, private: true, shared: true });
     const [amenities, setAmenities] = useState('Wifi');
-
-
-
-
-
-
-
     useEffect(() => {
         console.log(newStay)
     }, [newStay])
@@ -81,8 +76,26 @@ export const UploadStay = (props) => {
         setNewStay({ ...newStay, imgUrls: imgs });
     }
 
-
-
+    const theme = createTheme({
+        overrides: {
+            MuiOutlinedInput: {
+                root: {
+                    // Hover state
+                    "&:hover $notchedOutline": {
+                        borderColor: '222222'
+                    },
+                    // Focused state
+                    "&$focused $notchedOutline": {
+                        borderColor: '#FE385C'
+                    }
+                },
+                // Default State
+                notchedOutline: {
+                    borderColor: 'B0B0B0'
+                }
+            }
+        }
+    })
     const handleChange = (ev) => {
         const field = ev.target.name
         const value = ev.target.value
@@ -124,15 +137,6 @@ export const UploadStay = (props) => {
     }
 
 
-
-
-
-
-
-
-
-
-
     const uploadStay = async () => {
         const stayToUpload = await stayService.addStay(newStay)
         if (stayToUpload) console.log('new stay has been added')
@@ -140,8 +144,6 @@ export const UploadStay = (props) => {
         props.getStays()
         onClose()
     }
-
-
 
     return (
         <div className="main-upload-stay">
@@ -153,19 +155,19 @@ export const UploadStay = (props) => {
             
             <div className="container">
                 <div className="details-form">
-
-
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" />
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" />
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" />
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" />
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" />
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" />
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" />
+                <MuiThemeProvider theme={theme}>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    </MuiThemeProvider>
                 </div>
                 <div className="checkboxes">
 
-                    <h1>Amneties:</h1>
+                    <h1 style={{marginBottom:'0.8rem'}}>Amenities:</h1>
 
                     <div className="emnities">
                         <FormGroup>
@@ -176,7 +178,7 @@ export const UploadStay = (props) => {
 
                         </FormGroup>
                     </div>
-                    <h1>Type of Place:</h1>
+                    <h1 style={{marginBottom:'0.8rem', marginTop:'0.8rem'}}>Type of Place:</h1>
                     <div className="type">
                         <FormControl>
                             <RadioGroup
@@ -187,7 +189,7 @@ export const UploadStay = (props) => {
                                 <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Entire home/apt" label="Entire home/apt" />
                                 <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Hotel room" label="Hotel room" />
                                 <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
-                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
+                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Shared room" label="Shared room" />
 
                             </RadioGroup>
                         </FormControl>
@@ -210,20 +212,10 @@ export const UploadStay = (props) => {
                         <ImgUploader onUploaded={onUploaded} idx={4} />
                     </li>
                 </div>
-                
-
-
-
-
             </div>
-
             <div className="upload-btn-container" >
             <button className="reserve-button" onClick={uploadStay} >upload</button>
             </div>
-
-
-
-
         </div>
     )
 }

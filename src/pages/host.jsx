@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react"
-import { ImgUploader } from "../cmps/img-uploader"
+import { useDispatch } from 'react-redux'
+import { openModal } from "../store/actions/userActions"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
 import { UploadStay } from "../cmps/upload-stay"
 import { reservationService } from "../services/reservation.service"
@@ -14,6 +15,7 @@ export const Host = () => {
     const [reservations, setreservations] = useState(null)
     const [uploadStyling, setUploadStyling] = useState(false)
     const [hostStays, setHostStays] = useState(false)
+    const dispatch=useDispatch()
     
     let loggedinUser = userService.getLoggedinUser()
 
@@ -22,17 +24,7 @@ export const Host = () => {
         setHostStays(stays)
         console.log(stays)
     }
-
-    
-
-    // useEffect(() => {
-        
-    //     getStays()
-    // }, [hostStays])
-   
-
 const showUploadStayTogle = () => {
-    
     setUploadStyling(!uploadStyling)
 }
     
@@ -40,6 +32,12 @@ const showUploadStayTogle = () => {
     useEffect(() => {
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
+        const loggedInUser=userService.getLoggedinUser()
+        if(!loggedInUser){
+            dispatch(openModal(true))
+            return
+            //todo:refresh after log in
+        } 
         getReservations()
         getStays()
     }, [])
