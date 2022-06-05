@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
 import { UploadStay } from "../cmps/upload-stay"
@@ -42,11 +42,10 @@ export const Host = () => {
         const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
     }
-
     if (!loggedInUser) return <h1>must be logged in</h1>
     if (!reservations) return <h1>you currently have no reservations</h1>
     if (!hostStays) return <h1>loading</h1>
-    console.log(loggedInUser)
+
 
     return (<div className="stock-margin main-host-page">
 

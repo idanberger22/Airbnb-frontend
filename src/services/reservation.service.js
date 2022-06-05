@@ -34,9 +34,7 @@ const reviewChannel = new BroadcastChannel('reservationChannel')
 
 
 async function query(Id) {
-    console.log('im inside fronend service query')
     let reservations = await httpService.get('reservation', Id)
-
     return reservations
 }
 
