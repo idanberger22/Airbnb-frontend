@@ -3,10 +3,10 @@ import {userService} from '../../services/user.service'
 export function signup(user) {
     return async (dispatch) => {
       const newUser = await userService.signup(user)
+      console.log('signup new:',newUser)
       dispatch({ type: 'LOGIN', newUser }) 
     } 
   }
-
 
 export function login(credentials) {
     return async (dispatch) => {

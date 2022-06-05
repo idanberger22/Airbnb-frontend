@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
 import { UploadStay } from "../cmps/upload-stay"
@@ -14,7 +14,7 @@ export const Host = () => {
 
     const [reservations, setreservations] = useState(null)
     const [uploadStyling, setUploadStyling] = useState(false)
-    const [loggedInUser, setloggedInUser] = useState(userService.getLoggedinUser())
+    const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
     const [hostStays, setHostStays] = useState(false)
     const dispatch = useDispatch()
 
@@ -28,8 +28,7 @@ export const Host = () => {
             getReservations()
             getStays()
         }
-
-    }, [])
+    }, [loggedInUser])
 
     const getStays = async () => {
         const stays = await stayService.getByHOstId(loggedInUser._id)

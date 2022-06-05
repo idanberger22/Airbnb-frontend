@@ -22,10 +22,10 @@ export function userReducer(state = INITIAL_STATE, action) {
             return { users: state.users }
         case 'LOGIN':
             state.loggedinUser = action.user
+            console.log(state.loggedinUser)
             return { ...state }
         case 'LOGOUT':
             state.loggedinUser = null
-            console.log(state.loggedinUser)
             return { ...state }
         case 'OPEN_MODAL':
             state.isModalOpen = true
