@@ -1,30 +1,29 @@
-import {userService} from '../../services/user.service'
+import { userService } from '../../services/user.service'
 
 export function signup(user) {
     return async (dispatch) => {
-      const newUser = await userService.signup(user)
-      console.log('signup new:',newUser)
-      dispatch({ type: 'LOGIN', newUser }) 
-    } 
-  }
+        const newUser = await userService.signup(user)
+        dispatch({ type: 'LOGIN', user:newUser })
+    }
+}
 
 export function login(credentials) {
     return async (dispatch) => {
-      const user = await userService.login(credentials)
-      dispatch({ type: 'LOGIN', user }) 
-    } 
-  }
+        const user = await userService.login(credentials)
+        dispatch({ type: 'LOGIN', user })
+    }
+}
 
-  export function logOut() {
+export function logOut() {
     return async (dispatch) => {
         await userService.logout()
-        dispatch({ type: 'LOGOUT'})
-      }
-  }
+        dispatch({ type: 'LOGOUT' })
+    }
+}
 
 export function loadUsers() {
     return (dispatch) => {
-        const users=userService.query()
+        const users = userService.query()
         dispatch({ type: 'LOAD_USERS', users })
     }
 }
@@ -35,14 +34,14 @@ export function removeUser(id) {
     }
 }
 
-export function openModal(isLogin){
+export function openModal(isLogin) {
     return (dispatch) => {
         dispatch({ type: 'OPEN_MODAL', isLogin })
     }
 }
 
-export function closeModal(){
+export function closeModal() {
     return (dispatch) => {
-        dispatch({ type: 'CLOSE_MODAL'})
+        dispatch({ type: 'CLOSE_MODAL' })
     }
 }

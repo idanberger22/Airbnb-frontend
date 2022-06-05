@@ -4,7 +4,7 @@ import { TextField } from '@material-ui/core'
 import { createTheme } from "@material-ui/core/styles"
 import { MuiThemeProvider } from "@material-ui/core/styles"
 import { connect } from 'react-redux'
-import { closeModal, openModal,login } from '../store/actions/userActions'
+import { closeModal, openModal,login, signup } from '../store/actions/userActions'
 import { userService } from '../services/user.service'
 export class _LoginSignup extends React.Component {
 
@@ -50,7 +50,7 @@ export class _LoginSignup extends React.Component {
 
     onSignup = async (user) => {
         try{
-            await userService.signup(user)
+            await this.props.signup(user)
             this.onCloseModal()
         }
         catch{
@@ -170,7 +170,8 @@ function mapStateToProps(storeState) {
 const mapDispatchToProps = {
     closeModal,
     openModal,
-    login
+    login,
+    signup
 }
 
 export const LoginSignup = connect(mapStateToProps, mapDispatchToProps)(_LoginSignup)
