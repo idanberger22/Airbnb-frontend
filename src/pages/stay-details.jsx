@@ -44,9 +44,6 @@ export const StayDetails = () => {
 
     return <div className="stock-margin-narrow main-stay-details-container">
         <div className="stock-margin-center details-container">
-            {/* <div className="explore-filterr" style={navbarStyling}>
-                {<MainFilter />}
-            </div> */}
             <StaydetailsHeader stay={stay} />
             <DetailsGallery stay={stay} />
             <div className="stay-bellow-container">

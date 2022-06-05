@@ -37,8 +37,6 @@ async function getById(stayId) {
 async function getByHOstId(hostId) {
     let stays = await httpService.get('stay')
     const hostStays = stays.filter(stay => stay.host._id === hostId )
-    console.log('stays in frontend',stays)
-    
     return hostStays
 }
 
