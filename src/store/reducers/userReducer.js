@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     users: [],
     loggedinUser: '',
     isModalOpen: false,
-    isLogin:true
+    isLogin:true,
 }
 
 export function userReducer(state = INITIAL_STATE, action) {
