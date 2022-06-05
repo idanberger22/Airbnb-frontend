@@ -1,12 +1,25 @@
 import {userService} from '../../services/user.service'
 
-export function login(credentials) {
-    return (dispatch) => {
-      return userService.login(credentials)
-      .then((user) => {
-        dispatch({ type: 'LOGIN', user })
-      })
+export function signup(user) {
+    return async (dispatch) => {
+      const newUser = await userService.signup(user)
+      console.log('signup new:',newUser)
+      dispatch({ type: 'LOGIN', newUser }) 
     } 
+  }
+
+export function login(credentials) {
+    return async (dispatch) => {
+      const user = await userService.login(credentials)
+      dispatch({ type: 'LOGIN', user }) 
+    } 
+  }
+
+  export function logOut() {
+    return async (dispatch) => {
+        await userService.logout()
+        dispatch({ type: 'LOGOUT'})
+      }
   }
 
 export function loadUsers() {
@@ -19,12 +32,6 @@ export function removeUser(id) {
     return (dispatch) => {
         userService.removeUser(id)
         dispatch({ type: 'DELETE_USER', id })
-    }
-}
-export function addUser(user) {
-    return (dispatch) => {
-        const added=userService.saveUser(user)
-        dispatch({ type: 'ADD_USER', user:added })
     }
 }
 

@@ -23,7 +23,7 @@ async function login(userCred) {
 }
 async function signup(user) {
     const newUser = await httpService.post(AUTH_KEY+'signup', user)
-    socketService.login(user._id)
+    socketService.login(newUser._id)
     return saveLocalUser(newUser)
 }
 async function logout() {
@@ -33,9 +33,6 @@ async function logout() {
         socketService.logout()
     }
     else console.log('how can one fail to logout??')
-    
-
-
 }
 
 function saveLocalUser(user) {
