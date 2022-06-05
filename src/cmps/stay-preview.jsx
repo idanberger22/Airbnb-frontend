@@ -43,7 +43,7 @@ export function StayPreview({ stay }) {
                     <li><h1 className="font-light">{utilService.make2digits(stay.reviewScores.value / 2)}
 
                     </h1>
-                        <h1 style={{fontWeight:'700'}}>★</h1></li>
+                        <h1 style={{fontWeight:'800'}}>★</h1></li>
                 </div>
                 <div className="stay-preiview-details propery-description">
                     <li><h1>{stay.name} </h1></li>
