@@ -9,6 +9,11 @@
     .header {
         display: flex;
         justify-content: center;
+
+        .reserve-button{
+            width: 10rem;
+        }
+
     }
 
     table {
