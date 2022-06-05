@@ -67,7 +67,6 @@ export const UploadStay = (props) => {
     const [type, setType] = useState({ entire: true, hotel: true, private: true, shared: true });
     const [amenities, setAmenities] = useState('Wifi');
     useEffect(() => {
-        console.log(newStay)
     }, [newStay])
 
     const onUploaded = (imgUrl, idx) => {
@@ -101,25 +100,18 @@ export const UploadStay = (props) => {
         const value = ev.target.value
         console.log('field', field)
         if (field === 'city' || field === 'country' || field === 'street' || field === 'country-code') {
-            // const newAddress = newAddress.address
-            // setNewAddress({ ...newAddress, [field]: value })
             setNewStay({ ...newStay, address: { ...newStay.address, [field]: value } })
 
         }
         else setNewStay({ ...newStay, [field]: value })
-
-
-        console.log('newStay', newStay)
     }
 
     const handleEmnitiesChange = ({ target }) => {
-        console.log('taget.name', target.name)
         const amenity = target.name
         if (newStay.amenities.includes(amenity)) {
             setNewStay({ ...newStay, amenities: newStay.amenities.filter(amn => amn !== amenity) })
         }
         else setNewStay({ ...newStay, amenities: [...newStay.amenities, amenity] })
-        console.log('newStay', newStay)
     }
 
     const handleTypeChange = ({ target }) => {

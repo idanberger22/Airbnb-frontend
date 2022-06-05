@@ -21,9 +21,6 @@ export class ImgUploader extends Component {
     return isUploading ? 'Uploading....' : 'Upload Image'
   }
 
-  componentDidMount() {
-    console.log('state', this.state)
-  }
   render() {
     const { imgUrl } = this.state
     const id = utilService.makeId()
