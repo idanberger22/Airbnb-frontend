@@ -1,4 +1,5 @@
 import { reservationService } from "../services/reservation.service"
+import { UserMsg } from "./user-msg"
 export function AppFooter() {
 
     return (
@@ -27,7 +28,7 @@ export function AppFooter() {
                     <li>·</li>
                     <li>Support & resources</li>
                 </div>
-           
+                
         </div>
       
     )

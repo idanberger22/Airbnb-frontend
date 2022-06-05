@@ -1,68 +1,76 @@
-.main-host-page{
+.main-host-page {
 
-    .flex{
-        li:nth-child(2){
+    .flex {
+        li:nth-child(2) {
             margin-left: 1rem;
         }
     }
 
-    .header{
+    .header {
         display: flex;
         justify-content: center;
     }
 
-    table{
+    table {
         margin-top: 2rem;
     }
 
-    th{
+    th {
         font-family: Airbnb-Cereal-Bold;
 
     }
 
 
-   
 
-    .reservations-container{
+
+    .reservations-container {
         display: flex;
         justify-content: center;
         flex-direction: column;
-      
-        
+
+
     }
 
-    
-        tr, td, th, table{
-            padding: 2px;
-            border: 1px lightgray solid;
-        }
 
-        th{
-            background-color: lightgray;
-        }
-        table{
-            border-collapse: collapse;
-        }
+    tr,
+    td,
+    th,
+    table {
+        padding: 2px;
+        border: 1px lightgray solid;
+    }
 
-    td{
+    th {
+        background-color: lightgray;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
         text-align: center;
     }
 
-    
 
 
-    
-
-   
-
-    
 
 
-    .stock-margin-center{
+
+
+
+
+
+
+    .stock-margin-center {
         margin-top: 170px;
     }
 
-    img{
+    img {
         border-radius: 50%;
+        border: 1px lightgray solid;
+        width: 3rem;
+        object-fit: cover;
+        aspect-ratio: 1/1;
     }
 }

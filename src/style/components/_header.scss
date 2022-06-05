@@ -225,17 +225,18 @@ nav {
     border-radius: 30px;
     outline: 1px solid rgba($color: $clrGRAY, $alpha: 0.6);
     padding: 0;
-
+    
     span {
         color: #595959;
         font-size: 1.125rem;
         font-weight: 800;
         margin-right: 6px;
         margin-left: 12px;
-
+        
     }
-
+    
     img {
+        object-fit: cover;
         height: 30px;
         width: 30px;
         border-radius: 50%;

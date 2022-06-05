@@ -1,24 +1,25 @@
-
 .trips {
     padding-top: 170px;
 
-    .user-name-img{
-            border-radius: 50%;
+    .user-name-img {
+        border-radius: 50%;
+        border: 1px lightgray solid;
+        width: 3rem;
+        object-fit: cover;
+        aspect-ratio: 1/1;
     }
 
-    .flex{
-        li{
+    .flex {
+        li {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        li:first-child{
+
+        li:first-child {
             margin-right: 1rem;
         }
+
         margin-bottom: 5rem;
     }
 }
-
-
-
-

@@ -6,21 +6,29 @@ import { UploadStay } from "../cmps/upload-stay"
 import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
 import { userService } from "../services/user.service"
+import { StayPreview } from "../cmps/stay-preview"
 
 
 export const Host = () => {
     
     const [reservations, setreservations] = useState(null)
     const [uploadStyling, setUploadStyling] = useState(false)
+    const [hostStays, setHostStays] = useState(false)
     
     let loggedinUser = userService.getLoggedinUser()
 
     const getStays = async () => {
-        const stays = await stayService.query({hostId: loggedinUser._id})
+        const stays = await stayService.getByHOstId(loggedinUser._id)
+        setHostStays(stays)
         console.log(stays)
     }
 
+    
 
+    // useEffect(() => {
+        
+    //     getStays()
+    // }, [hostStays])
    
 
 const showUploadStayTogle = () => {
@@ -50,6 +58,7 @@ const showUploadStayTogle = () => {
     
     
     { if (!reservations) return <h1>loading</h1> }
+    { if (!hostStays) return <h1>loading</h1> }
     
     return (<div className="stock-margin main-host-page">
         
@@ -71,9 +80,9 @@ const showUploadStayTogle = () => {
             </div>
             <section >
                     <div className="card-container" >
-                        {/* {stays.map(stay =>
-                            // <StayPreview stay={stay} key={stay._id} />
-                        )} */}
+                        {hostStays.map(stay =>
+                            <StayPreview  stay={stay} key={stay._id} />
+                        )}
                     </div>
                 </section>
             <div>
@@ -100,7 +109,7 @@ const showUploadStayTogle = () => {
                     </table>
                    
 
-                       {uploadStyling && <UploadStay showUploadStayTogle={showUploadStayTogle} />}
+                       {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
                 </div>
             </div>
         </div>

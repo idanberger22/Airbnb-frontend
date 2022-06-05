@@ -34,10 +34,12 @@ async function getById(stayId) {
     const stay= await httpService.get(STAY_KEY+`/${stayId}`)
     return stay
 }
-async function getByHOstId(Id) {
-    let stays = await httpService.get('stay',Id)
+async function getByHOstId(hostId) {
+    let stays = await httpService.get('stay')
+    const hostStays = stays.filter(stay => stay.host._id === hostId )
+    console.log('stays in frontend',stays)
     
-    return stays
+    return hostStays
 }
 
 async function addStay(stay) {

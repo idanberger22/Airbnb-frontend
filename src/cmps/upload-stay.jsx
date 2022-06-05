@@ -137,6 +137,8 @@ export const UploadStay = (props) => {
         const stayToUpload = await stayService.addStay(newStay)
         if (stayToUpload) console.log('new stay has been added')
         else console.log('couldnt add a stay')
+        props.getStays()
+        onClose()
     }
 
 
@@ -194,7 +196,10 @@ export const UploadStay = (props) => {
 
                 </div>
                 <div className="img-upload-gallery">
-                    <li><ImgUploader onUploaded={onUploaded} idx={1} /></li>
+                    <li><ImgUploader onUploaded={onUploaded} idx={0} /></li>
+                    <li>
+                        <ImgUploader onUploaded={onUploaded} idx={1} />
+                    </li>
                     <li>
                         <ImgUploader onUploaded={onUploaded} idx={2} />
                     </li>
@@ -203,9 +208,6 @@ export const UploadStay = (props) => {
                     </li>
                     <li>
                         <ImgUploader onUploaded={onUploaded} idx={4} />
-                    </li>
-                    <li>
-                        <ImgUploader onUploaded={onUploaded} idx={5} />
                     </li>
                 </div>
                 

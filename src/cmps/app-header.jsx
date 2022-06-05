@@ -10,6 +10,7 @@ import { userService } from "../services/user.service"
 import whiteLogo from "../assets/imgs/logo-white.png"
 import redLogo from "../assets/imgs/logo1.png"
 import { ConfirmedResModal } from "./confirmed-res-modal"
+import { UserMsg } from "./user-msg"
 
 export const AppHeader = () => {
 
@@ -160,7 +161,7 @@ export const AppHeader = () => {
                         {LargeFilterShow && <MainFilter />}
                     </div>
                 </div>
-
+                <UserMsg />
             </div>
             <div className="right"></div>
         </header >
