@@ -43,6 +43,9 @@
 
 .left-side{
     display: flex;
+    li{
+       cursor: default; 
+    }   
 }
 .right-side{
     display: flex;

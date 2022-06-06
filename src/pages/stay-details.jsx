@@ -3,12 +3,10 @@ import { stayService } from "../services/stay.service"
 import { useParams } from "react-router-dom"
 import { DetailsGallery } from "../cmps/details-gallery"
 import { ReserveStay } from "../cmps/reserve-stay"
-import { MainFilter } from "../cmps/main-filter";
 import { StaydetailsHeader } from "../cmps/StaydetailsHeader"
 import { StayDeatailsBellow } from "../cmps/stay-deatails-bellow"
 import { ReviewLine } from "../cmps/review-line"
 import { MapCmp } from "../cmps/map-cmp"
-import { ConfirmedResModal } from "../cmps/confirmed-res-modal"
 
 export const StayDetails = () => {
 
@@ -54,6 +52,7 @@ export const StayDetails = () => {
                     <ReserveStay stay={stay} />
                 </div>
             </div>
+            <div className="line"></div>
             <section className="main-reviews">
                 {stay.reviews.map(review =>
                     <ReviewLine review={review} key={review.txt} />

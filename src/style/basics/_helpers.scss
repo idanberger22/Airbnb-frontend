@@ -10,7 +10,7 @@
     display: flex;
 }
 .red {
-  color:$clrRED
+  color:$clrRED !important
 }
 .center-h {
     margin: auto;
@@ -127,6 +127,10 @@
 border-radius: 12px;
 }
 
+.gray{
+  color:$clrGRAY
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -148,5 +152,11 @@ border-radius: 12px;
   height: 100vh;
   width: 99vw;
   opacity: 0;
-  z-index: 0;
+  z-index: 1;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  border-bottom: 1px solid rgb(221, 221, 221);
 }

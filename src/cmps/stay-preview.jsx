@@ -25,7 +25,7 @@ export function StayPreview({ stay }) {
                 <div>
                     <div className="img-container">
                         <div className={`heart ${heartClass}`} onClick={changeHeartColor}>
-                            <span className="material-icons">favorite</span>
+                            <span className="material-icons" style={{'oopz':'120'}}>favorite</span>
                         </div>
                         <div onClick={(ev) => switchImg(ev)}>
                             <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} showStatus={false}>
@@ -40,13 +40,16 @@ export function StayPreview({ stay }) {
                 </div>
                 <div className="stay-preiview-details location-rate">
                     <li><h1 className="font-medium" >{stay.address.city}, {stay.address.country}</h1></li>
-                    <li><h1 className="font-light">{utilService.make2digits(stay.reviewScores.value / 2)}
-
-                    </h1>
-                        <h1 style={{fontWeight:'800'}}>★</h1></li>
+                    <li><h1 className="font-light">{utilService.make2digits(stay.reviewScores.value / 2)} </h1>
+                        <span class="material-icons">
+                            star
+                        </span></li>
                 </div>
                 <div className="stay-preiview-details propery-description">
                     <li><h1>{stay.name} </h1></li>
+                </div>
+                <div className="stay-preiview-details propery-description">
+                    <li><h1>{stay.roomType} by {stay.host.fullname}</h1></li>
                 </div>
                 <div className="stay-preiview-details propery-price">
                     <li><h1 className="font-bold">${utilService.getUsPrice(stay.price)} <span className="font-light">night</span></h1></li>

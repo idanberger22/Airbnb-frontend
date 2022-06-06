@@ -48,7 +48,6 @@ export const MainFilter = () => {
             <label className="main-filter-label font-bold clickable checkin-pos">Check in</label>
             <label className="main-filter-label font-bold clickable checkout-pos">Check out</label>
             <div className="placeholder" style={{width:'5px',height:'13px'}}></div>
-
                 <DateRangeSelector place={'filter'} handleDate={handleDate} startDate={loadedFilter.from} endDate={loadedFilter.to} />
             </div>
             <NavLink className="navlink" to='/explore'>
