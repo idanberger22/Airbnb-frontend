@@ -33,14 +33,14 @@ export const Trips = () => {
                 </li>
                 <li>
                     <h1>
-                        Hello {loggedinUser.fullName}!
+                        Hello {loggedinUser.fullName}
                     </h1>
                 </li>
             </div>
             {/* <div>
                 <TripsHeader />
             </div> */}
-                <div className="trip-card-header "><h3>Your trips:</h3></div>
+                <div className="trip-card-header "><h3>Your trips</h3></div>
             <section className="trip-cards-container ">
                 {trips.map(trip => <TripCard trip={trip} key={trip._id} />)}
             </section>

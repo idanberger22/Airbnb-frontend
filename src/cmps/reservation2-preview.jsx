@@ -37,7 +37,7 @@ export function ReservationPreview2({ reservation, getReservations }) {
                     </td>
                  
                     <td>
-                        ${reservation.totalPrice}
+                        ${utilService.getUsPrice(reservation.totalPrice)}
                     </td>
                     {/* <td>
                         <button className="clickable">Add a review</button>

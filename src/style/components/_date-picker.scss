@@ -1,6 +1,6 @@
 .CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
-    background: $clrRED !important; 
-    border: 1px double $clrGRAY !important;
+    background: #d9d4d4 !important; 
+    color: black !important;
 }
 
 .CalendarDay__hovered_span, .CalendarDay__hovered_span:hover {
@@ -9,7 +9,8 @@
 }
 
 .CalendarDay__selected_span {
-    background: $clrRED !important; 
+    background: #d9d4d4 !important; 
+    color: black !important;
     border: 1px double $clrGRAY !important;
 }
 
@@ -19,4 +20,9 @@
 
 .DateRangePickerInput_arrow_svg {
     display: none !important;
+}
+
+.DateRangePicker{
+    width: 100%;
+
 }
