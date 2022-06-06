@@ -48,6 +48,9 @@ export function StayPreview({ stay }) {
                 <div className="stay-preiview-details propery-description">
                     <li><h1>{stay.name} </h1></li>
                 </div>
+                <div className="stay-preiview-details propery-description">
+                    <li><h1>{stay.roomType} by {stay.host.fullname}</h1></li>
+                </div>
                 <div className="stay-preiview-details propery-price">
                     <li><h1 className="font-bold">${utilService.getUsPrice(stay.price)} <span className="font-light">night</span></h1></li>
                 </div>

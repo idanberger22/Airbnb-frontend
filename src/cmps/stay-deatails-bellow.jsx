@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react"
 import { React } from "react"
 
 export function StayDeatailsBellow({ stay }) {
@@ -101,7 +100,6 @@ export function StayDeatailsBellow({ stay }) {
                     </li>
                 </ul>
             </div>
-
         </section>
 
     )

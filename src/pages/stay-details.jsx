@@ -52,6 +52,7 @@ export const StayDetails = () => {
                     <ReserveStay stay={stay} />
                 </div>
             </div>
+            <div className="line"></div>
             <section className="main-reviews">
                 {stay.reviews.map(review =>
                     <ReviewLine review={review} key={review.txt} />
