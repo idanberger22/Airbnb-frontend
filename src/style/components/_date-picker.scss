@@ -1,24 +1,30 @@
-.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
-    background: #d9d4d4 !important; 
-    color: black !important;
+.CalendarDay__selected {
+    background: #484848 !important; 
+    color: white !important;
+    border-radius: 50%;
 }
 
 .CalendarDay__hovered_span, .CalendarDay__hovered_span:hover {
-    background: lighten($clrRED,15%) !important;
-    border: 1px double $clrGRAY !important;
+    background: white !important;
+    color: $clrBLACK !important;
+    border: 0px double $clrGRAY !important;
 }
 
 .CalendarDay__selected_span {
-    background: #d9d4d4 !important; 
-    color: black !important;
-    border: 1px double $clrGRAY !important;
+    background: rgb(234, 234, 234) !important; 
+    color: $clrBLACK !important;
+    border-radius: 50% !important;
 }
 
-.DayPickerKeyboardShortcuts_show__bottomRight::before {
+.CalendarDay__default {
+    border: 0px solid $clrGRAY !important;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight::before { //?
     border-right: 33px solid $clrRED !important;
 }
 
-.DateRangePickerInput_arrow_svg {
+.DateRangePickerInput_arrow_svg { //arrow
     display: none !important;
 }
 
