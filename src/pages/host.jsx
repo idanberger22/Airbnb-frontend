@@ -35,18 +35,18 @@ export const Host = () => {
         else {
             getReservations()
             getStays()
-            
-            
+
+
         }
     }, [loggedInUser])
-    
+
     useEffect(() => {
         getReservations()
-        if(hostStays.length > 0) {
+        if (hostStays.length > 0) {
             setHostStyling(true)
             setListingsDetailsStyling(true)
         }
-        console.log('im here',hostStays.length)
+        console.log('im here', hostStays.length)
     }, [hostStays])
 
     const getStays = async () => {
@@ -119,16 +119,11 @@ export const Host = () => {
 
 
                 </div>}
-                {listingsDetailsStyling && <section >
-                    <div className="card-container" >
-                        {hostStays.map(stay =>
-                            <StayPreview stay={stay} key={stay._id} />
-                        )}
-                    </div>
-                </section>}
 
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
+                        
+                        <h1>Your reservations:</h1>
                         <table className="reservations-table" >
 
                             <tr>
@@ -138,7 +133,7 @@ export const Host = () => {
                                 <th>Check-in</th>
                                 <th>Check-out</th>
                                 <th>Total price</th>
-                                <th>Add a review</th>
+                                {/* <th>Add a review</th> */}
                                 <th>Cancel</th>
                             </tr>
 
@@ -151,6 +146,14 @@ export const Host = () => {
                         </table>
                     </div>
                 </div>}
+                {listingsDetailsStyling && <section >
+                    <h1>Your homes:</h1>
+                    <div className="card-container" >
+                        {hostStays.map(stay =>
+                            <StayPreview stay={stay} key={stay._id} />
+                        )}
+                    </div>
+                </section>}
             </div>}
         </div>
     )

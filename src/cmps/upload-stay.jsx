@@ -70,6 +70,7 @@ export const UploadStay = (props) => {
     }, [newStay])
 
     const onUploaded = (imgUrl, idx) => {
+        console.log('upload img')
         const imgs = newStay.imgUrls
         imgs[idx] = imgUrl
         setNewStay({ ...newStay, imgUrls: imgs });
@@ -139,7 +140,7 @@ export const UploadStay = (props) => {
 
     return (
         <div className="main-upload-stay">
-            <h1>upload a stay to host</h1>
+            <h1>Upload a stay to host</h1>
             <div onClick={onClose}>
 
             <span  class="material-icons">close</span>

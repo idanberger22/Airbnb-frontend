@@ -39,11 +39,11 @@ export function ReservationPreview2({ reservation, getReservations }) {
                     <td>
                         ${reservation.totalPrice}
                     </td>
+                    {/* <td>
+                        <button className="clickable">Add a review</button>
+                    </td> */}
                     <td>
-                        <button>Add a review</button>
-                    </td>
-                    <td>
-                        <button onClick={onRemove}>Cancel</button>
+                        <button className="clickable" onClick={onRemove}>Cancel</button>
                     </td>
                    
                

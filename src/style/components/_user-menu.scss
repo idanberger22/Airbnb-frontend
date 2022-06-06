@@ -14,13 +14,17 @@
     width: 240px;
     z-index: 15;
     font-family: Airbnb-Cereal-Light;
-    li{
-        padding: 1rem;
+    >li{
+        a{
+            padding: 1rem;
+            
+            
+        }
+        
         color: #222;
         color: $clrBLACK;
         text-decoration: none;
         margin: 0;
-        text-align: left;
         justify-content: left;
         justify-items: start;
         display: flex;

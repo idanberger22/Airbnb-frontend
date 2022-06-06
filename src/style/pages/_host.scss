@@ -1,5 +1,24 @@
 .main-host-page {
 
+
+
+    section ,.reservations-container{
+
+        >h1{
+    
+            margin-top: 5rem;
+            font-size: 2em;
+        }
+    }
+
+   
+   
+
+
+      
+        // margin-bottom: 1rem;
+   
+
     .become-a-host {
         display: flex;
 
@@ -54,6 +73,7 @@
         h1 {
             color: #fff;
             font-size: 48px;
+           
 
         }
 
@@ -88,8 +108,8 @@
         display: flex;
         justify-content: center;
 
-        
-        .reserve-button  {
+
+        .reserve-button {
             width: 10rem;
         }
     }
@@ -110,6 +130,19 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+
+        button {
+            background-color: unset;
+            border: 0.1px black solid;
+            border-radius: 8px;
+            padding: 8px;
+            margin: 4px;
+            font-family: Airbnb-Cereal-Medium;
+
+            &:hover {
+                background-color: rgb(226 226 226 / 46%);
+            }
+        }
 
 
     }

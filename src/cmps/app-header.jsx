@@ -32,8 +32,8 @@ export const AppHeader = () => {
     const [logoImgSrc, setogoImgSrc] = useState("../assets/imgs/logo1.png")
     const [showModalConfirmed, setShowModalConfirmed] = useState(false)
     const [hostBtnTxt, setHostBtnTxt] = useState('Become a host')
-    const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
-
+    const [loggedinUser,resetLoggedInUser]=useState(userService.getLoggedinUser())
+    // const loggedinUser = userService.getLoggedinUser()
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -47,13 +47,13 @@ export const AppHeader = () => {
     }, [])
 
     const getStays = async () => {
-        const stays = await stayService.getByHOstId(loggedInUser._id)
+        const stays = await stayService.getByHOstId(loggedinUser._id)
+        console.log('loggedInUser._id',loggedinUser)
         if(stays.length > 0 ) setHostBtnTxt('Host dashboard')
         // else setHostBtnTxt('Become a host')
     }
 
     // let loggedinUser = userService.getLoggedinUser()
-    const [loggedinUser,resetLoggedInUser]=useState(userService.getLoggedinUser())
 
     useEffect(() => {
         resetLoggedInUser(userService.getLoggedinUser)

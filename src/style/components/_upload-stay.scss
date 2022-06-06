@@ -173,6 +173,10 @@
 
         .details-form,
         .checkboxes {
+            h1{
+                text-align: left;
+
+            }
             display: flex;
             flex-direction: column;
 
