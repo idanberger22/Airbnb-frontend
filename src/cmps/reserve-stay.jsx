@@ -96,15 +96,14 @@ export function ReserveStay(props) {
 
     return (
         <div className="reserve-stay-container">
-            {/* {resModalIsOpen && <ConfirmedResModal reservation={reservation} />} */}
             <div className="reserve-stay-header">
                 <li className="reserve-stay-price font-book">${utilService.getUsPrice((props.stay.price))} <span>night</span></li>
                 <li>{props.stay.reviewScores.value / 2}<span className="material-icons">star</span> · <span >{props.stay.reviews.length} reviews</span></li>
             </div>
             <div className="picker-container">
-                <div className="range-date-selector">
+                {/* <div className="range-date-selector"> */}
                     <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
-                </div>
+                {/* </div> */}
                 <div onClick={() => onShowGusts(isTrue)} className="guests-pick clickable">
                     <div className="flex-col">
                         <div >guests</div>
