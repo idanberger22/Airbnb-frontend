@@ -11,10 +11,8 @@ export const SmallFilter = () => {
     
 
     useEffect(() => {
-        if(filterBy.location !== loadedFilter.location || 
-            filterBy.from !== loadedFilter.from ||
-            filterBy.to !== loadedFilter.to) setFilterBy(loadedFilter)
-    }, [])
+        filterBy.location=loadedFilter.location
+    }, [loadedFilter])
 
     const dispatchFilter = () => {
         dispatch(changeFilter(filterBy))
