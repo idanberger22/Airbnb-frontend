@@ -7,11 +7,11 @@ export const SmallFilter = () => {
 
     const dispatch = useDispatch()
     const [filterBy, setFilterBy] = useState({ location: '', from: null, to: null })
-    const  loadedFilter  = useSelector((storeState) => storeState.stayModule.filterBy)
-    
+    const loadedFilter = useSelector((storeState) => storeState.stayModule.filterBy)
+
 
     useEffect(() => {
-        filterBy.location=loadedFilter.location
+        filterBy.location = loadedFilter.location
     }, [loadedFilter])
 
     const dispatchFilter = () => {
@@ -24,9 +24,9 @@ export const SmallFilter = () => {
         setFilterBy({ ...filterBy, [field]: value })
     }
 
-    const handleDate = (dates)=>{
-        if (dates.startDate) setFilterBy({...filterBy,from:dates.startDate})
-        if(dates.endDate)   setFilterBy({...filterBy,to:dates.endDate})      
+    const handleDate = (dates) => {
+        if (dates.startDate) setFilterBy({ ...filterBy, from: dates.startDate })
+        if (dates.endDate) setFilterBy({ ...filterBy, to: dates.endDate })
     }
 
     return (
