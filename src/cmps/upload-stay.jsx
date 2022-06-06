@@ -1,8 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from 'react-redux'
-import { changeFilter } from "../store/actions/stay.action"
-import { NavLink } from "react-router-dom"
-import { DateRangeSelector } from "./date-picker"
 import { ImgUploader } from "./img-uploader"
 import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField } from "@material-ui/core"
 import { createTheme } from "@material-ui/core/styles"
@@ -49,7 +45,7 @@ export const UploadStay = (props) => {
                 }
             }
 
-            , reviewScores: { value: 5 },
+            , reviewScores: { value:utilService.getRandomFloat(8.5,10) },
             reviews: [
                 {
                     at: "2016-10-14T04:00:00.000Z",
@@ -70,7 +66,6 @@ export const UploadStay = (props) => {
     }, [newStay])
 
     const onUploaded = (imgUrl, idx) => {
-        console.log('upload img')
         const imgs = newStay.imgUrls
         imgs[idx] = imgUrl
         setNewStay({ ...newStay, imgUrls: imgs });
@@ -118,10 +113,7 @@ export const UploadStay = (props) => {
     const handleTypeChange = ({ target }) => {
         console.log('taget.name', target.value)
         const type = target.value
-
-        setNewStay({ ...newStay, type: type })
-
-
+        setNewStay({ ...newStay, roomType: type })
     }
 
     const onClose = () => {
@@ -168,7 +160,6 @@ export const UploadStay = (props) => {
                             <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Wifi" label="Wifi" />
                             <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Kitchen" label="Kitchen" />
                             <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Air conditioning" label="Air conditioning" />
-
                         </FormGroup>
                     </div>
                     <h1 style={{marginBottom:'0.8rem', marginTop:'0.8rem'}}>Type of Place:</h1>
