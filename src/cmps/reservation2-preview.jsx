@@ -1,6 +1,7 @@
 import { utilService } from "../services/util.service"
 import { reservationService } from "../services/reservation.service"
 import { userService } from "../services/user.service"
+import { ConfirmedResModalTrips } from "./confirmed-res-modal-trips"
 
 export function ReservationPreview2({ reservation, getReservations }) {
 
@@ -11,16 +12,29 @@ export function ReservationPreview2({ reservation, getReservations }) {
         getReservations()
     }
 
+    const openModal = () => {
+
+    }
+
     return (<>
+       
+       
         <td style={{ textAlign: 'left' }}>
-            <span style={{ marginLeft: '4px' }}>{reservation.user.fullName}</span>
-        </td>
-        <td style={{ textAlign: 'left' }}>
-        <span style={{ marginLeft: '4px' }}>{reservation.stay.name}</span>
+            <span style={{ marginLeft: '4px' }}>{reservation.stay.name}</span>
         </td>
 
-        <td>
-            {reservation.adults + reservation.childrens}
+        <td className="guests">
+            <tr>
+                <td>{reservation.user.fullName}</td>
+            </tr>
+            {reservation.adults!=0 && <tr>
+                <td>Adults: {reservation.adults}</td>
+            </tr>}
+            {reservation.childrens!=0 &&  <tr>
+                <td>Children: {reservation.childrens}</td>
+            </tr>}
+                {/* <td>2</td> */}
+            {/* {reservation.adults + reservation.childrens} */}
         </td>
 
         <td>
@@ -37,6 +51,7 @@ export function ReservationPreview2({ reservation, getReservations }) {
         <td>
             ${utilService.getUsPrice(reservation.totalPrice)}
         </td>
+        
         <td>
             <button className="clickable" onClick={onRemove}>Reject</button>
         </td>

@@ -121,14 +121,14 @@ export const Host = () => {
                         <table className="reservations-table" >
                             <thead>
                                 <tr>
-                                    <th>Guest Name</th>
-                                    <th>Property</th>
+                                    <th>Listing</th>
                                     <th>Guests</th>
                                     <th>Check-in</th>
                                     <th>Check-out</th>
                                     <th>Nights</th>
-                                    <th>Total Price</th>
-                                    <th>Options</th>
+                                    <th>Total Payout</th>
+                                    <th>options</th>
+
                                 </tr>
                             </thead>
                             <tbody>

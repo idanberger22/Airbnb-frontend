@@ -128,9 +128,29 @@
 
     table {
         margin-top: 2rem;
-        tr:not:first-child{
+        tr:not(first-child){
             td{
-                text-align: left !important;
+                text-align: left;
+            }
+            td:nth-child(2){
+                font-size: 5px;
+            }
+        }
+
+        .guests{
+            tr:first-child{
+                td{
+                    font-size: 0.8rem;
+                    color: #50ABAE;
+                }
+            }
+            tr{
+                td{
+
+                    text-align: left;
+                    font-size: 0.7rem;
+                    border: 0;
+                }
             }
         }
     }
@@ -153,7 +173,7 @@
             border: 0.1px black solid;
             border-radius: 8px;
             padding: 8px;
-            margin: 4px;
+            margin: 4px 0;
             font-family: Airbnb-Cereal-Medium;
 
             &:hover {
@@ -170,19 +190,31 @@
     th,
     table {
         padding: 2px;
-        border: 1px lightgray solid;
+        // border: 1px lightgray solid;
     }
 
     th {
-        background-color: lightgray;
+        // background-color: lightgray;
+        // color: $lite-font-color;
+        font-family: Airbnb-Cereal-Medium;
+        text-align: left;
+        font-size: 1rem;
+        border-bottom: 0.3px $clrGRAY solid;
+        
     }
 
+    th:last-child, td:last-child{
+        text-align: right;
+    }
+    
     table {
         border-collapse: collapse;
     }
-
+    
     td {
-        text-align: center;
+        border-bottom: 0.3px $clrGRAY solid;
+        text-align: left;
+        font-size: 0.9rem;
 
 
 
