@@ -41,7 +41,7 @@ export function StayPreview({ stay }) {
                 <div className="stay-preiview-details location-rate">
                     <li><h1 className="font-medium" >{stay.address.city}, {stay.address.country}</h1></li>
                     <li><h1 className="font-light">{utilService.make2digits(stay.reviewScores.value / 2)} </h1>
-                        <span class="material-icons">
+                        <span className="material-icons">
                             star
                         </span></li>
                 </div>

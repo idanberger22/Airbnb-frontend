@@ -126,7 +126,7 @@ export function ReserveStay(props) {
                     <h4>You won't be charged yet</h4>
                     <div className="flex-row-space-btw price">
                         <h1 className="underline">${utilService.getUsPrice(props.stay.price)} <span>x</span> {resNights} nights</h1>
-                        <h1 className="underline">${utilService.getUsPrice(props.stay.price * resNights)}</h1>
+                        <h1>${utilService.getUsPrice(props.stay.price * resNights)}</h1>
                     </div>
                     <div className="flex-row-space-btw service-fee">
                         <h1 className="underline">Service fee</h1>

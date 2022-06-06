@@ -8,7 +8,6 @@ export const stayService = {
     query,
     getById,
     getTopRated,
-    getRandomStayId,
     addStay,
     getByHOstId
 }
@@ -51,10 +50,4 @@ async function addStay(stay) {
 
 function getTopRated() {
     return dataService.getTopRated()
-}
-
-async function getRandomStayId() {
-    const stays = await httpService.get(STAY_KEY)
-    const idx = utilService.getRandomIntInclusive(0, stays.length - 1)
-    return stays[idx]._id
 }

@@ -2,6 +2,7 @@ export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
+    getRandomFloat,
     delay,
     capitalizeFirst,
     getUsPrice,
@@ -38,7 +39,11 @@ function makeLorem(size = 100) {
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+function getRandomFloat(min, max) {
+    return (Math.random() * (max - min)) + min
 }
 
 function delay(ms = 1500) {
