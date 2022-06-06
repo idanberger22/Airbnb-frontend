@@ -112,7 +112,7 @@ export function ReserveStay(props) {
                         {((reservation.adults + reservation.childrens) < 1) && <div><h4>Add guests</h4></div>}
                         {((reservation.adults + reservation.childrens) > 0) && <div><h4>{(reservation.adults + reservation.childrens)} guest{((reservation.adults + reservation.childrens) > 1) && 's'}</h4> </div>}
                     </div>
-                    <div><span className="material-icons cursor">{showGuestsStyle}</span></div>
+                    <div className="arrow"><span className="material-icons cursor">{showGuestsStyle}</span></div>
                 </div>
                 {!resModalIsOpen && 
                 <div style={guestModalShown}>
@@ -125,7 +125,7 @@ export function ReserveStay(props) {
                 {(reservation.adults!=0 || reservation.childrens!=0) && reservation.checkIn && reservation.checkOut && <div>
                     <h4>You won't be charged yet</h4>
                     <div className="flex-row-space-btw price">
-                        <h1 className="underline">${props.stay.price} <span>x</span> {resNights} nights</h1>
+                        <h1 className="underline">${utilService.getUsPrice(props.stay.price)} <span>x</span> {resNights} nights</h1>
                         <h1 className="underline">${utilService.getUsPrice(props.stay.price * resNights)}</h1>
                     </div>
                     <div className="flex-row-space-btw service-fee">
