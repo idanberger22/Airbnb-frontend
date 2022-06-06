@@ -68,8 +68,6 @@ export const Home = () => {
         dispatch(changeFilter({ location: cities[idx].name, from: null, to: null }))
     }
 
-
-
     { if (!topRated) return (<h1></h1>) }
 
     return (
