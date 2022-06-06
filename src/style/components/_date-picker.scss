@@ -10,6 +10,11 @@
     border: 0px double $clrGRAY !important;
 }
 
+.arrow{
+    display: flex;
+    align-items: center;
+}
+
 .CalendarDay__selected_span {
     background: rgb(227, 222, 222) !important; 
     color: $clrBLACK !important;
