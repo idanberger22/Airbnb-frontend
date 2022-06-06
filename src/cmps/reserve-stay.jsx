@@ -15,6 +15,7 @@ export function ReserveStay(props) {
     const [reservation, setReservation] = useState({
         checkIn: null,
         checkOut: null,
+        nights: null,
         adults: 1,
         childrens: 0,
         totalPrice: 0,
@@ -68,7 +69,7 @@ export function ReserveStay(props) {
         if (from && to) {
             const dayDiff = (to - from) / 1000 / 60 / 60 / 24
             setResNights(dayDiff)
-            setReservation({ ...reservation, checkIn: from._d, checkOut: to._d, totalPrice: dayDiff * props.stay.price +25 })
+            setReservation({ ...reservation, checkIn: from._d, checkOut: to._d, totalPrice: dayDiff * props.stay.price +25, nights: dayDiff })
         }
     }
 

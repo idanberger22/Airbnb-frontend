@@ -30,6 +30,9 @@ export function ReservationPreview2({ reservation, getReservations }) {
         <td>
             {reservation.checkOut.substring(0, 10)}
         </td>
+        <td>
+            {reservation.nights}
+        </td>
 
         <td>
             ${utilService.getUsPrice(reservation.totalPrice)}

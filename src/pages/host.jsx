@@ -126,6 +126,7 @@ export const Host = () => {
                                     <th>Guests</th>
                                     <th>Check-in</th>
                                     <th>Check-out</th>
+                                    <th>Nights</th>
                                     <th>Total Price</th>
                                     <th>Options</th>
                                 </tr>
