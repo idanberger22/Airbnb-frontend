@@ -14,17 +14,11 @@ export const ExploreFilter = (props) => {
         roomTypes: ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room'],
         amenities: []
     })
-    
+
     const [checked, setChecked] = useState({ entire: true, hotel: true, private: true, shared: true });
     const [priceIsShown, setPriceIsShown] = useState(false)
     const [typeIsShown, setTypeIsShown] = useState(false)
-    const [pricesData, setPricesData] = useState(null)
     const amenities = ['Wifi', 'TV', 'Kitchen', 'Air conditioning']
-
-    // useEffect(() => {
-    //     getPricesData()
-
-    // }, [props.stays])
 
     const onShown = (type) => {
         setPriceIsShown(false)
@@ -37,15 +31,6 @@ export const ExploreFilter = (props) => {
         }
     }
 
-    // const getPricesData = () => {
-    //     const data = props.stays.map(stay => {
-    //         return { price: stay.price }
-    //     })
-    //     data.sort(function (a, b) {
-    //         return a.price - b.price;
-    //     });
-    //     setPricesData(data)
-    // }
 
     useEffect(() => {
         props.onChangeExploreFilter(exploreFilterBy)
@@ -79,28 +64,38 @@ export const ExploreFilter = (props) => {
         return className
     }
 
+    const showAll = () => {
+        setChecked({ entire: true, hotel: true, private: true, shared: true })
+        setExploreFilterBy({...exploreFilterBy,roomTypes: ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']})
+    }
+
     // if (!pricesData) return <h1>loading</h1>
     return (
         <div className='secondary-filter'>
-            {priceIsShown&&<><div className="screen" onClick={()=>setPriceIsShown(false)}></div>
-            <PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays}/></>}
-            {typeIsShown && <div className='room-type-filter noselect'>
-            <div className="screen" onClick={()=>setTypeIsShown(false)}></div>
-                <FormGroup>
-                    <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
-                        onChange={() => handleRoomType('Entire home/apt', 'entire')} checked={checked.entire} inputProps={{ 'aria-label': 'controlled' }} />
-                        <div><span>Entire home</span><p>A place all for yourself</p></div></label>
-                    <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
-                        onChange={() => handleRoomType('Hotel room', 'hotel')} checked={checked.hotel} inputProps={{ 'aria-label': 'controlled' }} />
-                        <div><span>Hotel Room</span><p>A private or shared room in a boutique hotel</p></div></label>
-                    <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
-                        onChange={() => handleRoomType('Private room', 'private')} checked={checked.private} inputProps={{ 'aria-label': 'controlled' }} />
-                        <div><span>Private room</span><p>Your own room in a home or a hotel, plus some shared common spaces</p></div></label>
-                    <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
-                        onChange={() => handleRoomType('Shared room', 'shared')} checked={checked.shared} inputProps={{ 'aria-label': 'controlled' }} />
-                        <div><span>Shared room</span><p>A sleeping space and common areas that may be shared with others</p></div></label>
-                </FormGroup>
-            </div>}
+            {priceIsShown && <><div className="screen" onClick={() => setPriceIsShown(false)}></div>
+                <PriceModal exploreFilterBy={exploreFilterBy} handlePriceRange={handlePriceRange} stays={props.stays} /></>}
+
+            {typeIsShown && <>
+                    <div className="screen" onClick={() => setTypeIsShown(false)}></div>
+                <div className='room-type-filter noselect'>
+                    <FormGroup>
+                        <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
+                            onChange={() => handleRoomType('Entire home/apt', 'entire')} checked={checked.entire} inputProps={{ 'aria-label': 'controlled' }} />
+                            <div><span>Entire home</span><p>A place all for yourself</p></div></label>
+                        <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
+                            onChange={() => handleRoomType('Hotel room', 'hotel')} checked={checked.hotel} inputProps={{ 'aria-label': 'controlled' }} />
+                            <div><span>Hotel Room</span><p>A private or shared room in a boutique hotel</p></div></label>
+                        <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
+                            onChange={() => handleRoomType('Private room', 'private')} checked={checked.private} inputProps={{ 'aria-label': 'controlled' }} />
+                            <div><span>Private room</span><p>Your own room in a home or a hotel, plus some shared common spaces</p></div></label>
+                        <label><Checkbox sx={{ color: '#FE385C', '&.Mui-checked': { color: '#222222', }, }}
+                            onChange={() => handleRoomType('Shared room', 'shared')} checked={checked.shared} inputProps={{ 'aria-label': 'controlled' }} />
+                            <div><span>Shared room</span><p>A sleeping space and common areas that may be shared with others</p></div></label>
+                        <p onClick={showAll} className='clickable font-medium' style={{margin:'auto',textDecoration:'underline'}}>show all</p>
+                    </FormGroup>
+
+                </div>
+            </>}
 
             <div >
                 <div className='amn-container noselect'>
