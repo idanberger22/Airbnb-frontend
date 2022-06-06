@@ -10,10 +10,10 @@ export class DateRangeSelector extends Component {
     endDate: null,
     focusedInput: null
   }
-  placeholders = (this.props.place==='filter') ? ['Add date','Add date'] : ['Check in','Check out']
+  placeholders = (this.props.place === 'filter') ? ['Add date', 'Add date'] : ['Check in', 'Check out']
   componentDidMount() {
     this.setState({ ...this.state, endDate: this.props.endDate, startDate: this.props.startDate })
-    
+
   }
 
   handleDateChange = ({ startDate, endDate }) => {
@@ -36,7 +36,7 @@ export class DateRangeSelector extends Component {
         onFocusChange={this.handleFocusChange}
         startDate={this.state.startDate}
         startDateId="startDate"
-        
+
       />
     </section>
   }
