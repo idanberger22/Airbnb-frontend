@@ -9,6 +9,7 @@ import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
 import { NavLink } from "react-router-dom"
 import { utilService } from "../services/util.service"
+import { Statics } from "../cmps/statics"
 
 export const Host = () => {
 
@@ -60,12 +61,7 @@ export const Host = () => {
 
     }
 
-    const getIncome = ()=>{
-        if(!reservations) return 0
-        let totalIncome = 0
-        reservations.forEach(res => totalIncome+=res.totalPrice)
-        return totalIncome
-    }
+    
 
     const getReservations = async () => {
         const reservatios = await reservationService.query({ hostId: loggedInUser._id })
@@ -95,29 +91,33 @@ export const Host = () => {
             </div>}
 
             {hostStyling && <div className="stock-margin-center">
-                <div className="flex">
-                    <li>
-                        <img src={loggedInUser.imgUrl} alt="" />
-                    </li>
-                    <li>
-                        <h1>
-                            Hello {utilService.capitalizeFirst(loggedInUser.fullName)}!
-                        </h1>
-                    </li>
-                    <li style={{alignSelf:'center'}}>
-                        {!uploadStyling && 
-                            <button className="reserve-button" onClick={showUploadStayTogle}>Add new stay</button>
+                <div className="flex-row-space-btw">
+                    <div className="flex">
+                        <li>
+                            <img src={loggedInUser.imgUrl} alt="" />
+                        </li>
+                        <li>
+                            <h1>
+                                Hello {utilService.capitalizeFirst(loggedInUser.fullName)}
+                            </h1>
+                        </li>
+                    </div>
+                    <li style={{ alignSelf: 'center' }}>
+                        {!uploadStyling && <div onClick={showUploadStayTogle} className="add-stay-btn">
+                            <span class="material-icons">add_home</span>
+                        </div>
+
                         }
                     </li>
-                    <li>
-                        <p>Total income:${utilService.getUsPrice(getIncome())}</p>
-                    </li>
                 </div>
+
                 {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
+                        <Statics reservations={reservations} hostStays={hostStays}/>
+                        
 
-                        <h1>Your reservations:</h1>
+                        <h1>Your reservations</h1>
                         <table className="reservations-table" >
                             <thead>
                                 <tr>
@@ -142,7 +142,7 @@ export const Host = () => {
                 </div>}
 
                 {listingsDetailsStyling && <section >
-                    <h1>Your stays:</h1>
+                    <h1>Your stays</h1>
                     <div className="card-container" >
                         {hostStays.map(stay =>
                             <StayPreview stay={stay} key={stay._id} />

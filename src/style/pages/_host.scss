@@ -1,5 +1,16 @@
 .main-host-page {
 
+    .add-stay-btn{
+        span{
+
+            font-size: 4rem;
+            cursor: pointer;
+            border: 0.1px black solid;
+            border-radius: 8px;
+
+        }
+    }
+
 
 
     section ,.reservations-container{
@@ -89,6 +100,7 @@
             max-width: 170px;
         }
     }
+    
 
     .flex {
         img {
