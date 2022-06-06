@@ -17,7 +17,8 @@ window.cs = stayService
 async function query(filterBy, exploreFilterBy) {
     let stays = await httpService.get(STAY_KEY,filterBy)
     if (exploreFilterBy) {
-        stays = stays.filter(stay => stay.price <= exploreFilterBy.maxPrice && stay.price >= exploreFilterBy.minPrice)
+        if(exploreFilterBy.maxPrice===1200) stays = stays.filter(stay=>stay.price>exploreFilterBy.minPrice)
+        else stays = stays.filter(stay => stay.price <= exploreFilterBy.maxPrice && stay.price >= exploreFilterBy.minPrice)
         if (exploreFilterBy.roomTypes) {
             const fullRoomTypes = ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']
             fullRoomTypes.forEach(type => {
