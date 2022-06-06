@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { HomeImgCard } from "../cmps/home-img-card"
 import { stayService } from "../services/stay.service"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { showLargeFilter, showSmallFilter, LogoChangeToWhite } from "../store/actions/headerAction"
+import { changeFilter } from "../store/actions/stay.action"
 import { NavLink } from "react-router-dom"
+import { utilService } from "../services/util.service"
 
 
 export const Home = () => {
     const [topRated, setTopRated] = useState(null)
-    const [randomStayId, setRandomStayId] = useState('622f337a75c7d36e498aaafb')
     const cities = [{ name: 'New york', imgURL: 'https://a.cdn-hotels.com/gdcs/production101/d154/ee893f00-c31d-11e8-9739-0242ac110006.jpg' },
     { name: 'Porto', imgURL: 'https://touristjourney.com/wp-content/uploads/2020/10/shutterstock_1706807566-scaled.jpg' },
     { name: 'Montreal', imgURL: 'https://www.airtransat.com/getmedia/cafc7e6e-d0ff-497e-9998-e708f41aa191/Montreal-estival.aspx' },
@@ -17,7 +18,6 @@ export const Home = () => {
     useEffect(() => {
         window.addEventListener('scroll', changeCss, { passive: true });
         getTopRated()
-        GetRandomStayId()
         dispatchFiltertoShow()
         dispatchLogoIsWhite()
         document.documentElement.style.setProperty('--headerbackgroundColor', 'unset');
@@ -63,10 +63,12 @@ export const Home = () => {
         setTopRated([topStays])
     }
 
-    const GetRandomStayId = async () => {
-        const stayId = await stayService.getRandomStayId()
-        setRandomStayId(stayId)
+    const moveToRandom = () =>{
+        const idx = utilService.getRandomIntInclusive(0,3)
+        dispatch(changeFilter({ location: cities[idx].name, from: null, to: null }))
     }
+
+
 
     { if (!topRated) return (<h1></h1>) }
 
@@ -79,7 +81,7 @@ export const Home = () => {
                     </h1>
                     <div>
                         <button>
-                            <NavLink className='undecorate' to={`/stay/${randomStayId}`}>
+                            <NavLink onClick={moveToRandom} className='undecorate' to={`/explore`}>
                                 <h3 className="font-bold">
                                     I'm flexible
                                 </h3>
