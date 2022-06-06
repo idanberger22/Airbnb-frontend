@@ -41,7 +41,7 @@ export const GuestPicker = (props) => {
             </div>
         </div>
         <div className="adults">
-            <div>Childrens</div>
+            <div>Children</div>
             <div className="adults-right">
 
                 <div>
