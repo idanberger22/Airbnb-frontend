@@ -66,6 +66,19 @@ header {
     }
 }
 
+.reserve-stay-container{
+    
+    .date-range-selector .DateRangePickerInput_1 {
+        justify-content: space-between !important;
+    }
+    .date-range-selector .DateInput_input{
+        text-align: left;
+
+    }
+}
+
+
+
 .big {
     grid-row: 2;
     padding: 0 20%;
@@ -77,11 +90,11 @@ header {
         // color: #222222;
     }
 
+    
     .inpt-fillter:nth-child(2) {
         width: 100%;
         justify-content: center;
         align-items: center;
-
 
         .date-range-selector {
             width: 100%;
@@ -216,7 +229,7 @@ nav {
 
 .user-menu {
     gap: 7px;
-    // background-color: white;
+    background-color: #F7F7F7;
     position: relative;
     display: flex;
     justify-content: center;

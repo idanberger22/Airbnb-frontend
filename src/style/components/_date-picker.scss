@@ -1,19 +1,19 @@
 .CalendarDay__selected {
     background: #484848 !important; 
     color: white !important;
-    border-radius: 50%;
+    // border-radius: 50%;
 }
 
 .CalendarDay__hovered_span, .CalendarDay__hovered_span:hover {
-    background: white !important;
+    background: rgb(227, 222, 222) !important;
     color: $clrBLACK !important;
     border: 0px double $clrGRAY !important;
 }
 
 .CalendarDay__selected_span {
-    background: rgb(234, 234, 234) !important; 
+    background: rgb(227, 222, 222) !important; 
     color: $clrBLACK !important;
-    border-radius: 50% !important;
+    // border-radius: 50% !important;
 }
 
 .CalendarDay__default {
@@ -26,4 +26,9 @@
 
 .DateRangePickerInput_arrow_svg { //arrow
     display: none !important;
+}
+
+.DateRangePicker{
+    width: 100%;
+
 }

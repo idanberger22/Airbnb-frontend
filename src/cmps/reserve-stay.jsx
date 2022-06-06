@@ -35,6 +35,7 @@ export function ReserveStay(props) {
     const [guestModalShown, setGuestModalShown] = useState({ display: 'none' })
     const [isTrue, setIstrue] = useState(false)
     const [resModalIsOpen, setResModalIsOpen] = useState(false)
+    const [resNights, setResNights] = useState(null)
 
     const dispatch = useDispatch()
 
@@ -66,7 +67,8 @@ export function ReserveStay(props) {
     const setDatesAndPrice = (from, to) => {
         if (from && to) {
             const dayDiff = (to - from) / 1000 / 60 / 60 / 24
-            setReservation({ ...reservation, checkIn: from._d, checkOut: to._d, totalPrice: dayDiff * props.stay.price + 25 })
+            setResNights(dayDiff)
+            setReservation({ ...reservation, checkIn: from._d, checkOut: to._d, totalPrice: dayDiff * props.stay.price +25 })
         }
     }
 
@@ -106,7 +108,7 @@ export function ReserveStay(props) {
                 {/* </div> */}
                 <div onClick={() => onShowGusts(isTrue)} className="guests-pick clickable">
                     <div className="flex-col">
-                        <div >guests</div>
+                        <h5 >GUESTS</h5>
                         {((reservation.adults + reservation.childrens) < 1) && <div><h4>Add guests</h4></div>}
                         {((reservation.adults + reservation.childrens) > 0) && <div><h4>{(reservation.adults + reservation.childrens)} guest{((reservation.adults + reservation.childrens) > 1) && 's'}</h4> </div>}
                     </div>
@@ -123,16 +125,16 @@ export function ReserveStay(props) {
                 {(reservation.adults!=0 || reservation.childrens!=0) && reservation.checkIn && reservation.checkOut && <div>
                     <h4>You won't be charged yet</h4>
                     <div className="flex-row-space-btw price">
-                        <h1>Price</h1>
-                        <h1>${utilService.getUsPrice(reservation.totalPrice)}</h1>
+                        <h1 className="underline">${props.stay.price} <span>x</span> {resNights} nights</h1>
+                        <h1 className="underline">${utilService.getUsPrice(props.stay.price * resNights)}</h1>
                     </div>
                     <div className="flex-row-space-btw service-fee">
-                        <h1>Service fee</h1>
+                        <h1 className="underline">Service fee</h1>
                         <h1>$25</h1>
                     </div>
                     <div className="flex-row-space-btw total">
-                        <h1>Total</h1>
-                        <h1>${utilService.getUsPrice((reservation.totalPrice + 25))}</h1>
+                        <h1 className="font-bold">Total</h1>
+                        <h1 className="font-bold">${utilService.getUsPrice((reservation.totalPrice))}</h1>
                     </div>
                 </div>}
 

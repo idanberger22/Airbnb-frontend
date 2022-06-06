@@ -116,6 +116,11 @@
 
     table {
         margin-top: 2rem;
+        tr:not:first-child{
+            td{
+                text-align: left !important;
+            }
+        }
     }
 
     th {
@@ -166,6 +171,12 @@
 
     td {
         text-align: center;
+
+
+
+
+
+
     }
 
 

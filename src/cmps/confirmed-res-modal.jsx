@@ -4,6 +4,7 @@ import { openModal } from "../store/actions/userActions"
 import { userService } from "../services/user.service"
 import { ReservationConfirmed } from "../store/actions/reservation.action"
 import { utilService } from "../services/util.service"
+import { MapCmp } from "../cmps/map-cmp"
 import { useState } from "react"
 
 
@@ -55,7 +56,7 @@ export const ConfirmedResModal = (props) => {
         <span onClick={closeModal} className="material-icons clickable close-modal">close</span>
         <div className="bottom-container">
 
-            <h1>Your reservation at {props.reservation.hostName}'s' place is confirmed!</h1>
+            <h1>Your reservation at {props.reservation.hostName}'s place is confirmed</h1>
 
 
             <div className="dates-container">
@@ -72,10 +73,15 @@ export const ConfirmedResModal = (props) => {
                         {props.reservation.checkIn.toISOString().split('T')[0]}
                         </h3>
                     </li>
+                    <li>
+                        <h3>
+                        3:00 PM
+                        </h3>
+                    </li>
                 </div>
-                <span>
+                {/* <span>
                     |
-                </span>
+                </span> */}
                 <div>
                     <div>
                         <li>
@@ -90,6 +96,11 @@ export const ConfirmedResModal = (props) => {
                             {props.reservation.checkOut.toISOString().split('T')[0]}
                             </h3>
                         </li>
+                        <li>
+                        <h3>
+                        11:00 AM
+                        </h3>
+                    </li>
                     </div>
                 </div>
             </div>
@@ -119,7 +130,6 @@ export const ConfirmedResModal = (props) => {
                 <h3>
                     ${utilService.getUsPrice(props.reservation.totalPrice)}
                 </h3>
-
             </div>
             <div>
 
@@ -129,6 +139,7 @@ export const ConfirmedResModal = (props) => {
                 </button>
             </NavLink>
             </div>
+           
 
         </div>
         

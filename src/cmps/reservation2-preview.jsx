@@ -13,11 +13,10 @@ export function ReservationPreview2({ reservation, getReservations }) {
 
     return (<>
         <td style={{ textAlign: 'left' }}>
-            <span style={{marginLeft:'4px'}}>{reservation.user.fullName}</span>
+            <span style={{ marginLeft: '4px' }}>{reservation.user.fullName}</span>
         </td>
-
         <td style={{ textAlign: 'left' }}>
-        <span style={{marginLeft:'4px'}}>{reservation.stay.name}</span>
+            {reservation.stay.name}
         </td>
 
         <td>
@@ -33,7 +32,7 @@ export function ReservationPreview2({ reservation, getReservations }) {
         </td>
 
         <td>
-            ${utilService.getUsPrice(reservation.totalPrice) }
+            ${utilService.getUsPrice(reservation.totalPrice)}
         </td>
         <td>
             <button className="clickable" onClick={onRemove}>Reject</button>

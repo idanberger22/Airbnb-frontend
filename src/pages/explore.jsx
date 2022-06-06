@@ -5,12 +5,14 @@ import { StayPreview } from "../cmps/stay-preview"
 import { ExploreFilter } from "../cmps/explore-filter"
 import { LogoChangeToWhite } from "../store/actions/headerAction"
 import { useDispatch, useSelector } from 'react-redux'
+import { Loader } from "../cmps/loader"
 
 export function Explore() {
     const [headerFontColor, setHeaderFontColor] = useState('white')
-    const [stays, setStays] = useState(null)
+    const [stays, setStays] = useState(false)
     const { filterBy } = useSelector((storeState) => storeState.stayModule)
     const dispatch = useDispatch()
+    
 
     useEffect(() => {
         getStays()
@@ -19,9 +21,9 @@ export function Explore() {
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
         window.addEventListener('scroll', changeCss);
-        
+
         return () => {
-            
+
             window.removeEventListener('scroll', changeCss);
             document.documentElement.style.setProperty('--headerbackgroundColor', 'unset');
             document.documentElement.style.setProperty('--headerFontColor', '#fff');
@@ -33,7 +35,7 @@ export function Explore() {
         var bodyElement = document.querySelector("body");
         var navElement = document.querySelector(".explore-filterr");
         // this.scrollY > 5 ? navElement.style.visibility = 'hidden' : navElement.style.visibility = 'visible';
-      }
+    }
 
     const getStays = async () => {
         const stays = await stayService.query(filterBy)
@@ -44,8 +46,12 @@ export function Explore() {
         const stays = await stayService.query(filterBy, exploreFilterBy)
         setStays(stays)
     }
-
-    { if (!stays ) return (<h1>Loading</h1>) }
+    
+    
+    if (!stays) return (  <h1>...Loading</h1>
+     )
+        
+    
     return (
         <div className="stock-margin">
             <div className="stock-margin-center">
