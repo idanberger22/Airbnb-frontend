@@ -7,7 +7,7 @@ export function AppFooter() {
             <div className="fixed footer ">
 
                 <div className="left-side">
-                    <li><h1>cofferights 2022</h1></li>
+                    <li><h1>Staybnb LTD.</h1></li>
                     <li>·</li>
                     <li><h1>Privacy</h1></li>
                     <li>·</li>
@@ -26,7 +26,7 @@ export function AppFooter() {
                     <li>·</li>
                     <li>$ USD</li>
                     <li>·</li>
-                    <li>Support & resources</li>
+                    <li>Support & Resources</li>
                 </div>
                 
         </div>

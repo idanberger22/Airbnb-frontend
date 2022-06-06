@@ -11,6 +11,9 @@ import whiteLogo from "../assets/imgs/logo-white.png"
 import redLogo from "../assets/imgs/logo1.png"
 import { ConfirmedResModal } from "./confirmed-res-modal"
 import { UserMsg } from "./user-msg"
+import { stayService } from "../services/stay.service"
+
+
 
 export const AppHeader = () => {
 
@@ -28,19 +31,29 @@ export const AppHeader = () => {
     const [logoColor, setLogoColor] = useState({ color: 'red' })
     const [logoImgSrc, setogoImgSrc] = useState("../assets/imgs/logo1.png")
     const [showModalConfirmed, setShowModalConfirmed] = useState(false)
+    const [hostBtnTxt, setHostBtnTxt] = useState('Become a host')
+    const [loggedinUser,resetLoggedInUser]=useState(userService.getLoggedinUser())
+    // const loggedinUser = userService.getLoggedinUser()
 
     const dispatch = useDispatch()
     useEffect(() => {
         window.addEventListener('scroll', changeCss, { passive: true });
+        getStays()
         updateLogoColor()
         return () => {
-
+            
             window.removeEventListener('scroll', changeCss, { passive: true });
         }
     }, [])
 
+    const getStays = async () => {
+        const stays = await stayService.getByHOstId(loggedinUser._id)
+        console.log('loggedInUser._id',loggedinUser)
+        if(stays.length > 0 ) setHostBtnTxt('Host dashboard')
+        // else setHostBtnTxt('Become a host')
+    }
+
     // let loggedinUser = userService.getLoggedinUser()
-    const [loggedinUser,resetLoggedInUser]=useState(userService.getLoggedinUser())
 
     useEffect(() => {
         resetLoggedInUser(userService.getLoggedinUser)
@@ -139,7 +152,7 @@ export const AppHeader = () => {
                     </div>
                     <div className="nav-link-parent">
                         <li onClick={resetFilterBy}><NavLink className="font-medium" to='/explore'>Explore</NavLink></li>
-                        <li><NavLink className="font-medium" to='/host'>Become a host</NavLink></li>
+                        <li><NavLink className="font-medium" to='/host'>{hostBtnTxt}</NavLink></li>
                         <li>
                             <div className='user-menu noselect' onClick={toggleModal}>
                                 <div>

@@ -10,6 +10,7 @@ export class ImgUploader extends Component {
     isUploading: false
   }
   uploadImg = async (ev) => {
+    console.log('im here')
     this.setState({ isUploading: true })
     const { secure_url, height, width } = await uploadService.uploadImg(ev)
     this.setState({ isUploading: false, imgUrl: secure_url, height, width })
@@ -33,7 +34,7 @@ export class ImgUploader extends Component {
               drive_folder_upload
             </span>
         </label>
-          <input type="file" onChange={this.uploadImg} accept="img/*" id={id} style={{ display: 'none' }} /></>}
+          <input type="file"   onChange={this.uploadImg} accept="img/*" id={id} style={{ display: 'none' }} /></>}
       </div>
     )
   }

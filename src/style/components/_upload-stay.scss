@@ -162,10 +162,21 @@
         display: flex;
         justify-content: space-evenly;
 
+        .details-form{
+            .MuiOutlinedInput-root{
+                height: 3rem;
+                margin: 0.5rem;
+            }
+        }
+
 
 
         .details-form,
         .checkboxes {
+            h1{
+                text-align: left;
+
+            }
             display: flex;
             flex-direction: column;
 
