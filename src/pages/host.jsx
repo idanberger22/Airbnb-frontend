@@ -8,6 +8,7 @@ import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
 import { NavLink } from "react-router-dom"
+import { utilService } from "../services/util.service"
 
 export const Host = () => {
 
@@ -46,22 +47,24 @@ export const Host = () => {
             setListingsDetailsStyling(false)
         }
         else {
-            // setHostStyling(true)
             setHostStyling(true)
         }
         setHostStays(stays)
     }
     const showUploadStayTogle = () => {
-        console.log('im inside toggle')
         setUploadStyling(!uploadStyling)
-        // setHostStyling(!hostStyling)
     }
 
     const closeMainCover = () => {
-        console.log('im inside closeMainCover')
-
         setHostStyling(true)
 
+    }
+
+    const getIncome = ()=>{
+        if(!reservations) return 0
+        let totalIncome = 0
+        reservations.forEach(res => totalIncome+=res.totalPrice)
+        return totalIncome
     }
 
     const getReservations = async () => {
@@ -89,7 +92,6 @@ export const Host = () => {
                     </div>
                 </div>
                 <div className="right-side"></div>
-
             </div>}
 
             {hostStyling && <div className="stock-margin-center">
@@ -99,52 +101,54 @@ export const Host = () => {
                     </li>
                     <li>
                         <h1>
-                            Hello {loggedInUser.fullName}!
+                            Hello {utilService.capitalizeFirst(loggedInUser.fullName)}!
                         </h1>
+                    </li>
+                    <li style={{alignSelf:'center'}}>
+                        {!uploadStyling && 
+                            <button className="reserve-button" onClick={showUploadStayTogle}>Add new stay</button>
+                        }
+                    </li>
+                    <li>
+                        <p>Total income:${utilService.getUsPrice(getIncome())}</p>
                     </li>
                 </div>
                 {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
-                
-
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
-                        
+
                         <h1>Your reservations:</h1>
                         <table className="reservations-table" >
-
-                            <tr>
-                                <th>Guest Name</th>
-                                <th>Property</th>
-                                <th>Guests</th>
-                                <th>Check-in</th>
-                                <th>Check-out</th>
-                                <th>Total price</th>
-                                {/* <th>Add a review</th> */}
-                                <th>Cancel</th>
-                            </tr>
-
-                            {reservations.map(reservation =>
+                            <thead>
                                 <tr>
-
-                                    <ReservationPreview2 getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                    <th>Guest Name</th>
+                                    <th>Property</th>
+                                    <th>Guests</th>
+                                    <th>Check-in</th>
+                                    <th>Check-out</th>
+                                    <th>Total Price</th>
+                                    <th>options</th>
                                 </tr>
-                            )}
+                            </thead>
+                            <tbody>
+                                {reservations.map(reservation =>
+                                    <tr>
+                                        <ReservationPreview2 getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                    </tr>
+                                )}
+                            </tbody>
                         </table>
                     </div>
                 </div>}
+
                 {listingsDetailsStyling && <section >
-                    <h1>Your homes:</h1>
+                    <h1>Your stays:</h1>
                     <div className="card-container" >
                         {hostStays.map(stay =>
                             <StayPreview stay={stay} key={stay._id} />
                         )}
                     </div>
                 </section>}
-                {!uploadStyling && <div className="header">
-                    <button className="reserve-button" onClick={showUploadStayTogle}>Add a listing</button>
-
-
-                </div>}
             </div>}
         </div>
     )
