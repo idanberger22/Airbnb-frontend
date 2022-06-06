@@ -7,7 +7,7 @@ export function StayDeatailsBellow({ stay }) {
         <section className="">
             <section className="stay-details-header-below">
                 <div className="below-header">
-                    <h1>{stay.roomType} hosted by {stay.host.fullname} </h1>
+                    <h1>{stay.roomType} Hosted by {stay.host.fullname} </h1>
                     <section>
                         <h5>{stay.capacity} guest · {stay.bedrooms} bedrooms · {stay.beds} beds · {stay.bathrooms} baths </h5>
                     </section>

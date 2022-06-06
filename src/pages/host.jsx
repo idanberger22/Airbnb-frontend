@@ -129,7 +129,7 @@ export const Host = () => {
                             <tr>
                                 <th>Guest Name</th>
                                 <th>Property</th>
-                                <th>Guests qty</th>
+                                <th>Guests</th>
                                 <th>Check-in</th>
                                 <th>Check-out</th>
                                 <th>Total price</th>

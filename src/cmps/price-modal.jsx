@@ -67,13 +67,14 @@ export function PriceModal(props) {
             <Slider range allowCross={false} defaultValue={[0, 1200]} min={0} max={1200} onChange={props.handlePriceRange} />
             <div className='flex-row-space-btw'>
                 <li>
-                    ${utilService.getUsPrice(props.exploreFilterBy.minPrice)}
+                    <span style={{color:'gray', fontSize:'1rem'}}>${utilService.getUsPrice(props.exploreFilterBy.minPrice)}</span>
                 </li>
                 <li>
                     -
                 </li>
                 <li>
-                    ${utilService.getUsPrice(props.exploreFilterBy.maxPrice)}{props.exploreFilterBy.maxPrice===1200 && <span>+</span>}
+                    <span style={{color:'gray' , fontSize:'1rem'}}>${utilService.getUsPrice(props.exploreFilterBy.maxPrice)}</span>
+                    {props.exploreFilterBy.maxPrice===1200 && <span>+</span>}
                 </li>
             </div>
         </div>
