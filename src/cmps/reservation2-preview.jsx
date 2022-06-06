@@ -16,7 +16,7 @@ export function ReservationPreview2({ reservation, getReservations }) {
             <span style={{ marginLeft: '4px' }}>{reservation.user.fullName}</span>
         </td>
         <td style={{ textAlign: 'left' }}>
-            {reservation.stay.name}
+        <span style={{ marginLeft: '4px' }}>{reservation.stay.name}</span>
         </td>
 
         <td>
