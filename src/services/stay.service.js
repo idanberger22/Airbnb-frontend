@@ -46,8 +46,6 @@ async function getByHOstId(hostId) {
 async function addStay(stay) {
     const addedStay = await httpService.post('stay', stay)
     return addedStay
-
-
 }
 
 

@@ -9,8 +9,6 @@ import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
 import { NavLink } from "react-router-dom"
 
-
-
 export const Host = () => {
 
     const [reservations, setreservations] = useState(null)
@@ -21,22 +19,15 @@ export const Host = () => {
     const [hostStays, setHostStays] = useState(false)
     const dispatch = useDispatch()
 
-
-
-
     useEffect(() => {
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
-
-
         if (!loggedInUser) {
             dispatch(openModal(true))
         }
         else {
             getReservations()
             getStays()
-
-
         }
     }, [loggedInUser])
 
@@ -46,7 +37,6 @@ export const Host = () => {
             setHostStyling(true)
             setListingsDetailsStyling(true)
         }
-        console.log('im here', hostStays.length)
     }, [hostStays])
 
     const getStays = async () => {
@@ -114,11 +104,7 @@ export const Host = () => {
                     </li>
                 </div>
                 {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
-                {!uploadStyling && <div className="header">
-                    <button className="reserve-button" onClick={showUploadStayTogle}>Add a listing</button>
-
-
-                </div>}
+                
 
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
@@ -154,6 +140,11 @@ export const Host = () => {
                         )}
                     </div>
                 </section>}
+                {!uploadStyling && <div className="header">
+                    <button className="reserve-button" onClick={showUploadStayTogle}>Add a listing</button>
+
+
+                </div>}
             </div>}
         </div>
     )
