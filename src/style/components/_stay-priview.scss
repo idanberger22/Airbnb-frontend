@@ -171,3 +171,14 @@
         font-size: 30px;
     }
 }
+
+.heart-border{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    z-index: 2;
+    opacity: 0.85;
+    span {
+        font-size: 34px;
+    }
+}

@@ -25,7 +25,7 @@ export function StayPreview({ stay }) {
                 <div>
                     <div className="img-container">
                         <div className={`heart ${heartClass}`} onClick={changeHeartColor}>
-                            <span className="material-icons">favorite</span>
+                            <span className="material-icons" style={{'oopz':'120'}}>favorite</span>
                         </div>
                         <div onClick={(ev) => switchImg(ev)}>
                             <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} showStatus={false}>
