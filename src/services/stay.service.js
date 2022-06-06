@@ -15,10 +15,13 @@ export const stayService = {
 window.cs = stayService
 
 async function query(filterBy, exploreFilterBy) {
-    let stays = await httpService.get(STAY_KEY,filterBy)
+    let stays = await httpService.get(STAY_KEY, filterBy)
     if (exploreFilterBy) {
-        if(exploreFilterBy.maxPrice===1200) stays = stays.filter(stay=>stay.price>exploreFilterBy.minPrice)
-        else stays = stays.filter(stay => stay.price <= exploreFilterBy.maxPrice && stay.price >= exploreFilterBy.minPrice)
+        if (exploreFilterBy.maxPrice) {
+            if (exploreFilterBy.maxPrice === 1200) stays = stays.filter(stay => stay.price > exploreFilterBy.minPrice)
+            else stays = stays.filter(stay => stay.price <= exploreFilterBy.maxPrice && stay.price >= exploreFilterBy.minPrice)
+        }
+
         if (exploreFilterBy.roomTypes) {
             const fullRoomTypes = ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']
             fullRoomTypes.forEach(type => {
@@ -32,12 +35,12 @@ async function query(filterBy, exploreFilterBy) {
     return stays
 }
 async function getById(stayId) {
-    const stay= await httpService.get(STAY_KEY+`/${stayId}`)
+    const stay = await httpService.get(STAY_KEY + `/${stayId}`)
     return stay
 }
 async function getByHOstId(hostId) {
     let stays = await httpService.get('stay')
-    const hostStays = stays.filter(stay => stay.host._id === hostId )
+    const hostStays = stays.filter(stay => stay.host._id === hostId)
     return hostStays
 }
 
@@ -45,7 +48,7 @@ async function addStay(stay) {
     const addedStay = await httpService.post('stay', stay)
     return addedStay
 
-  
+
 }
 
 
