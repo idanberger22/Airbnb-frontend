@@ -69,21 +69,21 @@ export function ReserveStay(props) {
         if (from && to) {
             const dayDiff = (to - from) / 1000 / 60 / 60 / 24
             setResNights(dayDiff)
-            setReservation({ ...reservation, checkIn: from._d, checkOut: to._d, totalPrice: dayDiff * props.stay.price +25, nights: dayDiff })
+            setReservation({ ...reservation, checkIn: from._d, checkOut: to._d, totalPrice: dayDiff * props.stay.price + 25, nights: dayDiff })
         }
     }
 
     const reserveStay = async () => {
         reservation.user = userService.getLoggedinUser()
-        if(!reservation.user){
+        if (!reservation.user) {
             dispatch(openModal(true))
             return
-        } 
+        }
         reservation.userId = userService.getLoggedinUser()._id
         if (!reservation.checkIn || !reservation.checkOut || (reservation.adults + reservation.childrens) === 0) console.log('fill all details')
         else {
             setResModalIsOpen(true)
-            const newRes = await reservationService.addReservation(reservation)
+            await reservationService.addReservation(reservation)
             dispatchReservation(reservation)
             tripsService.addTrip(reservation)
         }
@@ -101,11 +101,11 @@ export function ReserveStay(props) {
         <div className="reserve-stay-container">
             <div className="reserve-stay-header">
                 <li className="reserve-stay-price font-book">${utilService.getUsPrice((props.stay.price))} <span>night</span></li>
-                <li>{props.stay.reviewScores.value / 2}<span className="material-icons" style={{margin:'auto 3px'}}>star</span> · <span >{props.stay.reviews.length} reviews</span></li>
+                <li>{props.stay.reviewScores.value / 2}<span className="material-icons" style={{ margin: 'auto 3px' }}>star</span> · <span >{props.stay.reviews.length} reviews</span></li>
             </div>
             <div className="picker-container">
                 {/* <div className="range-date-selector"> */}
-                    <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
+                <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
                 {/* </div> */}
                 <div onClick={() => onShowGusts(isTrue)} className="guests-pick clickable">
                     <div className="flex-col">
@@ -115,15 +115,15 @@ export function ReserveStay(props) {
                     </div>
                     <div className="arrow"><span className="material-icons cursor">{showGuestsStyle}</span></div>
                 </div>
-                {!resModalIsOpen && 
-                <div style={guestModalShown}>
-                    <GuestPicker className="guest-picker" onUpdateGuestsQty={onUpdateGuestsQty} />
-                </div>
+                {!resModalIsOpen &&
+                    <div style={guestModalShown}>
+                        <GuestPicker className="guest-picker" onUpdateGuestsQty={onUpdateGuestsQty} />
+                    </div>
                 }
-            </div> 
+            </div>
             <button onClick={reserveStay} onMouseMove={(e) => onMousMove(e)} style={reservedBtnBc} className='reserve-button'>Reserve</button>
-           {!resModalIsOpen &&  <section className="price-section">
-                {(reservation.adults!=0 || reservation.childrens!=0) && reservation.checkIn && reservation.checkOut && <div>
+            {!resModalIsOpen && <section className="price-section">
+                {(reservation.adults != 0 || reservation.childrens != 0) && reservation.checkIn && reservation.checkOut && <div>
                     <h4>You won't be charged yet</h4>
                     <div className="flex-row-space-btw price">
                         <h1 className="underline">${utilService.getUsPrice(props.stay.price)} <span>x</span> {resNights} nights</h1>

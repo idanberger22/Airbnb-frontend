@@ -1,5 +1,5 @@
 import { httpService } from './http.service'
-import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
+import { socketService } from './socket.service'
 const AUTH_KEY = 'auth/'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
@@ -15,6 +15,7 @@ window.userService = userService
 
 async function login(userCred) {
     const user = await httpService.post(AUTH_KEY+'login', userCred)
+    console.log('user',user)
     if (user) {
         socketService.login(user._id)
         return saveLocalUser(user)
