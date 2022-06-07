@@ -4,7 +4,6 @@ import { openModal } from "../store/actions/userActions"
 import { userService } from "../services/user.service"
 import { ReservationConfirmed } from "../store/actions/reservation.action"
 import { utilService } from "../services/util.service"
-import { MapCmp } from "../cmps/map-cmp"
 import { useState } from "react"
 
 
