@@ -13,8 +13,6 @@ import { ConfirmedResModal } from "./confirmed-res-modal"
 import { UserMsg } from "./user-msg"
 import { stayService } from "../services/stay.service"
 
-
-
 export const AppHeader = () => {
 
     const LargeFilterShow = useSelector((storeState) => storeState.headerModule.isLargeFilterShown)
@@ -33,7 +31,7 @@ export const AppHeader = () => {
     const [showModalConfirmed, setShowModalConfirmed] = useState(false)
     const [hostBtnTxt, setHostBtnTxt] = useState('Become a host')
     const [loggedinUser,resetLoggedInUser]=useState(userService.getLoggedinUser())
-    // const loggedinUser = userService.getLoggedinUser()
+    const logged = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -41,19 +39,22 @@ export const AppHeader = () => {
         getStays()
         updateLogoColor()
         return () => {
-            
             window.removeEventListener('scroll', changeCss, { passive: true });
         }
     }, [])
 
-    const getStays = async () => {
-        const stays = await stayService.getByHOstId(loggedinUser._id)
-        console.log('loggedInUser._id',loggedinUser)
-        if(stays.length > 0 ) setHostBtnTxt('Host dashboard')
-        // else setHostBtnTxt('Become a host')
-    }
+    useEffect(() => {
+        if(!logged) getStays(false)
+        getStays()
+    }, [logged])
 
-    // let loggedinUser = userService.getLoggedinUser()
+    const getStays = async (isUser=true) => {
+        let stays
+        if(isUser) stays = await stayService.getByHOstId(logged._id)
+        else stays=[]
+        if(stays && stays.length > 0 ) setHostBtnTxt('Host dashboard')
+        else setHostBtnTxt('Become a host')
+    }
 
     useEffect(() => {
         resetLoggedInUser(userService.getLoggedinUser)

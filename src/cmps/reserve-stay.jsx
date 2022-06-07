@@ -104,9 +104,7 @@ export function ReserveStay(props) {
                 <li>{props.stay.reviewScores.value / 2}<span className="material-icons" style={{ margin: 'auto 3px' }}>star</span> · <span >{props.stay.reviews.length} reviews</span></li>
             </div>
             <div className="picker-container">
-                {/* <div className="range-date-selector"> */}
-                <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
-                {/* </div> */}
+                    <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
                 <div onClick={() => onShowGusts(isTrue)} className="guests-pick clickable">
                     <div className="flex-col">
                         <h5 >GUESTS</h5>

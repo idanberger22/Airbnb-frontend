@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
-import { UploadStay } from "../cmps/upload-stay"
 import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
@@ -42,6 +41,10 @@ export const Host = () => {
     }, [hostStays])
 
     const getStays = async () => {
+        if(!loggedInUser){
+            setHostStays(null)
+            return
+        }
         const stays = await stayService.getByHOstId(loggedInUser._id)
         if (stays.length === 0) {
             setHostStyling(false)
@@ -52,22 +55,21 @@ export const Host = () => {
         }
         setHostStays(stays)
     }
-    const showUploadStayTogle = () => {
-        setUploadStyling(!uploadStyling)
-    }
 
     const closeMainCover = () => {
         setHostStyling(true)
-
     }
 
-
-
     const getReservations = async () => {
+        if(!loggedInUser){
+            setreservations(null)
+            return
+        }
         const reservatios = await reservationService.query({ hostId: loggedInUser._id })
         const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
     }
+
     if (!loggedInUser) return <h1>must be logged in</h1>
     if (!reservations) return <h1>you currently have no reservations</h1>
     if (!hostStays) return <h1>loading</h1>
@@ -84,7 +86,9 @@ export const Host = () => {
                     </div>
                     <div className="container">
                         <h1>Open your door to hosting</h1>
-                        <button className="reserve-button" onClick={closeMainCover}>Try hosting</button>
+                        <NavLink to='/host-your-home'>
+                            <button className="reserve-button" onClick={closeMainCover}>Try hosting</button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="right-side"></div>
@@ -102,18 +106,8 @@ export const Host = () => {
                             </h1>
                         </li>
                     </div>
-                    {/* <li style={{ alignSelf: 'center' }}> */}
-                    {/* <NavLink  to='/host-your-home'> */}
-                        {/* <a className="add-stay-btn">
-                            <span class="material-icons">add_home</span>
-                        </a> */}
-                        {/* </NavLink> */}
-
-                        
-                    {/* </li> */}
                 </div>
 
-                {/* {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />} */}
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
                         <Statics reservations={reservations} hostStays={hostStays} />

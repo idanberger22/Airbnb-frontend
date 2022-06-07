@@ -1,15 +1,8 @@
 
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from 'react-redux'
-import { openModal } from "../store/actions/userActions"
-import { ReservationPreview2 } from "../cmps/reservation2-preview"
-import { UploadStay } from "../cmps/upload-stay"
-import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
-import { StayPreview } from "../cmps/stay-preview"
 import { NavLink } from "react-router-dom"
 import { utilService } from "../services/util.service"
-import { Statics } from "../cmps/statics"
 import { userService } from "../services/user.service"
 import { Checkbox, createTheme, FormControl, FormControlLabel, FormGroup, MuiThemeProvider, Radio, RadioGroup, TextField } from "@material-ui/core"
 import { ImgUploader } from "../cmps/img-uploader"
@@ -123,9 +116,6 @@ export const HostYourHome = () => {
         setNewStay({ ...newStay, roomType: type })
     }
 
-
-
-
     const uploadStay = async () => {
         const stayToUpload = await stayService.addStay(newStay)
         if (stayToUpload) console.log('new stay has been added')
@@ -137,8 +127,6 @@ export const HostYourHome = () => {
     return (
         <div className="main-upload-stay">
             <h1>Upload a stay to host</h1>
-
-
             <div className="container">
                 <div className="details-form">
                     <MuiThemeProvider theme={theme}>
@@ -175,7 +163,6 @@ export const HostYourHome = () => {
                                 <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Hotel room" label="Hotel room" />
                                 <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
                                 <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Shared room" label="Shared room" />
-
                             </RadioGroup>
                         </FormControl>
 

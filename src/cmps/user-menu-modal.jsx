@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom"
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { openModal,logOut } from "../store/actions/userActions"
-import { userService } from "../services/user.service"
 
 export const UserMenuModal = (props) => {
 
     const dispatch = useDispatch()
-    const loggedinUser = userService.getLoggedinUser()
+    const loggedinUser = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     const toggleModal = (isLogin) => {
         dispatch(openModal(isLogin))
@@ -30,15 +29,19 @@ export const UserMenuModal = (props) => {
             <li onClick={() => toggleModal(true)} className="clickable noselect">
                 <a  className='undecorate'>Log in</a>
             </li></>}
-        {props.loggedinUser &&<li>
+        {loggedinUser && 
+        <>
+        <li>
             <NavLink className='undecorate'   to='/trips' >Trips</NavLink>
-        </li>}
+        </li>
         <li>
             <NavLink className='undecorate' onClick={closeSelf} to='/host-your-home' >Host your home</NavLink>
         </li>
-        {loggedinUser && <li>
+        <li>
             <NavLink onClick={onLogout} className='undecorate' to='/home'>Log out</NavLink>
-        </li>}
+        </li>
+        </>
+        }
     </section>
     )
 }
