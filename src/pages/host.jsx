@@ -60,13 +60,12 @@ export const Host = () => {
 
     }
 
-
-
     const getReservations = async () => {
         const reservatios = await reservationService.query({ hostId: loggedInUser._id })
         const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
     }
+    
     if (!loggedInUser) return <h1>must be logged in</h1>
     if (!reservations) return <h1>you currently have no reservations</h1>
     if (!hostStays) return <h1>loading</h1>
@@ -83,7 +82,9 @@ export const Host = () => {
                     </div>
                     <div className="container">
                         <h1>Open your door to hosting</h1>
-                        <button className="reserve-button" onClick={closeMainCover}>Try hosting</button>
+                        <NavLink to='/host-your-home'>
+                            <button className="reserve-button" onClick={closeMainCover}>Try hosting</button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="right-side"></div>
@@ -101,18 +102,8 @@ export const Host = () => {
                             </h1>
                         </li>
                     </div>
-                    {/* <li style={{ alignSelf: 'center' }}> */}
-                    {/* <NavLink  to='/host-your-home'> */}
-                        {/* <a className="add-stay-btn">
-                            <span class="material-icons">add_home</span>
-                        </a> */}
-                        {/* </NavLink> */}
-
-                        
-                    {/* </li> */}
                 </div>
 
-                {/* {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />} */}
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
                         <Statics reservations={reservations} hostStays={hostStays} />
