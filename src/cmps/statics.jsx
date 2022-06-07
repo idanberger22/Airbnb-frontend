@@ -51,7 +51,7 @@ export const Statics = ({ reservations, hostStays }) => {
             <div>
 
                 <h1>
-                    {nIghtsAvg}%
+                    {nIghtsAvg}
                 </h1>
                 <h3>
                 Average nightly rate
