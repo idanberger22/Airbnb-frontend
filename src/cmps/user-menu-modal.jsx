@@ -34,7 +34,7 @@ export const UserMenuModal = (props) => {
             <NavLink className='undecorate'   to='/trips' >Trips</NavLink>
         </li>}
         <li>
-            <NavLink className='undecorate' onClick={closeSelf} to='/host' >Host your home</NavLink>
+            <NavLink className='undecorate' onClick={closeSelf} to='/host-your-home' >Host your home</NavLink>
         </li>
         {loggedinUser && <li>
             <NavLink onClick={onLogout} className='undecorate' to='/home'>Log out</NavLink>

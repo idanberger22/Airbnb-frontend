@@ -164,9 +164,11 @@
 
 
     .reservations-container {
+        margin-top: 4rem;
         display: flex;
         justify-content: center;
         flex-direction: column;
+        gap: 4rem;
 
         button {
             background-color: unset;

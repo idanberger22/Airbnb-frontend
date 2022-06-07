@@ -1,14 +1,20 @@
-import { useEffect, useRef, useState } from "react"
-import { ImgUploader } from "./img-uploader"
-import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField } from "@material-ui/core"
-import { createTheme } from "@material-ui/core/styles"
-import { MuiThemeProvider } from "@material-ui/core/styles"
-import { userService } from "../services/user.service"
-import { utilService } from "../services/util.service"
+
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from 'react-redux'
+import { openModal } from "../store/actions/userActions"
+import { ReservationPreview2 } from "../cmps/reservation2-preview"
+import { UploadStay } from "../cmps/upload-stay"
+import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
+import { StayPreview } from "../cmps/stay-preview"
+import { NavLink } from "react-router-dom"
+import { utilService } from "../services/util.service"
+import { Statics } from "../cmps/statics"
+import { userService } from "../services/user.service"
+import { Checkbox, createTheme, FormControl, FormControlLabel, FormGroup, MuiThemeProvider, Radio, RadioGroup, TextField } from "@material-ui/core"
+import { ImgUploader } from "../cmps/img-uploader"
 
-
-export const UploadStay = (props) => {
+export const HostYourHome = () => {
 
     var loggedinUser = userService.getLoggedinUser()
 
@@ -45,7 +51,7 @@ export const UploadStay = (props) => {
                 }
             }
 
-            , reviewScores: { value: Math.round(utilService.getRandomFloat(8.5,10) * 100) /100 },
+            , reviewScores: { value: Math.round(utilService.getRandomFloat(8.5,10) * 10)/10 },
             reviews: [
                 {
                     at: "2016-10-14T04:00:00.000Z",
@@ -94,6 +100,7 @@ export const UploadStay = (props) => {
     const handleChange = (ev) => {
         const field = ev.target.name
         const value = ev.target.value
+        console.log('stay',newStay)
         console.log('field', field)
         if (field === 'city' || field === 'country' || field === 'street' || field === 'country-code') {
             setNewStay({ ...newStay, address: { ...newStay.address, [field]: value } })
@@ -116,43 +123,37 @@ export const UploadStay = (props) => {
         setNewStay({ ...newStay, roomType: type })
     }
 
-    const onClose = () => {
-        console.log('im here in props')
-        props.showUploadStayTogle()
-    }
+
 
 
     const uploadStay = async () => {
         const stayToUpload = await stayService.addStay(newStay)
         if (stayToUpload) console.log('new stay has been added')
         else console.log('couldnt add a stay')
-        props.getStays()
-        onClose()
+
+
     }
 
     return (
         <div className="main-upload-stay">
             <h1>Upload a stay to host</h1>
-            <div onClick={onClose}>
 
-            <span  class="material-icons">close</span>
-            </div>
-            
+
             <div className="container">
                 <div className="details-form">
-                <MuiThemeProvider theme={theme}>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
-                    <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }}/>
+                    <MuiThemeProvider theme={theme}>
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
                     </MuiThemeProvider>
                 </div>
                 <div className="checkboxes">
 
-                    <h1 style={{marginBottom:'0.8rem'}}>Amenities:</h1>
+                    <h1 style={{ marginBottom: '0.8rem' }}>Amenities:</h1>
 
                     <div className="emnities">
                         <FormGroup>
@@ -162,7 +163,7 @@ export const UploadStay = (props) => {
                             <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Air conditioning" label="Air conditioning" />
                         </FormGroup>
                     </div>
-                    <h1 style={{marginBottom:'0.8rem', marginTop:'0.8rem'}}>Type of Place:</h1>
+                    <h1 style={{ marginBottom: '0.8rem', marginTop: '0.8rem' }}>Type of Place:</h1>
                     <div className="type">
                         <FormControl>
                             <RadioGroup
@@ -198,8 +199,13 @@ export const UploadStay = (props) => {
                 </div>
             </div>
             <div className="upload-btn-container" >
-            <button className="reserve-button" onClick={uploadStay} >upload</button>
+                <NavLink className='clickable' to='/host'>
+                    <button className="reserve-button" onClick={uploadStay} >upload</button>
+                </NavLink>
             </div>
         </div>
     )
 }
+
+    // <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
+

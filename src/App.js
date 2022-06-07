@@ -9,6 +9,7 @@ import { LoginSignup } from './cmps/login-signup'
 import { Trips } from './pages/trips'
 import { Host } from './pages/host'
 import ScrollToTop from './cmps/scroll-to-top'
+import { HostYourHome } from './pages/host-your-home'
 
 
 
@@ -37,6 +38,7 @@ function App() {
               <Route path='/explore' element={<Explore />} />
               <Route path='/trips' element={<Trips />} />
               <Route path='/host' element={<Host />} />
+              <Route path='/host-your-home' element={<HostYourHome />} />
               <Route path='/' element={<Home />} />
             </Routes>
             <LoginSignup/>

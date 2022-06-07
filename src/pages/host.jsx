@@ -61,7 +61,7 @@ export const Host = () => {
 
     }
 
-    
+
 
     const getReservations = async () => {
         const reservatios = await reservationService.query({ hostId: loggedInUser._id })
@@ -102,43 +102,45 @@ export const Host = () => {
                             </h1>
                         </li>
                     </div>
-                    <li style={{ alignSelf: 'center' }}>
-                        {!uploadStyling && <div onClick={showUploadStayTogle} className="add-stay-btn">
+                    {/* <li style={{ alignSelf: 'center' }}> */}
+                    {/* <NavLink  to='/host-your-home'> */}
+                        {/* <a className="add-stay-btn">
                             <span class="material-icons">add_home</span>
-                        </div>
+                        </a> */}
+                        {/* </NavLink> */}
 
-                        }
-                    </li>
+                        
+                    {/* </li> */}
                 </div>
 
-                {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
+                {/* {uploadStyling && <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />} */}
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
-                        <Statics reservations={reservations} hostStays={hostStays}/>
-                        
-
-                        <h1>Your reservations</h1>
-                        <table className="reservations-table" >
-                            <thead>
-                                <tr>
-                                    <th>Listing</th>
-                                    <th>Guests</th>
-                                    <th>Check-in</th>
-                                    <th>Check-out</th>
-                                    <th>Nights</th>
-                                    <th>Total Payout</th>
-                                    <th>options</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {reservations.map(reservation =>
+                        <Statics reservations={reservations} hostStays={hostStays} />
+                        <div className="flex-col">
+                            <h1>Your reservations</h1>
+                            <table className="reservations-table" >
+                                <thead>
                                     <tr>
-                                        <ReservationPreview2 getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                        <th>Listing</th>
+                                        <th>Guests</th>
+                                        <th>Check-in</th>
+                                        <th>Check-out</th>
+                                        <th>Nights</th>
+                                        <th>Total Payout</th>
+                                        <th>Options</th>
+
                                     </tr>
-                                )}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {reservations.map(reservation =>
+                                        <tr>
+                                            <ReservationPreview2 getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>}
 
