@@ -41,11 +41,8 @@
         background-size: cover;
         background-position: 50%;
         height: 80vh;
-        margin-top: 0;
         width: 100%;
         z-index: -10;
-        margin-bottom: -50%;
-
     }
 
     .home-filterr {
@@ -109,11 +106,11 @@
     h1 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        margin: 1rem 0;
         font-family: Airbnb-Cereal-Book;
     }
 
     cursor: pointer;
-    margin-top: 60%;
     display: flex;
     flex-direction: column;
 

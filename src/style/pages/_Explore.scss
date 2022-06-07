@@ -1,8 +1,6 @@
 
 .in-margin-container{
     color: $clrBLACK;
-
-    // grid-column: 2;
 }
 
 
@@ -12,8 +10,7 @@
     position: relative;
     margin-top: 1rem;
     display: grid;
-    // display: inline-block;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
     gap: 1.2rem;
     img {
         width: 100%;
