@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
 import { ReservationPreview2 } from "../cmps/reservation2-preview"
-import { UploadStay } from "../cmps/upload-stay"
 import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"

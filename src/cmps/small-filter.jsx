@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { changeFilter } from "../store/actions/stay.action"
 import { NavLink } from "react-router-dom"
-import { DateRangeSelector } from "./date-picker"
 export const SmallFilter = () => {
 
     const dispatch = useDispatch()
@@ -24,15 +23,10 @@ export const SmallFilter = () => {
         setFilterBy({ ...filterBy, [field]: value })
     }
 
-    const handleDate = (dates) => {
-        if (dates.startDate) setFilterBy({ ...filterBy, from: dates.startDate })
-        if (dates.endDate) setFilterBy({ ...filterBy, to: dates.endDate })
-    }
-
     return (
         <div className="total-filter">
             <div className="inpt-fillter">
-                <input name="location" value={filterBy.location} type="text" placeholder="Start your search" onChange={handleChange} />
+                <input name="location" value={loadedFilter.location} type="text" placeholder="Start your search" onChange={handleChange} />
             </div>
             <NavLink className="navlink" to='/explore'>
                 <div onClick={dispatchFilter}>
