@@ -13,8 +13,6 @@ import { ConfirmedResModal } from "./confirmed-res-modal"
 import { UserMsg } from "./user-msg"
 import { stayService } from "../services/stay.service"
 
-
-
 export const AppHeader = () => {
 
     const LargeFilterShow = useSelector((storeState) => storeState.headerModule.isLargeFilterShown)

@@ -41,6 +41,10 @@ export const Host = () => {
     }, [hostStays])
 
     const getStays = async () => {
+        if(!loggedInUser){
+            setHostStays(null)
+            return
+        }
         const stays = await stayService.getByHOstId(loggedInUser._id)
         if (stays.length === 0) {
             setHostStyling(false)
@@ -51,15 +55,16 @@ export const Host = () => {
         }
         setHostStays(stays)
     }
-    const showUploadStayTogle = () => {
-        setUploadStyling(!uploadStyling)
-    }
 
     const closeMainCover = () => {
         setHostStyling(true)
     }
 
     const getReservations = async () => {
+        if(!loggedInUser){
+            setreservations(null)
+            return
+        }
         const reservatios = await reservationService.query({ hostId: loggedInUser._id })
         const sortedReservatios = reservatios.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setreservations(sortedReservatios)
