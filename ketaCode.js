@@ -17,15 +17,13 @@ socket.on('new-reservation', ({ hostId, guestName }) => {
 function componentDidMount() {
     socketService.on('rereservation-added', (data) => {
         const msg = `New reservation from ${data.guestName}`
-
         this.setState({ msg })
         setTimeout(() => {
             this.setState({ msg: null })
         }, 2500)
-
     })
 }
 
-function componentWillUnmount(){
+function componentWillUnmount() {
     socketService.off('rereservation-added')
 }

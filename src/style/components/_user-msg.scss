@@ -18,7 +18,9 @@
 .user-msg.success {
     background-color: $clrRED;
     border-bottom-left-radius: 12px;
+    z-index: 10000;
 }
 .user-msg.danger {
     background-color: rgb(216, 59, 59);
+    z-index: 10000;
 }
