@@ -198,7 +198,7 @@ export const UploadStay = (props) => {
                 </div>
             </div>
             <div className="upload-btn-container" >
-            <button className="reserve-button" onClick={uploadStay} >upload</button>
+            <button className="reserve-button" onClick={uploadStay} >Upload</button>
             </div>
         </div>
     )

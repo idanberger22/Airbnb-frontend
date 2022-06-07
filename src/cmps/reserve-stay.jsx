@@ -101,7 +101,7 @@ export function ReserveStay(props) {
         <div className="reserve-stay-container">
             <div className="reserve-stay-header">
                 <li className="reserve-stay-price font-book">${utilService.getUsPrice((props.stay.price))} <span>night</span></li>
-                <li>{props.stay.reviewScores.value / 2}<span className="material-icons" style={{ margin: 'auto 3px' }}>star</span> · <span >{props.stay.reviews.length} reviews</span></li>
+                <li><span className="material-icons" style={{ margin: 'auto 3px' }}>star</span>{ utilService.make2digits(props.stay.reviewScores.value / 2)} · <span >{props.stay.reviews.length} reviews</span></li>
             </div>
             <div className="picker-container">
                     <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
