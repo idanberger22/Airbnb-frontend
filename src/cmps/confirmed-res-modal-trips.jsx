@@ -90,12 +90,12 @@ export const ConfirmedResModalTrips = (props) => {
 
                 <div className="guests">
                     <h2>Who's coming</h2>
-                    <h3>
+                    <li>
                         {props.reservation.adults != 0 && <h3>Adults: {props.reservation.adults}</h3>}
-                    </h3>
-                    <h3>
+                    </li>
+                    <li>
                         {props.reservation.childrens != 0 && <h3>Childrens: {props.reservation.childrens}</h3>}
-                    </h3>
+                    </li>
                 </div>
 
                 <div className="address">

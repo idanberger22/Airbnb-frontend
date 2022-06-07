@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { React } from "react"
+import { utilService } from "../services/util.service"
 
 export function StaydetailsHeader({ stay }) {
    
@@ -13,7 +14,7 @@ export function StaydetailsHeader({ stay }) {
                     <h4><span className="material-icons">star</span></h4>
                 </li>
                 <li>
-                    <h4>{stay.reviewScores.value / 2}</h4>
+                    <h4>{utilService.make2digits(stay.reviewScores.value / 2)}</h4>
                 </li>
                 <li>
                     <h4>·</h4>

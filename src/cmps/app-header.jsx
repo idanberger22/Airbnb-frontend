@@ -79,7 +79,7 @@ export const AppHeader = () => {
             setogoImgSrc(whiteLogo)
             document.documentElement.style.setProperty('--headerbackgroundColor', 'unset');
             document.documentElement.style.setProperty('--bgc', '#unset');
-            document.documentElement.style.setProperty('--headerFontColor', '#fff');
+            document.documentElement.style.setProperty('--headerFontColor', '#F7F7F7');
             document.documentElement.style.setProperty('--headerbackgroundColor', '#unset');
         }
         else {
