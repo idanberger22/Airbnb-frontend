@@ -35,14 +35,14 @@ export const Statics = ({ reservations, hostStays }) => {
         return totalIncome
     }
 
-
+console.log(typeof avgRate)
 
     return (<section>
         <div className="flex-row-space-btw statics-container">
             <div>
 
                 <h1>
-                    {avgRate}
+                    {avgRate && utilService.make2digits(avgRate)}
                 </h1>
                 <h3>
                 Overall rating
@@ -51,7 +51,7 @@ export const Statics = ({ reservations, hostStays }) => {
             <div>
 
                 <h1>
-                    {nIghtsAvg}
+                    {nIghtsAvg && utilService.make2digits(nIghtsAvg)}
                 </h1>
                 <h3>
                 Average nightly rate
