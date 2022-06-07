@@ -24,8 +24,7 @@ async function query(filterBy, exploreFilterBy) {
             const fullRoomTypes = ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']
             fullRoomTypes.forEach(type => {
                 if (!exploreFilterBy.roomTypes.includes(type)) stays = stays.filter(stay => stay.roomType !== type)
-            })
-        }
+            })}
         if (exploreFilterBy.amenities) {
             exploreFilterBy.amenities.forEach(amn => { stays = stays.filter(stay => stay.amenities.includes(amn)) })
         }
@@ -51,3 +50,12 @@ async function addStay(stay) {
 function getTopRated() {
     return dataService.getTopRated()
 }
+
+
+// roomTypeCopy = ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']
+            // {let roomTypeCopy = JSON.parse(JSON.stringify(exploreFilterBy.roomTypes))
+            // if(roomTypeCopy.length>1) 
+            //     fullRoomTypes.forEach(type => {
+            //         if (!roomTypeCopy.includes(type)) stays = stays.filter(stay => stay.roomType !== type)
+            //     })
+            // } 
