@@ -6,8 +6,8 @@ import { userService } from "../services/user.service"
 export const UserMenuModal = (props) => {
 
     const dispatch = useDispatch()
-    // const loggedinUser = useSelector((storeState) => storeState.userModule.loggedinUser)
-    const loggedinUser = userService.getLoggedinUser()
+    const loggedinUser = useSelector((storeState) => storeState.userModule.loggedinUser)
+    // const loggedinUser = userService.getLoggedinUser()
     
 
     const toggleModal = (isLogin) => {
