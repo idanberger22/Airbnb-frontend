@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeFilter } from "../store/actions/stay.action"
 import { MainFilter } from "./main-filter"
 import { SmallFilter } from "./small-filter"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { UserMenuModal } from "./user-menu-modal"
 import { showLargeFilter, showSmallFilter, LogoChangeToWhite } from "../store/actions/headerAction"
 import { userService } from "../services/user.service"
