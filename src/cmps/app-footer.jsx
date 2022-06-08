@@ -4,7 +4,7 @@ export function AppFooter() {
 
     return (
 
-        <div className="stock-margin fixed main-footer">
+        <div id="main-footer" className="stock-margin fixed main-footer">
             {/* <div className="stock-margin-center"> */}
                 <div className="footer ">
                     <div className="left-side">

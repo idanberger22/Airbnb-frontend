@@ -23,11 +23,16 @@ export const StayDetails = () => {
         var myElement = document.getElementById("main-header");
         myElement.classList.add("stock-margin-narrow");
         myElement.classList.remove("stock-margin");
-
+        var myElement1 = document.getElementById("main-footer");
+        myElement1.classList.add("stock-margin-narrow");
+        myElement1.classList.remove("stock-margin");
+        
         return () => {
-
+            
             myElement.classList.remove("stock-margin-narrow");
             myElement.classList.add("stock-margin");
+            myElement1.classList.remove("stock-margin-narrow");
+            myElement1.classList.add("stock-margin");
         }
 
     }, [])

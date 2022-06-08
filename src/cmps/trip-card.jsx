@@ -31,7 +31,7 @@ export const TripCard = ({ trip }) => {
                         {trip.stay.address.country}
                     </div>
                     <div>
-                        hosted by {trip.hostName}
+                        Hosted by {trip.hostName}
                     </div>
                     <div>
                         {trip.checkIn.substring(0, 10)} - {trip.checkOut.substring(0, 10)}
