@@ -41,7 +41,7 @@ export const Trips = () => {
                 </section>
                 <h2 style={{ marginBottom: '2rem' }}>Your trips</h2>
 
-                <section className="trip-card-container">
+                <section className="trip-cards-container">
                     {trips.map(trip => <TripCard trip={trip} key={trip._id} />)}
                 </section>
             </div>
