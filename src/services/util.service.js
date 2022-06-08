@@ -56,7 +56,6 @@ function getUsPrice(price){
     return Math.floor((price)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 function make2digits(num){
-    console.log('avg in util',num)
     let string = num.toString()
     if(string.length===1) string+='.0'
     if(string.length>3) string = string.substring(0,3)
