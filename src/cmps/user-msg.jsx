@@ -1,9 +1,7 @@
 import React from 'react'
 
 import { eventBusService } from '../services/event-bus.service.js'
-import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.service.js';
-
-
+import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.service.js'
 export class UserMsg extends React.Component {
 
   removeEvent;
@@ -36,8 +34,6 @@ export class UserMsg extends React.Component {
     socketService.off(SOCKET_EVENT_REVIEW_ADDED)
     this.removeEvent()
   }
-
-
 
   render() {
     if (!this.state.msg) return <span></span>

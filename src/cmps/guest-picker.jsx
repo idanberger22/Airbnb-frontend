@@ -45,13 +45,13 @@ export const GuestPicker = (props) => {
             <div className="adults-right">
 
                 <div>
-                    <span onClick={()=>onUpdateQty('child',-1)} className="material-icons">remove</span>
+                    <span onClick={()=>onUpdateQty('child',-1)} className="material-icons noselect">remove</span>
                 </div>
                 <div className="flex-col-space-around between-btns">
                     {childsQty}
                 </div>
                 <div>
-                    <span onClick={()=>onUpdateQty('child',1)}className="material-icons">add</span>
+                    <span onClick={()=>onUpdateQty('child',1)}className="material-icons noselect">add</span>
                 </div>
             </div>
         </div>
