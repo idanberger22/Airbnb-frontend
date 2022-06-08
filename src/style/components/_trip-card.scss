@@ -29,13 +29,13 @@
 
 
     div:first-child {
-        font-size: 1.9rem;
+        font-size: 1rem;
         font-family: Airbnb-Cereal-Medium;
         color: $clrBLACK;
     }
 
     div:not(first-child) {
-        font-size: 1.5rem;
+        font-size: 0.9rem;
         font-family: Airbnb-Cereal-Book;
         color: #717171
     }
@@ -47,7 +47,7 @@
 
 .trip-card img {
     border-radius: 12px;
-    width: 13.8125rem;
+    width: 6.8125rem;
     aspect-ratio: 1/1;
     object-fit: cover;
     
