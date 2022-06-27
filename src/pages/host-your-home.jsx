@@ -93,8 +93,6 @@ export const HostYourHome = () => {
     const handleChange = (ev) => {
         const field = ev.target.name
         const value = ev.target.value
-        console.log('stay',newStay)
-        console.log('field', field)
         if (field === 'city' || field === 'country' || field === 'street' || field === 'country-code') {
             setNewStay({ ...newStay, address: { ...newStay.address, [field]: value } })
 
@@ -111,7 +109,6 @@ export const HostYourHome = () => {
     }
 
     const handleTypeChange = ({ target }) => {
-        console.log('taget.name', target.value)
         const type = target.value
         setNewStay({ ...newStay, roomType: type })
     }
