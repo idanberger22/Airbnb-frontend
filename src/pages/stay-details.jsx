@@ -11,12 +11,9 @@ import { MapCmp } from "../cmps/map-cmp"
 export const StayDetails = () => {
 
     const [stay, setStay] = useState(null)
-    const [navbarStyling, setNavbarStyling] = useState({ visibility: 'visible' })
     const { stayId } = useParams();
 
     useEffect(() => {
-
-
         getStay()
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
@@ -28,7 +25,6 @@ export const StayDetails = () => {
         myElement1.classList.remove("stock-margin");
         
         return () => {
-            
             myElement.classList.remove("stock-margin-narrow");
             myElement.classList.add("stock-margin");
             myElement1.classList.remove("stock-margin-narrow");
@@ -40,10 +36,9 @@ export const StayDetails = () => {
     const getStay = async () => {
         const stay = await stayService.getById(stayId)
         setStay(stay)
-        
     }
 
-    { if (!stay) return (<h1>loading</h1>) }
+    if (!stay) return <div className="loader"></div>
 
     return <div className="stock-margin-narrow main-stay-details-container">
         <div className="stock-margin-center details-container">
