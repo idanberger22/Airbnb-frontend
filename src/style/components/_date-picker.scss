@@ -32,19 +32,6 @@
     display: none !important;
 }
 
-.DateRangePicker{
-    width: 100%;
+.DayPickerKeyboardShortcuts_show__topRight::before {
+    border-right: 33px solid $clrRED !important;
 }
-
-.react-datepicker__input-container {
-    width: inherit;
-  }
-  
-  .react-datepicker-wrapper {
-    width: 100%;
-  }
-
-  .costume{
-    width: 2000px;
-    top:300px
-  }
