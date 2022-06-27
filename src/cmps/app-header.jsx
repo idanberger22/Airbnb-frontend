@@ -20,23 +20,19 @@ export const AppHeader = () => {
     const isLogoWhite = useSelector((storeState) => storeState.headerModule.isLogoWhite)
     const { isModalOpen } = useSelector((storeState) => storeState.userModule)
     const ReservationConfirmed = useSelector((storeState) => storeState.reservationModule.ReservationConfirmed)
-
-
-    const [isSmallFilterShown, setIsSmallFilterShown] = useState(true)
-    const [bigFilterStyle, setBigFilterStyle] = useState({ display: 'none' })
     const [smallFilterStyle, setsmallFilterStyle] = useState({ display: 'block' })
     const [menuModalShow, setMenuModalShow] = useState('none')
     const [logoColor, setLogoColor] = useState({ color: 'red' })
     const [logoImgSrc, setogoImgSrc] = useState("../assets/imgs/logo1.png")
     const [showModalConfirmed, setShowModalConfirmed] = useState(false)
     const [hostBtnTxt, setHostBtnTxt] = useState('Become a host')
-    const [loggedinUser,resetLoggedInUser]=useState(userService.getLoggedinUser())
+    const [loggedinUser, resetLoggedInUser] = useState(userService.getLoggedinUser())
     const logged = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     const dispatch = useDispatch()
+
     useEffect(() => {
         window.addEventListener('scroll', changeCss, { passive: true });
-        getStays()
         updateLogoColor()
         return () => {
             window.removeEventListener('scroll', changeCss, { passive: true });
@@ -44,17 +40,16 @@ export const AppHeader = () => {
     }, [])
 
     useEffect(() => {
-        if(!logged) getStays(false)
-        getStays()
+        if(!logged) setHostBtnTxt('Become a host')
+        else getUserStays()
     }, [logged])
 
-    const getStays = async (isUser=true) => {
-        let stays
-        if(isUser) stays = await stayService.getByHOstId(logged._id)
-        else stays=[]
+
+    const getUserStays = async () => {
+        const stays = await stayService.getByHostId(logged._id)
         if(stays && stays.length > 0 ) setHostBtnTxt('Host dashboard')
-        else setHostBtnTxt('Become a host')
     }
+
 
     useEffect(() => {
         resetLoggedInUser(userService.getLoggedinUser)
@@ -95,15 +90,11 @@ export const AppHeader = () => {
     const changeCss = () => {
         const scrollValue = document.documentElement.scrollTop
         if (scrollValue) {
-            setBigFilterStyle({ display: 'none' })
-            setsmallFilterStyle({ display: 'block' })
             dispatch(showSmallFilter())
         }
     }
 
     const onPresentFilter = () => {
-        setsmallFilterStyle({ display: 'none' })
-        setBigFilterStyle({ display: 'block' })
         dispatch(showLargeFilter())
     }
 
@@ -111,7 +102,7 @@ export const AppHeader = () => {
         dispatch(changeFilter({ location: '', from: null, to: null }))
     }
 
-    const removeOnLogout=()=>{
+    const removeOnLogout = () => {
         resetLoggedInUser(null)
     }
 
@@ -165,7 +156,7 @@ export const AppHeader = () => {
                             </div>
                             <div style={{ display: menuModalShow }}>
                                 <div className="screen" onClick={toggleModal}></div>
-                                <UserMenuModal toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser}/>
+                                <UserMenuModal toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser} />
                             </div>
                         </li>
                     </div>

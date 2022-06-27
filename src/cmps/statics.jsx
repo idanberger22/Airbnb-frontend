@@ -35,8 +35,6 @@ export const Statics = ({ reservations, hostStays }) => {
         return totalIncome
     }
 
-console.log(typeof avgRate)
-
     return (<section>
         <div className="flex-row-space-btw statics-container">
             <div>

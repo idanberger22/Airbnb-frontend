@@ -8,7 +8,7 @@ export const stayService = {
     getById,
     getTopRated,
     addStay,
-    getByHOstId
+    getByHostId
 }
 window.cs = stayService
 
@@ -34,7 +34,7 @@ async function getById(stayId) {
     const stay = await httpService.get(STAY_KEY + `/${stayId}`)
     return stay
 }
-async function getByHOstId(hostId) {
+async function getByHostId(hostId) {
     let stays = await httpService.get('stay')
     const hostStays = stays.filter(stay => stay.host._id === hostId)
     return hostStays
@@ -49,12 +49,3 @@ async function addStay(stay) {
 function getTopRated() {
     return dataService.getTopRated()
 }
-
-
-// roomTypeCopy = ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']
-            // {let roomTypeCopy = JSON.parse(JSON.stringify(exploreFilterBy.roomTypes))
-            // if(roomTypeCopy.length>1) 
-            //     fullRoomTypes.forEach(type => {
-            //         if (!roomTypeCopy.includes(type)) stays = stays.filter(stay => stay.roomType !== type)
-            //     })
-            // } 

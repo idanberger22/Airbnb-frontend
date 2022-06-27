@@ -47,7 +47,7 @@ export const Host = () => {
             setHostStays(null)
             return
         }
-        const stays = await stayService.getByHOstId(loggedInUser._id)
+        const stays = await stayService.getByHostId(loggedInUser._id)
         if (stays.length === 0) {
             setHostStyling(false)
             setListingsDetailsStyling(false)
