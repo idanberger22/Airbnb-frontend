@@ -10,9 +10,7 @@ import { Trips } from './pages/trips'
 import { Host } from './pages/host'
 import ScrollToTop from './cmps/scroll-to-top'
 import { HostYourHome } from './pages/host-your-home'
-
-
-
+import {userService} from './services/user.service.js'
 
 function App() {
   return (
@@ -30,7 +28,7 @@ function App() {
 
           </Helmet>
 
-          <AppHeader />
+          <AppHeader/>
           <main>
             <Routes>
               <Route path='/stay/:stayId' element={<StayDetails />} />
