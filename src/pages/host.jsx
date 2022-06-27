@@ -16,8 +16,8 @@ export const Host = () => {
     const [reservations, setreservations] = useState(null)
     const [hostStyling, setHostStyling] = useState(true)
     const [listingsDetailsStyling, setListingsDetailsStyling] = useState(true)
-    const loggedInUser = userService.getLoggedinUser()
     const [hostStays, setHostStays] = useState(false)
+    const loggedInUser = userService.getLoggedinUser()
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export const Host = () => {
             getReservations()
             getStays()
         }
-    }, [loggedInUser])
+    }, [])
 
     useEffect(() => {
         getReservations()
