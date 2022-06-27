@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
 import { ReservationPreview } from "../cmps/reservation2-preview"
 import { reservationService } from "../services/reservation.service"
@@ -17,7 +17,8 @@ export const Host = () => {
     const [hostStyling, setHostStyling] = useState(true)
     const [listingsDetailsStyling, setListingsDetailsStyling] = useState(true)
     const [hostStays, setHostStays] = useState(false)
-    const loggedInUser = userService.getLoggedinUser()
+    const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
+    const loggedRedux = useSelector((storeState) => storeState.userModule.loggedinUser)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -30,7 +31,11 @@ export const Host = () => {
             getReservations()
             getStays()
         }
-    }, [])
+    }, [loggedInUser])
+
+    useEffect(() => {
+        setLoggedInUser(userService.getLoggedinUser())
+    }, [loggedRedux])
 
     useEffect(() => {
         getReservations()
@@ -71,7 +76,7 @@ export const Host = () => {
     }
 
     if (!loggedInUser || !reservations || !hostStays) return <div className="loader"></div>
-    
+
     return (
         <div className="stock-margin main-host-page">
             {!hostStyling && <div className="become-a-host">
@@ -137,8 +142,6 @@ export const Host = () => {
                         </div>
                     </div>
                 </div>}
-
-
 
                 {listingsDetailsStyling && <section >
                     <h1>Your stays</h1>
