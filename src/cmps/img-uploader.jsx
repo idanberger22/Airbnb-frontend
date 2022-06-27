@@ -10,7 +10,6 @@ export class ImgUploader extends Component {
     isUploading: false
   }
   uploadImg = async (ev) => {
-    console.log('im here')
     this.setState({ isUploading: true })
     const { secure_url, height, width } = await uploadService.uploadImg(ev)
     this.setState({ isUploading: false, imgUrl: secure_url, height, width })

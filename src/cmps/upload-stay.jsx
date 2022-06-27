@@ -94,7 +94,6 @@ export const UploadStay = (props) => {
     const handleChange = (ev) => {
         const field = ev.target.name
         const value = ev.target.value
-        console.log('field', field)
         if (field === 'city' || field === 'country' || field === 'street' || field === 'country-code') {
             setNewStay({ ...newStay, address: { ...newStay.address, [field]: value } })
 
@@ -117,7 +116,6 @@ export const UploadStay = (props) => {
     }
 
     const onClose = () => {
-        console.log('im here in props')
         props.showUploadStayTogle()
     }
 
