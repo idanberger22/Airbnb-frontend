@@ -1,23 +1,21 @@
 
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
-import { ReservationPreview2 } from "../cmps/reservation2-preview"
+import { ReservationPreview } from "../cmps/reservation2-preview"
 import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
 import { NavLink } from "react-router-dom"
 import { utilService } from "../services/util.service"
-import { Statics } from "../cmps/statics"
+import { Statistics } from "../cmps/statistics"
 import { userService } from "../services/user.service"
 
 export const Host = () => {
 
     const [reservations, setreservations] = useState(null)
-    const [uploadStyling, setUploadStyling] = useState(false)
     const [hostStyling, setHostStyling] = useState(true)
     const [listingsDetailsStyling, setListingsDetailsStyling] = useState(true)
-    // const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
     const loggedInUser = userService.getLoggedinUser()
     const [hostStays, setHostStays] = useState(false)
     const dispatch = useDispatch()
@@ -43,7 +41,7 @@ export const Host = () => {
     }, [hostStays])
 
     const getStays = async () => {
-        if(!loggedInUser){
+        if (!loggedInUser) {
             setHostStays(null)
             return
         }
@@ -63,7 +61,7 @@ export const Host = () => {
     }
 
     const getReservations = async () => {
-        if(!loggedInUser){
+        if (!loggedInUser) {
             setreservations(null)
             return
         }
@@ -75,7 +73,6 @@ export const Host = () => {
     if (!loggedInUser) return <h1>must be logged in</h1>
     if (!reservations) return <h1>you currently have no reservations</h1>
     if (!hostStays) return <h1>loading</h1>
-
 
     return (
         <div className="stock-margin main-host-page">
@@ -96,6 +93,7 @@ export const Host = () => {
                 <div className="right-side"></div>
             </div>}
 
+
             {hostStyling && <div className="stock-margin-center">
                 <div className="flex-row-space-btw">
                     <div className="flex">
@@ -110,9 +108,11 @@ export const Host = () => {
                     </div>
                 </div>
 
+
+
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
-                        <Statics reservations={reservations} hostStays={hostStays} />
+                        <Statistics reservations={reservations} hostStays={hostStays} />
                         <div className="flex-col">
                             <h1>Your reservations</h1>
                             <table className="reservations-table" >
@@ -130,8 +130,8 @@ export const Host = () => {
                                 </thead>
                                 <tbody>
                                     {reservations.map(reservation =>
-                                        <tr>
-                                            <ReservationPreview2 getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                        <tr key={reservation._id}>
+                                            <ReservationPreview getReservations={getReservations} reservation={reservation} key={reservation._id} />
                                         </tr>
                                     )}
                                 </tbody>
@@ -139,6 +139,8 @@ export const Host = () => {
                         </div>
                     </div>
                 </div>}
+
+
 
                 {listingsDetailsStyling && <section >
                     <h1>Your stays</h1>

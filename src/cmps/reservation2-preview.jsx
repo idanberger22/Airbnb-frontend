@@ -1,19 +1,11 @@
 import { utilService } from "../services/util.service"
 import { reservationService } from "../services/reservation.service"
-import { userService } from "../services/user.service"
-import { ConfirmedResModalTrips } from "./confirmed-res-modal-trips"
 
-export function ReservationPreview2({ reservation, getReservations }) {
-
-    // var date = reservation.checkIn
+export function ReservationPreview({ reservation, getReservations }) {
 
     const onRemove = async () => {
-        const deletedRes = await reservationService.removeReservation(reservation)
+        await reservationService.removeReservation(reservation)
         getReservations()
-    }
-
-    const openModal = () => {
-
     }
 
     return (<>
@@ -33,8 +25,6 @@ export function ReservationPreview2({ reservation, getReservations }) {
             {reservation.childrens!=0 &&  <tr>
                 <td>Children: {reservation.childrens}</td>
             </tr>}
-                {/* <td>2</td> */}
-            {/* {reservation.adults + reservation.childrens} */}
         </td>
 
         <td>
