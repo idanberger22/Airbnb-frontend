@@ -70,9 +70,8 @@ export const Host = () => {
         setreservations(sortedReservatios)
     }
 
-    if (!loggedInUser) return <h1>must be logged in</h1>
-    if (!reservations) return <h1>you currently have no reservations</h1>
-    if (!hostStays) return <h1>loading</h1>
+    if (!loggedInUser || !reservations || !hostStays) return <div className="loader"></div>
+    
     return (
         <div className="stock-margin main-host-page">
             {!hostStyling && <div className="become-a-host">

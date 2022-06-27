@@ -5,7 +5,6 @@ export function AppFooter() {
     return (
 
         <div id="main-footer" className="stock-margin fixed main-footer">
-            {/* <div className="stock-margin-center"> */}
                 <div className="footer ">
                     <div className="left-side">
                         <li><h1>Staybnb LTD.</h1></li>
@@ -29,7 +28,6 @@ export function AppFooter() {
 
                 </div>
             </div>
-        // </div>
 
     )
 }
