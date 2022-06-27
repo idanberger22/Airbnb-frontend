@@ -36,8 +36,8 @@ export class DateRangeSelector extends Component {
         onFocusChange={this.handleFocusChange}
         startDate={this.state.startDate}
         startDateId="startDate"
-
-      />
+        wrapperClassName="costume"
+        />
     </section>
   }
 }
