@@ -9,6 +9,7 @@ import { StayPreview } from "../cmps/stay-preview"
 import { NavLink } from "react-router-dom"
 import { utilService } from "../services/util.service"
 import { Statics } from "../cmps/statics"
+import { userService } from "../services/user.service"
 
 export const Host = () => {
 
@@ -16,7 +17,8 @@ export const Host = () => {
     const [uploadStyling, setUploadStyling] = useState(false)
     const [hostStyling, setHostStyling] = useState(true)
     const [listingsDetailsStyling, setListingsDetailsStyling] = useState(true)
-    const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
+    // const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
+    const loggedInUser = userService.getLoggedinUser()
     const [hostStays, setHostStays] = useState(false)
     const dispatch = useDispatch()
 

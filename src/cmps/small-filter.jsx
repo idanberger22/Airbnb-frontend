@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { changeFilter } from "../store/actions/stay.action"
 import { NavLink } from "react-router-dom"

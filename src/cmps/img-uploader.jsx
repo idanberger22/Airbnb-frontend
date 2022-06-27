@@ -30,7 +30,7 @@ export class ImgUploader extends Component {
       <div className="upload-preview"  >
         {imgUrl && <img src={imgUrl} style={{ maxWidth: '100px', float: 'right' }} />}
         {!imgUrl && <> <label htmlFor={id} className='red clickable' style={{ marginTop: '0.5rem', marginLeft: '0.5rem' }}>
-            <span class="material-icons">
+            <span className="material-icons">
               drive_folder_upload
             </span>
         </label>

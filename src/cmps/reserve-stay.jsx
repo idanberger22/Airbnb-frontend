@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { DateRangeSelector } from './date-picker'
 import { GuestPicker } from "./guest-picker"
@@ -8,7 +8,6 @@ import { tripsService } from "../services/trips.service"
 import { openModal } from "../store/actions/userActions"
 import { reservationService } from "../services/reservation.service"
 import { ReservationConfirmed } from "../store/actions/reservation.action"
-import { NavLink } from "react-router-dom"
 
 
 export function ReserveStay(props) {
