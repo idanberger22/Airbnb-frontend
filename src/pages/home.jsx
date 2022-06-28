@@ -107,8 +107,8 @@ export const Home = () => {
             </section>
             <div className="become-a-host">
                 <div>
-                    <h1>Become a host!</h1>
-                    <NavLink to='/host'><button className="clickable">learn more</button></NavLink>
+                    <h1>Become a host</h1>
+                    <NavLink to='/host'><button className="reserve-button">learn more</button></NavLink>
                 </div>
             </div>
         </article>
