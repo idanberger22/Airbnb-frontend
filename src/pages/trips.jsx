@@ -6,9 +6,9 @@ import { utilService } from "../services/util.service"
 import { NavLink } from "react-router-dom"
 import hand from '../assets/imgs/hand.svg';
 
-
 export const Trips = () => {
     let loggedinUser = userService.getLoggedinUser()
+   
 
     const [trips, setTrips] = useState(null)
     useEffect(() => {
@@ -22,7 +22,8 @@ export const Trips = () => {
         const sortedTrips = trips.sort((a, b) => Date.parse(a.checkIn) - Date.parse(b.checkIn))
         setTrips(sortedTrips)
     }
-    if (!trips) return <h1>Loding...</h1>
+    if (!trips) return <div className="loader"></div>
+
     return (
         <section className="trips stock-margin">
             <div className="stock-margin-center">

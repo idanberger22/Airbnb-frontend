@@ -1,16 +1,10 @@
 .main-footer{
-    // display: grid;
-
-    // grid-template-columns: 60px 1fr 60px;
     position: fixed;
     bottom: 0;
     width: 100%;
 
     border-top: 2px var(--verylightgray) solid;
     background-color: $headerbackgroundColor;
-    // border-top: 2px var(--verylightgray) solid;
-
-    
 }
 
 .footer-mobile{
@@ -24,7 +18,7 @@
     div{
         grid-column: 1/4;
         display: flex ;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 0.5rem;
     }
 }
