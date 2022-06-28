@@ -53,7 +53,7 @@ export const StayDetails = () => {
                 <div className="features-container">
                     <StayDeatailsBellow stay={stay} />
                 </div>
-                <div className="reserve-container">
+                <div className="reserve-container hidden-from-mobile">
                     <ReserveStay stay={stay} />
                 </div>
             </div>

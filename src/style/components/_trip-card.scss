@@ -59,18 +59,23 @@
 }
 
 .trips-search-card {
-    background-image: url("https://image.shutterstock.com/image-photo/beautiful-summer-tropical-beach-white-260nw-1988709386.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    .left-side-trip{
+        flex-grow: 1;
+    }
+    .right-side-trip{
+        flex-grow: 5;
+
+        background-image: url("https://image.shutterstock.com/image-photo/beautiful-summer-tropical-beach-white-260nw-1988709386.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    border: 0.5px lightgray solid;
     border-radius: 10px;
-    width: 50%;
     margin:2rem auto 2rem 0;
-    padding: 30px;
     a {
         text-decoration: none;
     }
     *{
         font-family: Airbnb-Cereal-Light;
-        margin-bottom: 1.5rem;
     }
 }

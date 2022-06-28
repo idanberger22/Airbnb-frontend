@@ -31,10 +31,10 @@
     padding-bottom: 20px;
 }
 
-.features-container {
-    padding-right: 15%;
-    flex: 80%;
-}
+// .features-container {
+//     padding-right: 15%;
+//     flex: 80%;
+// }
 
 .feature-logo {
     line-height: 3;
@@ -106,7 +106,7 @@
 
 .stay-bellow-container{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    // grid-template-columns: 3fr 1fr;
     
     margin-top: 3rem;
     justify-content: space-between;
@@ -115,7 +115,7 @@
 .main-reviews{
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    // grid-template-columns: repeat(2, minmax(auto, 1fr));
     gap: 1rem;
 
 }

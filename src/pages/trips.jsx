@@ -34,10 +34,15 @@ export const Trips = () => {
                         </h1>
                     </li>
                 </div>
-                <section className="trips-search-card noselect">
-                    <h2>Looking for the next place to visit?</h2>
-                    <h4>time to dust off your bags and start planning your next adventure</h4>
-                    <NavLink to='/explore'><button style={{ width: '200px' }} className="reserve-button">explore for more</button></NavLink>
+                <section className="flex trips-search-card">
+                    <div className="left-side-trip">
+                        <h2>Looking for the next place to visit?</h2>
+                        <h4>time to dust off your bags and start planning your next adventure</h4>
+                        <NavLink to='/explore'><button style={{ width: '200px' }} className="reserve-button">explore for more</button></NavLink>
+                    </div>
+                    <div className="right-side-trip ">
+                        right
+                    </div>
                 </section>
                 <h2 style={{ marginBottom: '2rem' }}>Your trips</h2>
 
