@@ -9,10 +9,6 @@
         background-color: var(--headerbackgroundColor);
         grid-column: 3;
     }
-
-
-
-
 }
 
 header {
@@ -80,67 +76,9 @@ header {
 
 
 .big {
-    grid-row: 2;
-    padding: 0 20%;
-    // 1.4375rem;
-
     *:not(.material-symbols-sharp) {
         font-size: 1rem;
         font-family: Airbnb-Cereal-Medium !important;
-        // color: #222222;
-    }
-
-    
-    .inpt-fillter:nth-child(2) {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-
-        .date-range-selector {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .DateRangePicker_1 {
-                width: 100%;
-
-                .DateInput_1 {
-                    display: flex;
-                    flex-direction: column;
-                    // width: 50%;
-                }
-            }
-        }
-    }
-
-    // >div {
-    //     width: 35rem;
-    // }
-
-    .total-filter {
-        height: 62px;
-        align-self: center;
-        margin: 0 auto;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-
-        &:first-child {
-            input {
-                width: 9rem;
-            }
-
-        }
-
-        &:nth-child(2) {
-            flex-direction: column;
-        }
-
-
-    }
-
-    .DateInput_input_1 {
-        width: unset !important;
     }
 }
 

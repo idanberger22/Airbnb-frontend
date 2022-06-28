@@ -63,7 +63,9 @@
 
 .DateInput_input {
     text-align: center;
+    padding: 0 !important;
 }
+
 
 .DateInput_input__focused {
     border-bottom: 2px solid $clrRED !important;

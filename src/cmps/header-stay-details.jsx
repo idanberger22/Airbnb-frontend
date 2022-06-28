@@ -3,16 +3,6 @@ import { useEffect, useState } from "react"
 
 export const HeaderStayDeatails = ({ stay }) => {
 
-
-    useEffect(() => {
-
-
-
-
-    }, [])
-
-
-
     return <section className="details-header">
     <div className="decription-stay-priview">
         <h2>{stay.name}</h2>

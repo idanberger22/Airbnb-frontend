@@ -31,25 +31,28 @@ export const MainFilter = () => {
         if (dates.endDate) setFilterBy({ ...filterBy, to: dates.endDate })
     }
 
-    const clearFilterBy = () => {
-        setFilterBy({ ...filterBy, location: '' })
-        dispatchFilter()
-    }
-
     return (
         <div className="total-filter">
+            
             <div className="inpt-fillter">
-                <div className="center" style={{alignItems:'flex-start'}}>
+                <div className="center" style={{ alignItems: 'flex-start' }}>
                     <label htmlFor='main-input' className="main-filter-label font-bold clickable">Where</label>
-                    <input name="location" value={filterBy.location} type="text" placeholder="Search destination" onChange={handleChange} autoComplete='off' id='main-input'/>
+                    <input name="location" value={filterBy.location} type="text" placeholder="Search destination" onChange={handleChange} autoComplete='off' id='main-input' />
                 </div>
             </div>
-            <div className="inpt-fillter center" style={{position:'relative'}}>
-            <label className="main-filter-label font-bold clickable checkin-pos">Check in</label>
-            <label className="main-filter-label font-bold clickable checkout-pos">Check out</label>
-            <div className="placeholder" style={{width:'5px',height:'13px'}}></div>
-                <DateRangeSelector place={'filter'} handleDate={handleDate} startDate={loadedFilter.from} endDate={loadedFilter.to} />
+
+
+            <div className="inpt-fillter" style={{ position: 'relative' }}>
+                <div className="center">
+                    <div className="filter-labels-holder">
+                        <label className="main-filter-label font-bold clickable">Check in</label>
+                        <label className="main-filter-label font-bold clickable">Check out</label>
+                    </div>
+                    <DateRangeSelector place={'filter'} handleDate={handleDate} startDate={loadedFilter.from} endDate={loadedFilter.to} />
+                </div>
             </div>
+
+
             <NavLink className="navlink" to='/explore'>
                 <div onClick={dispatchFilter}>
                     <div className="inpt-fillter search-symbol">

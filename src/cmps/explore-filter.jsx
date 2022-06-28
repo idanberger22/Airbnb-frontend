@@ -69,7 +69,6 @@ export const ExploreFilter = (props) => {
         setExploreFilterBy({...exploreFilterBy,roomTypes: ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room']})
     }
 
-    // if (!pricesData) return <h1>loading</h1>
     return (
         <div className='secondary-filter'>
             {priceIsShown && <><div className="screen" onClick={() => setPriceIsShown(false)}></div>
