@@ -10,7 +10,22 @@
     background-color: $headerbackgroundColor;
     // border-top: 2px var(--verylightgray) solid;
 
-    >div{
+    
+}
+
+.footer-mobile{
+    *{
+        text-decoration: none;
+        color: black;
+    }
+    img{
+        width: 1rem;
+    }
+    div{
+        grid-column: 1/4;
+        display: flex ;
+        justify-content: space-between;
+        padding: 0.5rem;
     }
 }
 

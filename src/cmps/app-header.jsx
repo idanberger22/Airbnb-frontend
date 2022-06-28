@@ -120,7 +120,7 @@ export const AppHeader = () => {
     }
 
     return (
-        <header id="main-header" className="stock-margin main-header">
+        <header id="main-header" className="stock-margin main-header app-header-main">
             {showModalConfirmed && <ConfirmedResModal reservation={ReservationConfirmed} />}
             <div className="left"></div>
             <div className="stock-margin-center flex-col">

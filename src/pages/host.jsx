@@ -79,6 +79,7 @@ export const Host = () => {
 
     return (
         <div className="stock-margin main-host-page">
+            {console.log('checking')}
             {!hostStyling && <div className="become-a-host">
                 <div className="left-side">
                     <div className="logo-become-a-host">
@@ -121,13 +122,13 @@ export const Host = () => {
                             <table className="reservations-table" >
                                 <thead>
                                     <tr>
-                                        <th>Listing</th>
-                                        <th>Guests</th>
-                                        <th>Check-in</th>
-                                        <th>Check-out</th>
-                                        <th>Nights</th>
-                                        <th>Total Payout</th>
-                                        <th>Options</th>
+                                        <td>Listing</td>
+                                        <td>Guests</td>
+                                        <td>Check-in</td>
+                                        <td>Check-out</td>
+                                        <td>Nights</td>
+                                        <td>Total Payout</td>
+                                        <td>Options</td>
 
                                     </tr>
                                 </thead>

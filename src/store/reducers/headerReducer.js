@@ -2,7 +2,6 @@ const INITIAL_STATE = {
     isLargeFilterShown: false,
     isSmallFilterShown: true,
     isLogoWhite: false
-
 }
 
 export function headerReducer(state = INITIAL_STATE, action) {

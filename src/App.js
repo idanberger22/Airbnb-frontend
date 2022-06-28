@@ -10,7 +10,11 @@ import { Trips } from './pages/trips'
 import { Host } from './pages/host'
 import ScrollToTop from './cmps/scroll-to-top'
 import { HostYourHome } from './pages/host-your-home'
-import {userService} from './services/user.service.js'
+import { AppHeaderMobile } from './cmps/app-header-mobile'
+import { AppFooterMobile } from './cmps/app-footer-mobile'
+
+
+
 
 function App() {
   return (
@@ -28,7 +32,8 @@ function App() {
 
           </Helmet>
 
-          <AppHeader/>
+          <AppHeader />
+          <AppHeaderMobile/>
           <main>
             <Routes>
               <Route path='/stay/:stayId' element={<StayDetails />} />
@@ -42,6 +47,7 @@ function App() {
             <LoginSignup/>
           </main>
           <AppFooter />
+          <AppFooterMobile/>
         </div>
      
     </Router>

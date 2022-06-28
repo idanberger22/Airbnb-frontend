@@ -23,10 +23,13 @@ export const SmallFilter = () => {
         setFilterBy({ ...filterBy, [field]: value })
     }
 
+    
+
+
     return (
         <div className="total-filter">
             <div className="inpt-fillter">
-                <input name="location" value={loadedFilter.location} type="text" placeholder="Start your search" onChange={handleChange} />
+                <input  name="location" value={loadedFilter.location} type="text" placeholder="Start your search" onChange={handleChange} />
             </div>
             <NavLink className="navlink" to='/explore'>
                 <div onClick={dispatchFilter}>
@@ -35,6 +38,8 @@ export const SmallFilter = () => {
                     </div>
                 </div>
             </NavLink>
+           
+
         </div>
     )
 }
