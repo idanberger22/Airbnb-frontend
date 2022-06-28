@@ -43,10 +43,11 @@ body {
     height: 8vmax;
     border-right: 6px solid $clrRED;
     border-radius: 100%;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    margin: auto;
     animation: spinRight 800ms linear infinite;
     
     &:before, &:after {
