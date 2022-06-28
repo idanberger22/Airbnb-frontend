@@ -33,7 +33,6 @@ export function Explore() {
     const changeCss = () => {
         var bodyElement = document.querySelector("body");
         var navElement = document.querySelector(".explore-filterr");
-        // this.scrollY > 5 ? navElement.style.visibility = 'hidden' : navElement.style.visibility = 'visible';
     }
 
     const getStays = async () => {
@@ -47,9 +46,7 @@ export function Explore() {
     }
     
     
-    if (!stays) return (  <h1>...Loading</h1>
-     )
-        
+    if (!stays) return ( <div className="loader"></div> )
     
     return (
         <div className="stock-margin">

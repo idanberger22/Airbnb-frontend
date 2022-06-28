@@ -40,13 +40,13 @@ export const Statistics = ({ reservations, hostStays }) => {
             <div>
 
                 <h1>
-                    {nIghtsAvg}
+                    {nIghtsAvg} nights
                 </h1>
                 <h3>
                     Average nightly rate
                 </h3>
             </div>
-            <div>
+            <div>  
 
 
                 <h1>

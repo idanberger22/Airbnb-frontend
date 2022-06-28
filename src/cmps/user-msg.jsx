@@ -20,7 +20,6 @@ export class UserMsg extends React.Component {
     })
     
     socketService.on(SOCKET_EVENT_REVIEW_ADDED, (data) => {
-      console.log('GOT from socket' )
       const msg=`New reservation from ${data.guestName}`
       this.setState({ msg })
       setTimeout(()=>{

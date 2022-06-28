@@ -34,6 +34,7 @@ export const AppHeader = () => {
     useEffect(() => {
         window.addEventListener('scroll', changeCss, { passive: true });
         updateLogoColor()
+        getUserStays()
         return () => {
             window.removeEventListener('scroll', changeCss, { passive: true });
         }
@@ -46,7 +47,8 @@ export const AppHeader = () => {
 
 
     const getUserStays = async () => {
-        const stays = await stayService.getByHostId(logged._id)
+        const loggedUser = await userService.getLoggedinUser()
+        const stays = await stayService.getByHostId(loggedUser._id)
         if(stays && stays.length > 0 ) setHostBtnTxt('Host dashboard')
     }
 

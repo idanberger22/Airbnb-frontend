@@ -32,7 +32,6 @@
     display: none !important;
 }
 
-.DateRangePicker{
-    width: 100%;
-
+.DayPickerKeyboardShortcuts_show__topRight::before {
+    border-right: 33px solid $clrRED !important;
 }

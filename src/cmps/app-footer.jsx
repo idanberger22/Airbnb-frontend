@@ -29,7 +29,6 @@ export function AppFooter() {
 
                 </div>
             </div>
-        // </div>
 
     )
 }

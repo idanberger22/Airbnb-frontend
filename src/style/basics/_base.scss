@@ -38,5 +38,51 @@ body {
     font-family: Airbnb-Cereal-Medium !important;
 }
 
+.loader {
+    width: 8vmax;
+    height: 8vmax;
+    border-right: 6px solid $clrRED;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: spinRight 800ms linear infinite;
+    
+    &:before, &:after {
+      content: '';
+      width: 6vmax;
+      height: 6vmax;
+      display: block;
+      position: absolute;
+      top: calc(50% - 3vmax);
+      left: calc(50% - 3vmax);
+      border-left: 3px solid $clrRED;
+      border-radius: 100%;
+      animation: spinLeft 800ms linear infinite;
+    }
+    
+    &:after {
+      width: 4vmax;
+      height: 4vmax;
+      top: calc(50% - 2vmax);
+      left: calc(50% - 2vmax);
+      border: 0;
+      border-right: 2px solid $clrRED;
+      animation: none;
+    }
+  }
+  
+  @keyframes spinLeft {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+  }
+  
+  @keyframes spinRight {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+  }
+  
+
 
 
