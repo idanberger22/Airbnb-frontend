@@ -10,7 +10,6 @@
 // BASICS
 @import 'basics/helpers';
 @import 'basics/base';
-@import './responsive/mq';
 
 //CMPS
 @import '/src/style/components/stay-priview';
@@ -36,7 +35,6 @@
 @import '/src/style/components/user-msg';
 @import '/src/style/components/statics';
 
-
 //pages
 @import '/src/style/pages/home';
 @import '/src/style/pages/Explore';
@@ -44,3 +42,6 @@
 @import '/src/style/pages/stay-details';
 @import '/src/style/basics/for-all';
 @import '/src/style/pages//host';
+
+//mq
+@import './responsive/mq';

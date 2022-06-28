@@ -14,8 +14,6 @@ export const AppHeaderMobile = () => {
         setModalIsOpen({ display: 'block' })
     }
 
-
-
     return (
         <header id="main-header" className="stock-margin main-header mobile-header">
             {/* {showModalConfirmed && <ConfirmedResModal reservation={ReservationConfirmed} />} */}
@@ -29,8 +27,7 @@ export const AppHeaderMobile = () => {
                         </div> */}
                     </div>
                     <div style={modalIsOpen} className="search-drop-down">
-                        <input type="text" placeholder="date" />
-                        <DateRangeSelector />
+                        {/* <DateRangeSelector /> */}
                     </div>
                 </nav>
                 <UserMsg />

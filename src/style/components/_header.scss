@@ -255,9 +255,18 @@ nav {
         border-radius: 50%;
         margin-right: 5px;
     }
+
 }
 
 .user-menu:hover {
     transition: 0.12s;
     box-shadow: 0px 3px 5px -3px rgba($color: $clrBLACK, $alpha: 0.6);
+}
+
+.user-icon {
+    object-fit: cover;
+    height: 20px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
 }

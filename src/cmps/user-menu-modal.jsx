@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom"
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { openModal,logOut } from "../store/actions/userActions"
 import { userService } from "../services/user.service"
 
 export const UserMenuModal = (props) => {
 
     const dispatch = useDispatch()
-    // const loggedinUser = useSelector((storeState) => storeState.userModule.loggedinUser)
     const loggedinUser = userService.getLoggedinUser()
     
 
