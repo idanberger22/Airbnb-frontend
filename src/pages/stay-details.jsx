@@ -53,6 +53,7 @@ export const StayDetails = () => {
                 </div>
             </div>
             <div className="line"></div>
+            <h1>Reviews</h1>
             <section className="main-reviews">
                 {stay.reviews.map(review =>
                     <ReviewLine review={review} key={review.txt} />

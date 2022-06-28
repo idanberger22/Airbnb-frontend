@@ -37,7 +37,6 @@ export const ReviewLine = ({ review }) => {
             <p className="content">
                 {review.txt.slice(0,200)}
                 {review.txt.length > 200 && '...'}
-                {review.txt.length > 200 && <span className="review-more"><br />Show more</span>}
             </p>
         </div>
 
