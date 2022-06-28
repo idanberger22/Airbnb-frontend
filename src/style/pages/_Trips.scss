@@ -1,3 +1,5 @@
+
+
 .trips {
     padding-top: 170px;
 
@@ -21,5 +23,50 @@
         }
 
         margin-bottom: 2rem;
+    }
+}
+
+.trips-search-card {
+    h4{
+        color: grey;
+    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .left-side-trip{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 2rem;
+        // grid-column: 1;
+        border-left: 1px lightgray solid;
+        border-top: 1px lightgray solid;
+        border-bottom: 1px lightgray solid;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+        img{
+            width: 3rem;
+        }
+        
+    }
+
+    
+    .right-side-trip{
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        grid-column: 2/-1;
+        
+
+        background-image: url("../../assets/imgs/http___cdn.cnn.com_cnnnext_dam_assets_181010131059-australia-best-beaches-cossies-beach-cocos3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    margin:2rem auto 2rem 0;
+    a {
+        text-decoration: none;
+    }
+    *{
+        font-family: Airbnb-Cereal-Light;
     }
 }
