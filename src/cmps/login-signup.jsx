@@ -5,7 +5,6 @@ import { createTheme } from "@material-ui/core/styles"
 import { MuiThemeProvider } from "@material-ui/core/styles"
 import { connect } from 'react-redux'
 import { closeModal, openModal,login, signup } from '../store/actions/userActions'
-import { userService } from '../services/user.service'
 export class _LoginSignup extends React.Component {
 
     state = {
@@ -127,9 +126,9 @@ export class _LoginSignup extends React.Component {
                                         {<span className="error">{errors.email}</span>}
                                         <Field name="imgUrl" type="text" as={TextField} variant="outlined" label="your image URL" fullWidth InputLabelProps={{ style: { color: '#222222' } }} />
                                     </MuiThemeProvider>
-                                    <div className='center' style={{ height: '1.5rem', marginTop: '0.5rem' }}>
+                                    
                                         <p className='font-light'>*This website uses cookies. by signing up, you accept all Cookies.</p>
-                                    </div>
+                                    
                                     <button className='reserve-button' style={{ '--mouse-x': this.state.mouseX, '--mouse-y': this.state.mouseY, margin: 'auto', marginTop: '12px' }}
                                         onMouseMove={this.onMousMove} onClick={this.onV}>
                                         Continue

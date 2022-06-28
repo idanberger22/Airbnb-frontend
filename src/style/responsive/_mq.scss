@@ -1,25 +1,25 @@
 /* MOBILE ONLY  */
 
 @media (max-width: 500px) {
-
-    .hidden-from-mobile{
+    .hidden-from-mobile {
         display: none;
         visibility: hidden;
     }
 
-    .stock-margin, .stock-margin-narrow{
+    .stock-margin,
+    .stock-margin-narrow {
         grid-template-columns: 10px 1fr 10px;
     }
 
-    .card-container{
+    .card-container {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 
-    .secondary-header-stay-details{
+    .secondary-header-stay-details {
         flex-direction: column;
     }
 
-    .footer-desktop{
+    .footer-desktop {
         visibility: hidden;
     }
 
@@ -31,7 +31,6 @@
         pointer-events: none;
         input {
             pointer-events: all;
-
         }
     }
 
@@ -70,7 +69,8 @@
         }
     }
 
-    .become-a-host, .main-page-head{
+    .become-a-host,
+    .main-page-head {
         display: none;
     }
 
@@ -80,26 +80,31 @@
         display: flex;
         flex-direction: column;
         // padding: 0 20%;
-        
     }
-    
-    .home-page-card-container{
-        margin-top: 5rem;
 
+    .home-page-card-container {
+        margin-top: 5rem;
     }
 
     .user-menu-container {
         position: fixed;
-        top: calc(100vh - 215px) ;
-        right: 15px ;
+        top: calc(100vh - 215px);
+        right: 15px;
         width: unset;
         padding: 5px;
     }
-    
+}
+
+@media (max-width: 580px) {
+    .form-container {
+        width: 320px;
+        p {
+            display: none;
+        }
+    }
 }
 
 @media (min-width: 501px) {
-
     .main-reviews {
         grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
@@ -113,26 +118,25 @@
         flex: 80% 1;
     }
 
-    .stock-margin{
+    .stock-margin {
         grid-template-columns: 60px 1fr 60px;
     }
 
-    .card-container{
+    .card-container {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
-    .mobile{
-     display: none;
-     visibility: hidden;   
+    .mobile {
+        display: none;
+        visibility: hidden;
     }
 
-    .footer-mobile{
+    .footer-mobile {
         visibility: hidden;
     }
 
     .mobile-header {
         visibility: hidden;
         grid-column: 2;
-
     }
 }
