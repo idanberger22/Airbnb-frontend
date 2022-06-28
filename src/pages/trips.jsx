@@ -4,6 +4,8 @@ import { reservationService } from "../services/reservation.service"
 import { userService } from "../services/user.service"
 import { utilService } from "../services/util.service"
 import { NavLink } from "react-router-dom"
+import hand from '../assets/imgs/hand.svg';
+
 
 export const Trips = () => {
     let loggedinUser = userService.getLoggedinUser()
@@ -34,14 +36,17 @@ export const Trips = () => {
                         </h1>
                     </li>
                 </div>
-                <section className="flex trips-search-card">
+                <section className="trips-search-card">
                     <div className="left-side-trip">
-                        <h2>Looking for the next place to visit?</h2>
+                    <img src={hand} />
+                    <div>
+                        <h3>Looking for the next place to visit?</h3>
                         <h4>time to dust off your bags and start planning your next adventure</h4>
+                    </div>
                         <NavLink to='/explore'><button style={{ width: '200px' }} className="reserve-button">explore for more</button></NavLink>
                     </div>
                     <div className="right-side-trip ">
-                        right
+                        
                     </div>
                 </section>
                 <h2 style={{ marginBottom: '2rem' }}>Your trips</h2>

@@ -43,13 +43,13 @@ export function AppFooterMobile() {
         <div id="main-footer" className="stock-margin fixed main-footer footer-mobile">
             <div >
                 <li ><NavLink className="font-medium" to='/'>
-                    <span class="material-icons">
+                    <span className="material-icons">
                         home
                     </span>
                 </NavLink></li>
 
                 <li ><NavLink className="font-medium" to='/explore'>
-                    <span class="material-icons">
+                    <span className="material-icons">
                         search
                     </span>
                 </NavLink></li>

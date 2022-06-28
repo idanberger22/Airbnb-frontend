@@ -133,7 +133,7 @@ export const UploadStay = (props) => {
             <h1>Upload a stay to host</h1>
             <div onClick={onClose}>
 
-            <span  class="material-icons">close</span>
+            <span  className="material-icons">close</span>
             </div>
             
             <div className="container">

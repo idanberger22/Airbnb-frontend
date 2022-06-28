@@ -1,7 +1,32 @@
 /* MOBILE ONLY  */
 
-@media (max-width: 500px) {
-    .hidden-from-mobile {
+@media (max-width: 640px) {
+
+    .gallery-grid{
+        gap: 2px;
+    }
+
+
+
+    
+
+    .right-side-trip{
+        display: none;
+    }
+    
+    .left-side-trip{
+        grid-column: 1/-1;
+        border-radius: 12px;
+        border: 1px lightgray solid;
+    }
+
+    .secondary-filter{
+        margin-top: 75px;
+    }
+
+    
+
+    .hidden-from-mobile{
         display: none;
         visibility: hidden;
     }
@@ -60,7 +85,7 @@
         }
 
         .small {
-            padding: 0.5rem;
+            // padding: 0.5rem;
             display: unset !important;
         }
 
@@ -93,9 +118,6 @@
         width: unset;
         padding: 5px;
     }
-}
-
-@media (max-width: 580px) {
     .form-container {
         width: 320px;
         p {
@@ -104,7 +126,118 @@
     }
 }
 
-@media (min-width: 501px) {
+
+    
+
+
+
+/* SMALL */
+
+// @media (min-width: 660px) {
+//     .main-layout {
+//         max-width: 600px;
+//         margin: 0 auto;
+//     }
+// }
+
+
+/* MEDIUM */
+
+@media (min-width: 640px) {
+
+    .gallery-grid{
+        gap: 8px;
+    }
+
+    .trip-cards-container{
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));;
+    }
+
+    .left-side-trip{
+        grid-column: 1;
+    }
+    // .main-layout {
+    //     max-width: 860px;
+    // }
+
+    // .hidden-from-tablet{
+    //     display: none;
+    //     visibility: hidden;
+    // }
+
+    .main-nav{
+        .logo{
+            display: none;
+        }
+    }
+    .secondary-filter{
+        margin-top: 170px;
+    }
+
+    .main-reviews {
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+    }
+
+    // .stay-bellow-container {
+        
+    //     grid-template-columns: 3fr 1fr;
+        
+    // }
+
+    // .features-container {
+    //     padding-right: 15%;
+    //     flex: 80% 1;
+    // }
+
+    .stock-margin{
+        grid-template-columns: 60px 1fr 60px;
+    }
+
+    .card-container{
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .mobile{
+     display: none;
+     visibility: hidden;   
+    }
+
+    .footer-mobile{
+        visibility: hidden;
+    }
+
+    .mobile-header {
+        visibility: hidden;
+        grid-column: 2;
+
+    }
+
+    // .logo{
+    //     display: none;
+    //     visibility: hidden;
+    // }
+}
+
+
+// /* LARGE */
+
+@media (min-width: 920px) {
+
+    .hidden-from-tablet{
+        display: unset;
+        visibility: visible;
+    }
+
+    .main-nav{
+        .logo{
+            display: -webkit-box;
+        }
+    }
+
+    .secondary-filter{
+        margin-top: 170px;
+    }
+
     .main-reviews {
         grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
