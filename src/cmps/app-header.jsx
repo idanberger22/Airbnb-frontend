@@ -113,10 +113,10 @@ export const AppHeader = () => {
     }
     const getImg = () => {
         if (loggedinUser) {
-            if (loggedinUser.imgUrl) return <img src={loggedinUser.imgUrl} className='user-icon' />
-            else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon' />
+            if (loggedinUser.imgUrl) return <img src={loggedinUser.imgUrl} />
+            else return <img src={require("../assets/imgs/user-icon.png")}/>
         }
-        else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon' />
+        else return <img src={require("../assets/imgs/user-icon.png")} />
     }
 
     return (

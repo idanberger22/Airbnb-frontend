@@ -24,10 +24,10 @@
 
     
 
-    // .hidden-from-mobile{
-    //     display: none;
-    //     visibility: hidden;
-    // }
+    .hidden-from-mobile{
+        display: none;
+        visibility: hidden;
+    }
 
     .stock-margin, .stock-margin-narrow{
         grid-template-columns: 10px 1fr 10px;
@@ -41,22 +41,16 @@
         flex-direction: column;
     }
 
-   
-   
-    
     .footer-desktop{
         visibility: hidden;
     }
 
     .nav-link-parent {
-
         display: none;
-
     }
 
     .small-filte-parent {
         pointer-events: none;
-
         input {
             pointer-events: all;
 
@@ -96,17 +90,11 @@
         .total-filter {
             justify-content: space-between;
         }
-
-
     }
 
     .become-a-host, .main-page-head{
         display: none;
     }
-
-
-
-
 
     // , .home-page-card-line
     .home-page-card-container .home-page-card-line {
@@ -122,6 +110,14 @@
 
     }
 
+    .user-menu-container {
+        position: fixed;
+        top: calc(100vh - 215px) ;
+        right: 15px ;
+        width: unset;
+        padding: 5px;
+    }
+    
 }
 
 
@@ -237,9 +233,7 @@
     }
 
     .stay-bellow-container {
-        
         grid-template-columns: 3fr 1fr;
-        
     }
 
     .features-container {
@@ -269,23 +263,4 @@
         grid-column: 2;
 
     }
-
-
-
-
-    // .main-layout {
-    //     max-width: 1060px;
-    // }
-
-    // .card-layout>*:nth-child(even) {
-    //     padding-inline-start: 80px;
-    // }
-
-    // .card-layout>*:nth-child(odd):not(:first-child) {
-    //     padding-inline-end: 80px;
-    // }
-
-    // .card-layout>* {
-    //     margin-bottom: 130px;
-    // }
 }

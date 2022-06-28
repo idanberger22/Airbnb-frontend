@@ -38,6 +38,7 @@ export const SmallFilter = () => {
                     </div>
                 </div>
             </NavLink>
+            
            
 
         </div>
