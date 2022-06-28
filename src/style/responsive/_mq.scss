@@ -95,12 +95,11 @@
         display: none;
     }
 
-    // , .home-page-card-line
     .home-page-card-container .home-page-card-line {
-        grid-template-columns: unset !important;
-        display: flex;
-        flex-direction: column;
-        // padding: 0 20%;
+        grid-template-columns: 1fr 1fr;
+        // grid-template-columns: unset !important;
+        // display: flex;
+        // flex-direction: column;
     }
 
     .home-page-card-container {
