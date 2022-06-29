@@ -73,7 +73,7 @@ export function ReserveStay(props) {
     }
 
     const reserveStay = async () => {
-        if(props.isMobile)  props.showReserveCmp(false)
+        if (props.isMobile) props.showReserveCmp(false)
         reservation.user = userService.getLoggedinUser()
         if (!reservation.user) {
             dispatch(openModal(true))
@@ -84,6 +84,7 @@ export function ReserveStay(props) {
         else {
             setResModalIsOpen(true)
             await reservationService.addReservation(reservation)
+            
             dispatchReservation(reservation)
             tripsService.addTrip(reservation)
         }
