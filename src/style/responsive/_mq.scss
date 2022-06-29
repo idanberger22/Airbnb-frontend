@@ -2,6 +2,8 @@
 
 @media (max-width: 640px) {
     .main-nav {
+        width: 85%;
+        margin: auto;
         display: unset;
         margin-top: 1rem;
         height: unset;
@@ -14,9 +16,8 @@
     .filterr {
         display: unset;
 
-        >div {
+        > div {
             display: unset;
-
         }
 
         .total-filter {
@@ -32,7 +33,8 @@
             top: 0;
 
             .inpt-fillter:first-child {
-                align-self: flex-start;
+                align-self: center;
+                margin-top: 10px;
             }
 
             .filter-labels-holder {
@@ -50,6 +52,10 @@
             }
         }
     }
+
+    // .filterr .navlink div {
+    //     padding: 0px 2px 4px 2px !important;
+    // }
 
     .right-side-trip {
         display: none;
@@ -143,18 +149,18 @@
         background-position: 54% !important;
         h1 {
             max-width: 150px;
-            font-size:2.25rem !important;
+            font-size: 2.25rem !important;
         }
-        button{
+        button {
             margin-top: 15px !important;
         }
     }
 
     .host-modal-fullscreen {
-        h1{
+        h1 {
             font-size: 2rem;
         }
-        .right-side{
+        .right-side {
             display: none !important;
         }
     }
@@ -177,7 +183,7 @@
         border-radius: 0;
         box-shadow: unset;
         width: 100%;
-        >li{
+        > li {
             border-top: 1px solid $clrGRAY;
         }
     }
@@ -203,10 +209,9 @@
         gap: 1rem;
         border: unset;
         z-index: 101;
-
     }
 
-    .res-confirmed-modal{
+    .res-confirmed-modal {
         width: 100%;
         height: 100vh;
         z-index: 100;
@@ -225,7 +230,7 @@
     }
 
     .host-modal-fullscreen {
-        h1{
+        h1 {
             font-size: 3rem;
         }
     }
@@ -251,7 +256,6 @@
     .main-reviews {
         grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
-
 
     .stock-margin {
         grid-template-columns: 60px 1fr 60px;
