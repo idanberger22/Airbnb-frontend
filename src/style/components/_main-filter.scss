@@ -76,6 +76,20 @@
           box-sizing: border-box;
           box-shadow: inset 0 0 0 2px lightgray;
      }
+     
+}
+.total-filter-small {
+     padding-left: 1rem;
+     display: flex;
+     box-shadow: inset 0 0 0 1px lightgray;
+     background-color: $bgc;
+     border-radius: 42px;
+     justify-content: space-between;
+
+     &:hover {
+          box-sizing: border-box;
+          box-shadow: inset 0 0 0 2px lightgray;
+     }
 }
 
 .main-filter-label {

@@ -23,7 +23,7 @@ export const StayDetails = () => {
         var myElement1 = document.getElementById("main-footer");
         myElement1.classList.add("stock-margin-narrow");
         myElement1.classList.remove("stock-margin");
-        
+
         return () => {
             myElement.classList.remove("stock-margin-narrow");
             myElement.classList.add("stock-margin");
@@ -38,6 +38,12 @@ export const StayDetails = () => {
         setStay(stay)
     }
 
+    const showReserveCmp = () => {
+        document.documentElement.style.setProperty('--ResVisible', 'block');
+
+
+    }
+
     if (!stay) return <div className="loader"></div>
 
     return <div className="stock-margin-narrow main-stay-details-container">
@@ -48,7 +54,7 @@ export const StayDetails = () => {
                 <div className="features-container">
                     <StayDeatailsBellow stay={stay} />
                 </div>
-                <div className="reserve-container hidden-from-mobile hidden-from-tablet">
+                <div className="reserve-container">
                     <ReserveStay stay={stay} />
                 </div>
             </div>
@@ -62,6 +68,9 @@ export const StayDetails = () => {
             <section className="map">
                 <MapCmp stay={stay} />
             </section>
+            {/* <div className="flex reserve-container-mobile hidden-from-tablet2">
+                <button onClick={showReserveCmp} className="reserve-button mobile-btn-reserve">Reserve</button>
+            </div> */}
         </div>
     </div>
 }

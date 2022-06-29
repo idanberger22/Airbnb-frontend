@@ -33,7 +33,7 @@ function App() {
           </Helmet>
 
           <AppHeader />
-          <AppHeaderMobile/>
+          {/* <AppHeaderMobile/> */}
           <main>
             <Routes>
               <Route path='/stay/:stayId' element={<StayDetails />} />

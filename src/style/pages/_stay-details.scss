@@ -177,3 +177,12 @@
     // width: 300px;
 }
 
+.reserve-container-mobile {
+    position: fixed;
+    bottom: 44px;
+    left: 0;
+    padding: 1rem;
+    background-color: $bgc;
+    width: 100%;
+}
+

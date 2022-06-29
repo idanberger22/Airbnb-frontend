@@ -1,5 +1,6 @@
 .date-range-selector {
     display: flex;
+    justify-content: space-around;
     .DateRangePickerInput {
         border: unset;
     }

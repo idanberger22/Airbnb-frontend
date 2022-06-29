@@ -27,7 +27,7 @@ export const SmallFilter = () => {
 
 
     return (
-        <div className="total-filter">
+        <div className="total-filter-small">
             <div className="inpt-fillter">
                 <input  name="location" value={loadedFilter.location} type="text" placeholder="Start your search" onChange={handleChange} />
             </div>
