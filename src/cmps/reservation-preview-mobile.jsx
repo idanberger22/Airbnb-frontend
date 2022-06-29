@@ -9,25 +9,11 @@ export function ReservationPreviewMobile({ reservation, getReservations }) {
     }
 
     return (<div className="reseravtion-preview-mobile">
-
-        {reservation.stay.name}
-
-        {reservation.user.fullName}
-
-        {reservation.adults}
-
-        {reservation.childrens}
-
-        {reservation.checkIn.substring(0, 10)}
-
-        {reservation.checkOut.substring(0, 10)}
-
-        {reservation.nights}
-
-        ${utilService.getUsPrice(reservation.totalPrice)}
-
+        <h1>confirmed · {reservation.user.fullName}</h1>
+        <p>{reservation.stay.name}</p>
+        <p>{reservation.checkIn.substring(0, 10)} to {reservation.checkOut.substring(0, 10)}</p>
+        <p>{reservation.adults} adults · {reservation.nights} nights g· ${utilService.getUsPrice(reservation.totalPrice)}</p>
         <button className="clickable" onClick={onRemove}>Reject</button>
-
     </div>
     )
 

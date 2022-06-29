@@ -1,32 +1,26 @@
 .main-host-page {
-
-    .add-stay-btn{
-        span{
-
+    .add-stay-btn {
+        span {
             font-size: 4rem;
             cursor: pointer;
             border: 0.1px black solid;
             border-radius: 8px;
-
         }
     }
 
-
-
-    section ,.reservations-container{
-
-        >h1{
-    
+    section,
+    .reservations-container {
+        > h1 {
             margin-top: 5rem;
             font-size: 2em;
         }
     }
-    
+
     .host-modal-fullscreen {
         display: flex;
 
         .right-side {
-            background-image: url('https://storage.googleapis.com/gen-atmedia/3/2015/12/972c8534d61a3b36e3d417581f570a2e60446696.jpeg');
+            background-image: url("https://storage.googleapis.com/gen-atmedia/3/2015/12/972c8534d61a3b36e3d417581f570a2e60446696.jpeg");
             background-position: 50%;
             background-size: cover;
             width: 100%;
@@ -43,7 +37,6 @@
                 transform: translate(-50%, -50%);
                 text-align: center;
                 width: 100%;
-
             }
 
             display: unset !important;
@@ -52,11 +45,8 @@
             background-color: black;
 
             button {
-
                 color: white;
             }
-
-
         }
 
         position: fixed;
@@ -80,7 +70,6 @@
             max-width: 170px;
         }
     }
-    
 
     .flex {
         img {
@@ -100,7 +89,6 @@
         display: flex;
         justify-content: center;
 
-
         .reserve-button {
             width: 10rem;
         }
@@ -108,22 +96,21 @@
 
     table {
         margin-top: 2rem;
-        tr:not(first-child){
-            td{
+        tr:not(first-child) {
+            td {
                 text-align: left;
             }
         }
 
-        .guests{
-            tr:first-child{
-                td{
+        .guests {
+            tr:first-child {
+                td {
                     font-size: 0.8rem;
-                    color: #50ABAE;
+                    color: #50abae;
                 }
             }
-            tr{
-                td{
-
+            tr {
+                td {
                     text-align: left;
                     font-size: 0.7rem;
                     border: 0;
@@ -134,7 +121,6 @@
 
     th {
         font-family: Airbnb-Cereal-Bold;
-
     }
 
     .reservations-container {
@@ -144,7 +130,7 @@
         flex-direction: column;
         gap: 4rem;
 
-        h1{
+        h1 {
             margin-bottom: 14px;
         }
 
@@ -160,12 +146,20 @@
                 background-color: rgb(226 226 226 / 46%);
             }
         }
-        .reseravtion-preview-mobile{
-        border-bottom: 1px solid $clrGRAY;
+        .reseravtion-preview-mobile {
+            border-bottom: 1px solid $clrGRAY;
+            color: $clrGRAY;
+            h1 {
+                color: lighten($clrBLACK, 10%);
+                font-size: 1.2rem;
+                margin-bottom: 0.25rem;
+            }
+            button {
+                // margin-top: 0.5rem;
+                margin: 0.5rem auto;
+            }
+        }
     }
-    }
-    
-
 
     tr,
     td,
@@ -182,38 +176,22 @@
         text-align: left;
         font-size: 1rem;
         border-bottom: 0.3px $clrGRAY solid;
-        
     }
 
-    th:last-child, td:last-child{
+    th:last-child,
+    td:last-child {
         text-align: right;
     }
-    
+
     table {
         border-collapse: collapse;
     }
-    
+
     td {
         border-bottom: 0.3px $clrGRAY solid;
         text-align: left;
         font-size: 0.9rem;
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
 
     .stock-margin-center {
         margin-top: 170px;
@@ -228,5 +206,4 @@
         margin: 3rem;
         width: 2rem;
     }
-
 }
