@@ -73,6 +73,7 @@ export function ReserveStay(props) {
     }
 
     const reserveStay = async () => {
+        if(props.isMobile)  props.showReserveCmp(false)
         reservation.user = userService.getLoggedinUser()
         if (!reservation.user) {
             dispatch(openModal(true))
@@ -96,14 +97,21 @@ export function ReserveStay(props) {
         setReservedBtnBc({ '--mouse-y': y, '--mouse-x': x })
     }
 
+    const closeResModal = () => {
+        props.showReserveCmp(false)
+    }
+
+
+    if (!props.MobileResClass) return <h1>...loading</h1>
+
     return (
-        <div className="reserve-stay-container">
+        <div style={props.MobileResClass} className="reserve-stay-container">
             <div className="reserve-stay-header">
                 <li className="reserve-stay-price font-book">${utilService.getUsPrice((props.stay.price))} <span>night</span></li>
-                <li><span className="material-icons" style={{ margin: 'auto 3px' }}>star</span>{ utilService.make2digits(props.stay.reviewScores.value / 2)} · <span >{props.stay.reviews.length} reviews</span></li>
+                <li><span className="material-icons" style={{ margin: 'auto 3px' }}>star</span>{utilService.make2digits(props.stay.reviewScores.value / 2)} · <span >{props.stay.reviews.length} reviews</span></li>
             </div>
             <div className="picker-container">
-                    <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
+                <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
                 <div onClick={() => onShowGusts(isTrue)} className="guests-pick clickable">
                     <div className="flex-col">
                         <h5 >GUESTS</h5>
@@ -138,6 +146,11 @@ export function ReserveStay(props) {
 
 
             </section>}
+            {props.isMobile && <button className="close-res-mobile-modal" onClick={closeResModal}>
+                <span class="material-icons">
+                    close
+                </span>
+            </button>}
         </div>
     )
 }

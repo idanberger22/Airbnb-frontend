@@ -188,15 +188,24 @@
 
     .reserve-stay-container {
         position: fixed;
-        top: unset;
+        display: flex;
+        top: 0;
         bottom: 44px;
         border-radius: unset;
         box-shadow: unset;
         width: 100%;
         left: 0;
         bottom: 10px;
-        gap: 0.2rem;
+        gap: 1rem;
+        border: unset;
+        z-index: 101;
 
+    }
+
+    .res-confirmed-modal{
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
     }
 }
 
