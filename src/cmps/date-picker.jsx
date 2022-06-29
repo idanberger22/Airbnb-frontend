@@ -9,7 +9,7 @@ export class DateRangeSelector extends Component {
     startDate: null,
     endDate: null,
     focusedInput: null,
-    isMobile : document.body.clientWidth<650? true : false
+    isMobile : document.body.clientWidth<640? true : false
   }
   placeholders = (this.props.place === 'filter') ? ['Add date', 'Add date'] : ['Check in', 'Check out']
   componentDidMount() {

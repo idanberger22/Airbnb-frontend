@@ -110,10 +110,10 @@
 
     .user-menu-container {
         position: fixed;
-        top: calc(100vh - 215px);
-        right: 15px;
-        width: unset;
-        padding: 5px;
+        bottom: 43px;
+        border-radius: 0;
+        box-shadow: unset;
+        width: 98%;
     }
     .form-container {
         width: 320px;
@@ -135,14 +135,6 @@
     .left-side-trip {
         grid-column: 1;
     }
-    // .main-layout {
-    //     max-width: 860px;
-    // }
-
-    // .hidden-from-tablet{
-    //     display: none;
-    //     visibility: hidden;
-    // }
 
     .main-nav {
         .logo {
@@ -157,16 +149,6 @@
         grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
 
-    // .stay-bellow-container {
-
-    //     grid-template-columns: 3fr 1fr;
-
-    // }
-
-    // .features-container {
-    //     padding-right: 15%;
-    //     flex: 80% 1;
-    // }
 
     .stock-margin {
         grid-template-columns: 60px 1fr 60px;
