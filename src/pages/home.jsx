@@ -18,8 +18,10 @@ export const Home = () => {
     useEffect(() => {
         window.addEventListener('scroll', changeCss, { passive: true });
         getTopRated()
-        dispatchFiltertoShow()
+        // dispatchFiltertoShow()
         dispatchLogoIsWhite()
+        
+        document.body.clientWidth < 640 ? dispatchFiltertoHide() : dispatchFiltertoShow()
         document.documentElement.style.setProperty('--headerbackgroundColor', 'unset');
         document.documentElement.style.setProperty('--headerFontColor', '#F7F7F7');
         document.documentElement.style.setProperty('--verylightgray', 'unset');
@@ -108,7 +110,7 @@ export const Home = () => {
             <div className="become-a-host">
                 <div>
                     <h1>Become a host</h1>
-                    <NavLink to='/host'><button className="reserve-button">learn more</button></NavLink>
+                    <NavLink to='/host'><button className="reserve-button">Learn more</button></NavLink>
                 </div>
             </div>
         </article>

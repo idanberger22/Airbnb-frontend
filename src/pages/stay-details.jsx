@@ -7,13 +7,21 @@ import { StaydetailsHeader } from "../cmps/StaydetailsHeader"
 import { StayDeatailsBellow } from "../cmps/stay-deatails-bellow"
 import { ReviewLine } from "../cmps/review-line"
 import { MapCmp } from "../cmps/map-cmp"
+import { display } from "@mui/system"
 
 export const StayDetails = () => {
 
     const [stay, setStay] = useState(null)
-    const { stayId } = useParams();
+    const [isMobile, setIsMobile] = useState(false)
+    const [MobileResClass, setMobileResClass] = useState({display: 'flex'})
 
+    
+    const { stayId } = useParams();
+    
     useEffect(() => {
+        const isMobile =  document.body.clientWidth < 640 ? true : false
+        if(isMobile) setMobileResClass({display: 'none'})
+        setIsMobile(isMobile)
         getStay()
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
@@ -38,8 +46,9 @@ export const StayDetails = () => {
         setStay(stay)
     }
 
-    const showReserveCmp = () => {
-        document.documentElement.style.setProperty('--ResVisible', 'block');
+    const showReserveCmp = (onClick) => {
+        // document.documentElement.style.setProperty('--ResVisible', 'block');
+        onClick ? setMobileResClass({display:'flex'}) : setMobileResClass({display:'none'})
 
 
     }
@@ -55,7 +64,8 @@ export const StayDetails = () => {
                     <StayDeatailsBellow stay={stay} />
                 </div>
                 <div className="reserve-container">
-                    <ReserveStay stay={stay} />
+                    {console.log('MobileResClass',MobileResClass)}
+                    <ReserveStay stay={stay} showReserveCmp = {showReserveCmp} isMobile={isMobile} MobileResClass={isMobile ? MobileResClass :{display: 'flex'}}/>
                 </div>
             </div>
             <div className="line"></div>
@@ -68,9 +78,9 @@ export const StayDetails = () => {
             <section className="map">
                 <MapCmp stay={stay} />
             </section>
-            {/* <div className="flex reserve-container-mobile hidden-from-tablet2">
-                <button onClick={showReserveCmp} className="reserve-button mobile-btn-reserve">Reserve</button>
-            </div> */}
+            <div className="flex reserve-container-mobile hidden-from-tablet2">
+                <button onClick={()=>showReserveCmp(true)} className="reserve-button mobile-btn-reserve">Reserve</button>
+            </div>
         </div>
     </div>
 }
