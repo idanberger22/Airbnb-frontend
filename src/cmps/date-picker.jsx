@@ -9,12 +9,11 @@ export class DateRangeSelector extends Component {
     startDate: null,
     endDate: null,
     focusedInput: null,
-    isMobile : document.body.clientWidth<640? true : false
+    isMobile: document.body.clientWidth < 640 ? true : false
   }
   placeholders = (this.props.place === 'filter') ? ['Add date', 'Add date'] : ['Check in', 'Check out']
   componentDidMount() {
     this.setState({ ...this.state, endDate: this.props.endDate, startDate: this.props.startDate })
-
   }
 
   handleDateChange = ({ startDate, endDate }) => {
@@ -23,12 +22,12 @@ export class DateRangeSelector extends Component {
   }
 
   handleFocusChange = (focusedInput) => this.setState({ focusedInput })
-  
+
   render = () => {
     return <section className="date-range-selector">
       <DateRangePicker
-      {...(this.state.isMobile ? {orientation: 'vertical'} : {})}
-      {...(this.state.isMobile ? {verticalHeight: 385} : {})}
+        {...(this.state.isMobile ? { orientation: 'vertical' } : {})}
+        {...(this.state.isMobile ? { verticalHeight: 385 } : {})}
         startDatePlaceholderText={this.placeholders[0]}
         endDatePlaceholderText={this.placeholders[1]}
         noBorder={true}

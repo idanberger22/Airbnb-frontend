@@ -94,6 +94,15 @@
         }
     }
 
+    .host-modal-fullscreen {
+        h1{
+            font-size: 2rem;
+        }
+        .right-side{
+            display: none !important;
+        }
+    }
+
     .main-page-head {
         height: 40vh;
     }
@@ -110,7 +119,7 @@
 
     .user-menu-container {
         position: fixed;
-        bottom: 43px;
+        bottom: 40px;
         border-radius: 0;
         box-shadow: unset;
         width: 98%;
@@ -129,6 +138,12 @@
 @media (min-width: 640px) {
     .gallery-grid {
         gap: 8px;
+    }
+
+    .host-modal-fullscreen {
+        h1{
+            font-size: 3rem;
+        }
     }
 
     .trip-cards-container {
@@ -174,11 +189,6 @@
         visibility: hidden;
         grid-column: 2;
     }
-
-    // .logo{
-    //     display: none;
-    //     visibility: hidden;
-    // }
 }
 
 // /* LARGE */

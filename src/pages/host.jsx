@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
 import { ReservationPreview } from "../cmps/reservation2-preview"
+import { ReservationPreviewMobile } from "../cmps/reservation-preview-mobile"
 import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
 import { StayPreview } from "../cmps/stay-preview"
@@ -81,7 +82,7 @@ export const Host = () => {
 
     return (
         <div className="stock-margin main-host-page">
-            {!hostStyling && <div className="become-a-host">
+            {!hostStyling && <div className='host-modal-fullscreen'>
                 <div className="left-side">
                     <div className="logo-become-a-host">
                         <NavLink className='clickable' to='/home'>
@@ -129,7 +130,6 @@ export const Host = () => {
                                         <td>Nights</td>
                                         <td>Total Payout</td>
                                         <td>Options</td>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -140,6 +140,11 @@ export const Host = () => {
                                     )}
                                 </tbody>
                             </table>}
+                            {isMobile && reservations.map(reservation =>
+                                        <tr key={reservation._id}>
+                                            <ReservationPreviewMobile getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                        </tr>
+                                    )}
 
                         </div>
                     </div>
