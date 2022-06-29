@@ -20,6 +20,8 @@ export const Host = () => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     const loggedRedux = useSelector((storeState) => storeState.userModule.loggedinUser)
     const dispatch = useDispatch()
+    let isMobile = document.body.clientWidth<640? true : false
+    
 
     useEffect(() => {
         document.documentElement.style.setProperty('--headerFontColor', '#000');
@@ -114,9 +116,10 @@ export const Host = () => {
                 {listingsDetailsStyling && <div>
                     <div className="reservations-container">
                         <Statistics reservations={reservations} hostStays={hostStays} />
-                        {/* <div className="flex-col">
+                        <div className="flex-col">
                             <h1>Your reservations</h1>
-                            <table className="reservations-table" >
+
+                            {!isMobile && <table className="reservations-table" >
                                 <thead>
                                     <tr>
                                         <td>Listing</td>
@@ -136,8 +139,9 @@ export const Host = () => {
                                         </tr>
                                     )}
                                 </tbody>
-                            </table>
-                        </div> */}
+                            </table>}
+
+                        </div>
                     </div>
                 </div>}
 

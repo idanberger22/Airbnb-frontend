@@ -114,6 +114,9 @@
         border-radius: 0;
         box-shadow: unset;
         width: 98%;
+        >li{
+            border-top: 1px solid $clrGRAY;
+        }
     }
     .form-container {
         width: 320px;
