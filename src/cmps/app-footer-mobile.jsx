@@ -53,10 +53,6 @@ export function AppFooterMobile() {
                         search
                     </span>
                 </NavLink></li>
-                {/* <li ><NavLink className="font-medium" to='/host'>
-                    <img src={require("../assets/imgs/logo1.png")} />
-                </NavLink></li> */}
-
                 <li onClick={toggleModal}>
                     {getImg()}
                 </li>
