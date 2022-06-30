@@ -44,7 +44,7 @@ export const HostYourHome = () => {
                 }
             }
 
-            , reviewScores: { value: Math.round(utilService.getRandomFloat(8.5,10) * 10)/10 },
+            , reviewScores: { value: Math.round(utilService.getRandomFloat(8.5, 10) * 10) / 10 },
             reviews: [
                 {
                     at: "2016-10-14T04:00:00.000Z",
@@ -120,74 +120,76 @@ export const HostYourHome = () => {
 
 
     }
-    if(document.body.clientWidth<920) return <h1 style={{margin:'auto',padding:'100px 20px'}}>Oops! uploading a stay from a smaller device is currently unavailable...<br/>
-    Please connect from a PC for a full experience.</h1> 
+    // if (document.body.clientWidth < 920) return <h1 style={{ margin: 'auto', padding: '100px 20px' }}>Oops! uploading a stay from a smaller device is currently unavailable...<br />
+    //     Please connect from a PC for a full experience.</h1>
 
     return (
         <div className="main-upload-stay">
-            <h1>Upload a stay to host</h1>
-            <div className="container">
-                <div className="details-form">
-                    <MuiThemeProvider theme={theme}>
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                        <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
-                    </MuiThemeProvider>
-                </div>
-                <div className="checkboxes">
-
-                    <h1 style={{ marginBottom: '0.8rem' }}>Amenities:</h1>
-
-                    <div className="emnities">
-                        <FormGroup>
-                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="TV" label="TV" />
-                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Wifi" label="Wifi" />
-                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Kitchen" label="Kitchen" />
-                            <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Air conditioning" label="Air conditioning" />
-                        </FormGroup>
+            <div className="content-host">
+                <h1>Upload a stay to host</h1>
+                <div className="container">
+                    <div className="details-form">
+                        <MuiThemeProvider theme={theme}>
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Property name" name="name" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Summary" name="summary" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country" name="country" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="City" name="city" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Street" name="street" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Country code" name="country-code" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                            <TextField onChange={(ev) => handleChange(ev)} id="outlined-basic" label="Price per night" name="price" variant="outlined" InputLabelProps={{ style: { color: '#222222' } }} />
+                        </MuiThemeProvider>
                     </div>
-                    <h1 style={{ marginBottom: '0.8rem', marginTop: '0.8rem' }}>Type of Place:</h1>
-                    <div className="type">
-                        <FormControl>
-                            <RadioGroup
-                                aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue="female"
-                                name="radio-buttons-group"
-                            >
-                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Entire home/apt" label="Entire home/apt" />
-                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Hotel room" label="Hotel room" />
-                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
-                                <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Shared room" label="Shared room" />
-                            </RadioGroup>
-                        </FormControl>
+                    <div className="checkboxes">
+
+                        <h1 style={{ marginBottom: '0.8rem' }}>Amenities:</h1>
+
+                        <div className="emnities">
+                            <FormGroup>
+                                <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="TV" label="TV" />
+                                <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Wifi" label="Wifi" />
+                                <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Kitchen" label="Kitchen" />
+                                <FormControlLabel onChange={(ev) => handleEmnitiesChange(ev)} control={<Checkbox />} name="Air conditioning" label="Air conditioning" />
+                            </FormGroup>
+                        </div>
+                        <h1 style={{ marginBottom: '0.8rem', marginTop: '0.8rem' }}>Type of Place:</h1>
+                        <div className="type">
+                            <FormControl>
+                                <RadioGroup
+                                    aria-labelledby="demo-radio-buttons-group-label"
+                                    defaultValue="female"
+                                    name="radio-buttons-group"
+                                >
+                                    <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Entire home/apt" label="Entire home/apt" />
+                                    <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Hotel room" label="Hotel room" />
+                                    <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Private room" label="Private room" />
+                                    <FormControlLabel onChange={(ev) => handleTypeChange(ev)} control={<Radio />} value="Shared room" label="Shared room" />
+                                </RadioGroup>
+                            </FormControl>
+
+                        </div>
 
                     </div>
-
+                    <div className="img-upload-gallery">
+                        <li><ImgUploader onUploaded={onUploaded} idx={0} /></li>
+                        <li>
+                            <ImgUploader onUploaded={onUploaded} idx={1} />
+                        </li>
+                        <li>
+                            <ImgUploader onUploaded={onUploaded} idx={2} />
+                        </li>
+                        <li>
+                            <ImgUploader onUploaded={onUploaded} idx={3} />
+                        </li>
+                        <li>
+                            <ImgUploader onUploaded={onUploaded} idx={4} />
+                        </li>
+                    </div>
                 </div>
-                <div className="img-upload-gallery">
-                    <li><ImgUploader onUploaded={onUploaded} idx={0} /></li>
-                    <li>
-                        <ImgUploader onUploaded={onUploaded} idx={1} />
-                    </li>
-                    <li>
-                        <ImgUploader onUploaded={onUploaded} idx={2} />
-                    </li>
-                    <li>
-                        <ImgUploader onUploaded={onUploaded} idx={3} />
-                    </li>
-                    <li>
-                        <ImgUploader onUploaded={onUploaded} idx={4} />
-                    </li>
+                <div className="upload-btn-container" >
+                    <NavLink className='clickable' to='/host'>
+                        <button className="reserve-button" onClick={uploadStay} >upload</button>
+                    </NavLink>
                 </div>
-            </div>
-            <div className="upload-btn-container" >
-                <NavLink className='clickable' to='/host'>
-                    <button className="reserve-button" onClick={uploadStay} >upload</button>
-                </NavLink>
             </div>
         </div>
     )
