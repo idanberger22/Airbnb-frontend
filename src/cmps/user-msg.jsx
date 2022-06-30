@@ -37,7 +37,7 @@ export class UserMsg extends React.Component {
   render() {
     if (!this.state.msg) return <span></span>
     const msgClass = this.state.msg.type || ''
-    // 
+    
     return (
       <section className={'user-msg success'}>
         <h1>{this.state.msg}</h1>

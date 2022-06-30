@@ -1,6 +1,7 @@
 /* MOBILE ONLY  */
 
 @media (max-width: 640px) {
+
     .main-nav {
         width: 85%;
         margin: auto;
@@ -213,9 +214,31 @@
         height: 100vh;
         z-index: 100;
     }
+
+    .main-upload-stay{
+        a:last-child{
+            width: 100%;
+
+            button{
+                width: 100%;
+            }
+        }
+
+    }
+
+    .main-upload-stay .container{
+        flex-direction: column;
+    }
+
+    
 }
 
 @media (min-width: 640px) {
+
+    .main-upload-stay .container{
+        flex-direction: column;
+    }
+
     .gallery-grid {
         gap: 8px;
         --ResVisible: none;
@@ -280,6 +303,10 @@
 // /* LARGE */
 
 @media (min-width: 920px) {
+
+    .main-upload-stay .container{
+        flex-direction: row;
+    }
     .hidden-from-tablet {
         display: unset;
         visibility: visible;

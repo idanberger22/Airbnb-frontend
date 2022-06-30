@@ -27,6 +27,7 @@ export const AppHeader = () => {
     const [showModalConfirmed, setShowModalConfirmed] = useState(false)
     const [hostBtnTxt, setHostBtnTxt] = useState('Become a host')
     const [loggedinUser, resetLoggedInUser] = useState(userService.getLoggedinUser())
+    const [userStays, setUserStays] = useState(null)
     const logged = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     const dispatch = useDispatch()
@@ -49,6 +50,7 @@ export const AppHeader = () => {
     const getUserStays = async () => {
         const loggedUser = await userService.getLoggedinUser()
         const stays = await stayService.getByHostId(loggedUser._id)
+        setUserStays(stays)
         if(stays && stays.length > 0 ) setHostBtnTxt('Host dashboard')
     }
 
@@ -119,6 +121,8 @@ export const AppHeader = () => {
         else return <img src={require("../assets/imgs/user-icon.png")} />
     }
 
+    if(!hostBtnTxt) return <div className="loader"></div>
+
     return (
         <header id="main-header" className="stock-margin main-header app-header-main">
             {showModalConfirmed && <ConfirmedResModal reservation={ReservationConfirmed} />}
@@ -158,7 +162,7 @@ export const AppHeader = () => {
                             </div>
                             <div style={{ display: menuModalShow }}>
                                 <div className="screen" onClick={toggleModal}></div>
-                                <UserMenuModal toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser} />
+                                <UserMenuModal hostBtnTxt={hostBtnTxt} toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser} />
                             </div>
                         </li>
                     </div>
