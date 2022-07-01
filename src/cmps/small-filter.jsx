@@ -8,7 +8,6 @@ export const SmallFilter = () => {
     const [filterBy, setFilterBy] = useState({ location: '', from: null, to: null })
     const loadedFilter = useSelector((storeState) => storeState.stayModule.filterBy)
 
-
     useEffect(() => {
         filterBy.location = loadedFilter.location
     }, [loadedFilter])
@@ -23,9 +22,6 @@ export const SmallFilter = () => {
         setFilterBy({ ...filterBy, [field]: value })
     }
 
-    
-
-
     return (
         <div className="total-filter-small">
             <div className="inpt-fillter">
@@ -38,9 +34,6 @@ export const SmallFilter = () => {
                     </div>
                 </div>
             </NavLink>
-            
-           
-
         </div>
     )
 }

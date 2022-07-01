@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 export function Explore() {
-    const [headerFontColor, setHeaderFontColor] = useState('white')
     const [stays, setStays] = useState(false)
     const { filterBy } = useSelector((storeState) => storeState.stayModule)
     const dispatch = useDispatch()
@@ -55,6 +54,7 @@ export function Explore() {
                     <ExploreFilter stays={stays} onChangeExploreFilter={onChangeExploreFilter} />
                 </div>
                 <section >
+                    {stays.length===0 && <h1 className="no-stays-msg">No results matches your search...</h1>}
                     <div className="card-container" >
                         {stays.map(stay =>
                             <StayPreview stay={stay} key={stay._id} />

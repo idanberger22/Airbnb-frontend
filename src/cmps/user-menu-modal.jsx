@@ -25,19 +25,6 @@ export const UserMenuModal = (props) => {
         closeSelf()
     }
 
-    const getLinks = () => {
-        if (isMobile) return (
-            <li>
-                <NavLink className='undecorate' onClick={closeSelf} to='/host' >Host dashboard</NavLink>
-            </li>
-        )
-        return (
-        <li>
-            <NavLink className='undecorate' onClick={closeSelf} to='/host-your-home' >Host your home</NavLink>
-        </li>
-        )
-    }
-
     return (<section onClick={closeSelf} className="user-menu-container">
         {!loggedinUser && <><li onClick={() => toggleModal(false)} className="clickable noselect">
             <a className='undecorate'>Sign up</a>
@@ -51,7 +38,12 @@ export const UserMenuModal = (props) => {
                 <li>
                     <NavLink className='undecorate' to='/trips' >Trips</NavLink>
                 </li>
-                {getLinks()}
+                {isMobile && <li>
+                    <NavLink className='undecorate' onClick={closeSelf} to='/host' >Host dashboard</NavLink>
+                </li>}  
+                <li>
+                    <NavLink className='undecorate' onClick={closeSelf} to='/host-your-home' >Host your home</NavLink>
+                </li>
                 <li>
                     <NavLink onClick={onLogout} className='undecorate' to='/home'>Log out</NavLink>
                 </li>
