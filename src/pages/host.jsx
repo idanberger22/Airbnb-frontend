@@ -20,9 +20,7 @@ export const Host = () => {
     const [hostStays, setHostStays] = useState(false)
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     const loggedRedux = useSelector((storeState) => storeState.userModule.loggedinUser)
-    const dispatch = useDispatch()
-    let isMobile = document.body.clientWidth<640? true : false
-    
+    const dispatch = useDispatch()    
 
     useEffect(() => {
         document.documentElement.style.setProperty('--headerFontColor', '#000');
@@ -119,8 +117,7 @@ export const Host = () => {
                         <Statistics reservations={reservations} hostStays={hostStays} />
                         <div className="flex-col">
                             <h1>Your reservations</h1>
-
-                            {!isMobile && <table className="reservations-table" >
+                            <table>
                                 <thead>
                                     <tr>
                                         <td>Listing</td>
@@ -139,13 +136,14 @@ export const Host = () => {
                                         </tr>
                                     )}
                                 </tbody>
-                            </table>}
-                            {isMobile && reservations.map(reservation =>
-                                        <tr key={reservation._id}>
+                            </table>
+                            <div className="reservations-mobile">
+                                {reservations.map(reservation =>
+                                        <div key={reservation._id}>
                                             <ReservationPreviewMobile getReservations={getReservations} reservation={reservation} key={reservation._id} />
-                                        </tr>
+                                        </div>
                                     )}
-
+                            </div>
                         </div>
                     </div>
                 </div>}

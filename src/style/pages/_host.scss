@@ -16,8 +16,6 @@
         }
     }
 
-    
-
     .host-modal-fullscreen {
         display: flex;
 
@@ -72,8 +70,6 @@
             max-width: 170px;
         }
     }
-
-    
 
     .flex {
         img {
@@ -150,16 +146,20 @@
                 background-color: rgb(226 226 226 / 46%);
             }
         }
-        .reseravtion-preview-mobile {
-            border-bottom: 1px solid $clrGRAY;
-            color: $clrGRAY;
-            h1 {
-                color: lighten($clrBLACK, 10%);
-                font-size: 1.2rem;
-                margin-bottom: 0.25rem;
-            }
-            button {
-                margin: 0.5rem auto;
+        .reservations-mobile {
+            display: none;
+
+            .reseravtion-preview-mobile {
+                border-bottom: 1px solid $clrGRAY;
+                color: $clrGRAY;
+                h1 {
+                    color: lighten($clrBLACK, 10%);
+                    font-size: 1.2rem;
+                    margin-bottom: 0.25rem;
+                }
+                button {
+                    margin: 0.5rem auto;
+                }
             }
         }
     }
