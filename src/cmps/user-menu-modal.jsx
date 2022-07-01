@@ -9,7 +9,6 @@ export const UserMenuModal = (props) => {
     const loggedinUser = userService.getLoggedinUser()
     let isMobile = document.body.clientWidth < 640 ? true : false
 
-
     const toggleModal = (isLogin) => {
         dispatch(openModal(isLogin))
         closeSelf()
