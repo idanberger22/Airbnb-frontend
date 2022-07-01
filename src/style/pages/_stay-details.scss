@@ -31,11 +31,6 @@
     padding-bottom: 20px;
 }
 
-// .features-container {
-//     padding-right: 15%;
-//     flex: 80%;
-// }
-
 .feature-logo {
     line-height: 3;
     display: flex;
@@ -82,16 +77,12 @@
 }
 .right-side{
     align-items: center;
-    display: flex;
-   
-    
+    display: flex;  
 }
 
 .right-side-share {
     padding-right: 10px;
 }
-
-
 
 .header-stay-details-reviews {
     text-decoration: underline;
@@ -105,9 +96,7 @@
 
 
 .stay-bellow-container{
-    display: grid;
-    // grid-template-columns: 3fr 1fr;
-    
+    display: grid; 
     margin-top: 3rem;
     justify-content: space-between;
 }
@@ -115,7 +104,6 @@
 .main-reviews{
     margin-top: 2rem;
     display: grid;
-    // grid-template-columns: repeat(2, minmax(auto, 1fr));
     gap: 1rem;
 
 }
@@ -142,7 +130,7 @@
 }
 
 .stay-description {
-    margin-top: 50px;
+    margin-top: 25px;
     border-bottom: 1px solid rgb(221,221,221);
     padding-bottom: 30px;
 }
@@ -157,7 +145,6 @@
     display: grid;
     margin-top: 50px;
     margin-bottom: 50px;
-    // width: 70%;
 }
 
 .amenities-list {
@@ -174,7 +161,6 @@
     line-height: 1.5;
     gap: 10px;
     font-size: 20px;
-    // width: 300px;
 }
 
 .reserve-container-mobile {
