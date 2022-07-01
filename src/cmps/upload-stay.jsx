@@ -110,7 +110,6 @@ export const UploadStay = (props) => {
     }
 
     const handleTypeChange = ({ target }) => {
-        console.log('taget.name', target.value)
         const type = target.value
         setNewStay({ ...newStay, roomType: type })
     }

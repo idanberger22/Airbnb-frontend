@@ -18,13 +18,7 @@ async function query(Id) {
 
 async function addReservation(reservation) {
     const addedReservation = await httpService.post('reservation', reservation)
-    console.log('im here before emit of new reservation')
     socketService.emit('new-reservation',{hostId:addedReservation.hostId,guestName:addedReservation.user.fullName})
-    // review.byUser = userService.getLoggedinUser()
-    // review.aboutUser = await userService.getById(review.aboutUserId)
-    // const addedReview = await storageService.post('review', review)
-
-    // reviewChannel.postMessage(ReservationConfirmed(addedReservation))
     return addedReservation
 }
 

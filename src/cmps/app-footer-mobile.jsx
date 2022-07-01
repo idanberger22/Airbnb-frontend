@@ -38,7 +38,6 @@ export function AppFooterMobile() {
     }
 
     const resetFilterBy = () => {
-        console.log('gggggggggg')
         dispatch(changeFilter({ location: '', from: null, to: null }))
     }
 

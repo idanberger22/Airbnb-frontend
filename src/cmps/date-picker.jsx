@@ -20,6 +20,9 @@ export class DateRangeSelector extends Component {
     if (this.props.place === 'filter') this.setState({ startDate, endDate }, () => this.props.handleDate({ startDate, endDate }))
     else this.setState({ startDate, endDate }, () => this.props.setDatesAndPrice(startDate, endDate))
   }
+  handleDateChangeRaw = (e) => {
+    e.preventDefault()
+  }
 
   handleFocusChange = (focusedInput) => this.setState({ focusedInput })
 
@@ -38,6 +41,10 @@ export class DateRangeSelector extends Component {
         onFocusChange={this.handleFocusChange}
         startDate={this.state.startDate}
         startDateId="startDate"
+
+        disabledKeyboardNavigation
+        onFocus={e => e.target.blur()}
+        onChangeRaw={this.handleDateChangeRaw}
       />
     </section>
   }
