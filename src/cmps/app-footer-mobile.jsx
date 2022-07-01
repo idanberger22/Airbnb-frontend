@@ -5,7 +5,6 @@ import { UserMenuModal } from "./user-menu-modal"
 import { changeFilter } from "../store/actions/stay.action"
 import { userService } from "../services/user.service"
 
-
 export function AppFooterMobile() {
     const { isModalOpen } = useSelector((storeState) => storeState.userModule)
     const [menuModalShow, setMenuModalShow] = useState('none')

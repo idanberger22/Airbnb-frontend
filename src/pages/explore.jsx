@@ -55,6 +55,7 @@ export function Explore() {
                 </div>
                 <section >
                     {stays.length===0 && <h1 className="no-stays-msg">No results matches your search...</h1>}
+                    {stays.length>0 && <h3 style={{marginTop:'8px'}}>Showing {stays.length} stays</h3>}
                     <div className="card-container" >
                         {stays.map(stay =>
                             <StayPreview stay={stay} key={stay._id} />
