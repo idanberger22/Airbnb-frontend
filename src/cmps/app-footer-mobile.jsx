@@ -2,16 +2,16 @@ import { NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { UserMenuModal } from "./user-menu-modal"
-import { showLargeFilter, showSmallFilter } from "../store/actions/headerAction"
+import { changeFilter } from "../store/actions/stay.action"
 import { userService } from "../services/user.service"
 
 
 export function AppFooterMobile() {
-
     const { isModalOpen } = useSelector((storeState) => storeState.userModule)
     const [menuModalShow, setMenuModalShow] = useState('none')
     const [loggedinUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     const logged = useSelector((storeState) => storeState.userModule.loggedinUser)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         setLoggedInUser(userService.getLoggedinUser())  
@@ -38,17 +38,22 @@ export function AppFooterMobile() {
         else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon'/>
     }
 
+    const resetFilterBy = () => {
+        console.log('gggggggggg')
+        dispatch(changeFilter({ location: '', from: null, to: null }))
+    }
+
     return (
 
         <div id="main-footer" className="stock-margin fixed main-footer footer-mobile">
             <div >
-                <li ><NavLink className="font-medium" to='/'>
+                <li onClick={resetFilterBy}><NavLink className="font-medium" to='/'>
                     <span className="material-icons">
                         home
                     </span>
                 </NavLink></li>
 
-                <li ><NavLink className="font-medium" to='/explore'>
+                <li onClick={resetFilterBy}><NavLink className="font-medium" to='/explore'>
                     <span className="material-icons">
                         search
                     </span>

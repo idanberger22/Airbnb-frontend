@@ -1,5 +1,7 @@
-.statics-container{
+.statistics-container{
     padding: 0 20%;
+    display:flex;
+    justify-content: space-between;
     *{
         text-align: left;
         h1{

@@ -25,14 +25,8 @@ export const Statistics = ({ reservations, hostStays }) => {
         setAvgRate(utilService.make2digits(rate / hostStays.length))
     }
 
-    const getClass = () => {
-        let className = document.body.clientWidth<640? 'center statics-container' : 'flex-row-space-btw statics-container'
-        console.log(className)
-        return className
-    }
-
     return (<section>
-        <div className={getClass()}>
+        <div className='statistics-container'>
             <div className="center">
                 <h1>
                     {avgRate}★
@@ -50,7 +44,7 @@ export const Statistics = ({ reservations, hostStays }) => {
                     Average nightly rate
                 </h3>
             </div>
-            <div className="center" style={{marginRight:'auto'}}>
+            <div className="center" style={{ marginRight: 'auto' }}>
 
                 <h1>
                     ${totalIncome}
