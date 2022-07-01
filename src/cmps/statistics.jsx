@@ -52,7 +52,6 @@ export const Statistics = ({ reservations, hostStays }) => {
                 <h3>
                     Total income
                 </h3>
-
             </div>
 
         </div>
