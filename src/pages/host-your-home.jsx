@@ -120,9 +120,7 @@ export const HostYourHome = () => {
 
 
     }
-    // if (document.body.clientWidth < 920) return <h1 style={{ margin: 'auto', padding: '100px 20px' }}>Oops! uploading a stay from a smaller device is currently unavailable...<br />
-    //     Please connect from a PC for a full experience.</h1>
-
+    
     return (
         <div className="main-upload-stay">
             <div className="content-host">

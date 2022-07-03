@@ -63,7 +63,8 @@ export class _LoginSignup extends React.Component {
             this.onCloseModal()
         }
         catch {
-            this.setState({ ...this.state, invalidMsg: true }, this.resetMsg)
+            console.log('sdfsdfsdf')
+            this.setState({ ...this.state, invalidMsg: true }, this.resetMsg())
         }
     }
     resetMsg = () => {
@@ -144,14 +145,15 @@ export class _LoginSignup extends React.Component {
                             <MuiThemeProvider theme={this.theme}>
                                 <Field name="username" type="text" as={TextField} variant="outlined" label="Username" fullWidth InputLabelProps={{ style: { color: '#222222' } }} />
                                 <Field name="password" type="password" as={TextField} variant="outlined" label="Password" fullWidth style={{ marginTop: '12px' }} InputLabelProps={{ style: { color: '#222222' } }} />
-                                <div className='center' style={{ height: '1.5rem', marginTop: '0.5rem' }}>
-                                    {this.state.invalidMsg && <p className='red font-light'>Invalid username/password</p>}
+                                </MuiThemeProvider>
+                                <div className='center'>
+                                   {this.state.invalidMsg && <h5 className='red font-light'>Invalid username/password</h5>} 
                                 </div>
+                                
                                 <button className='reserve-button' style={{ '--mouse-x': this.state.mouseX, '--mouse-y': this.state.mouseY, margin: 'auto', marginTop: '12px' }} onMouseMove={this.onMousMove}>
                                     Continue
                                 </button>
                                 <h5 className='clickable' onClick={() => this.toggleModal(false)}>New user</h5>
-                            </MuiThemeProvider>
                         </Form>
                     </Formik>}
                 </div>
