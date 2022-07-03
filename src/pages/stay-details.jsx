@@ -61,7 +61,6 @@ export const StayDetails = () => {
                     <StayDeatailsBellow stay={stay} />
                 </div>
                 <div className="reserve-container">
-                    {console.log('MobileResClass',MobileResClass)}
                     <ReserveStay stay={stay} showReserveCmp = {showReserveCmp} isMobile={isMobile} MobileResClass={isMobile ? MobileResClass :{display: 'flex'}}/>
                 </div>
             </div>

@@ -148,7 +148,7 @@ export function ReserveStay(props) {
 
             </section>}
             {props.isMobile && <button className="close-res-mobile-modal" onClick={closeResModal}>
-                <span class="material-icons">
+                <span className="material-icons">
                     close
                 </span>
             </button>}
