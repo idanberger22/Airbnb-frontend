@@ -13,11 +13,7 @@ export const TripCard = ({ trip }) => {
         
         setResModalIsOpen(!resModalIsOpen)
     }
-    
-
-    // onpenResModal={ModalIsOpen()}
-
-    // return <Link to={`/stay/${trip.stay._id}`}>
+ 
     return <section  className="trip-card-container">
         {resModalIsOpen && <ConfirmedResModalTrips  toggleModalIsOpen={toggleModalIsOpen} reservation={trip}/>}
         <section className="trip-card">
