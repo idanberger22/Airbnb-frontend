@@ -17,7 +17,7 @@ export const DetailsGallery = ({ stay }) => {
         })}
         {openImg && <>
             <div className="modal-blur" onClick={() => setOpenImg(false)}></div>
-            {/* <img className="img-modal" src={openImg}></img> */}
+            <img className="img-modal" src={openImg}></img>
         </>}
     </section>
 
