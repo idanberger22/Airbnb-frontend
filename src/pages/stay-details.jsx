@@ -47,10 +47,7 @@ export const StayDetails = () => {
     }
 
     const showReserveCmp = (onClick) => {
-        // document.documentElement.style.setProperty('--ResVisible', 'block');
         onClick ? setMobileResClass({display:'flex'}) : setMobileResClass({display:'none'})
-
-
     }
 
     if (!stay) return <div className="loader"></div>
