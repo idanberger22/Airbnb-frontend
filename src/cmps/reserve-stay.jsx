@@ -4,7 +4,6 @@ import { DateRangeSelector } from './date-picker'
 import { GuestPicker } from "./guest-picker"
 import { utilService } from "../services/util.service"
 import { userService } from "../services/user.service"
-import { tripsService } from "../services/trips.service"
 import { openModal } from "../store/actions/userActions"
 import { reservationService } from "../services/reservation.service"
 import { ReservationConfirmed } from "../store/actions/reservation.action"
@@ -83,10 +82,8 @@ export function ReserveStay(props) {
         if (!reservation.checkIn || !reservation.checkOut || (reservation.adults + reservation.childrens) === 0) console.log('fill all details')
         else {
             setResModalIsOpen(true)
-            await reservationService.addReservation(reservation)
-            
+            await reservationService.addReservation(reservation)   
             dispatchReservation(reservation)
-            tripsService.addTrip(reservation)
         }
     }
 
