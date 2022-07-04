@@ -42,9 +42,9 @@ export class DateRangeSelector extends Component {
         startDate={this.state.startDate}
         startDateId="startDate"
 
-        disabledKeyboardNavigation
-        onFocus={e => e.target.blur()}
-        onChangeRaw={this.handleDateChangeRaw}
+        // disabledKeyboardNavigation = {true}
+        // onFocus={e => e.target.blur()}
+        // onChangeRaw={this.handleDateChangeRaw}
       />
     </section>
   }

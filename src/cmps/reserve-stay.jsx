@@ -33,7 +33,7 @@ export function ReserveStay(props) {
     const [showGuestsStyle, setShowGuestsStyle] = useState('expand_more')
     const [reservedBtnBc, setReservedBtnBc] = useState({ backgroundColor: `green` })
     const [guestModalShown, setGuestModalShown] = useState({ display: 'none' })
-    const [isTrue, setIstrue] = useState(false)
+    const [isExpanded, setIsExpanded] = useState(false)
     const [resModalIsOpen, setResModalIsOpen] = useState(false)
     const [resNights, setResNights] = useState(null)
 
@@ -52,8 +52,8 @@ export function ReserveStay(props) {
         setReservation({ ...reservation, adults, childrens })
     }
 
-    const onShowGusts = (isTrue) => {
-        if (isTrue === false) {
+    const onShowGusts = (isExpanded) => {
+        if (isExpanded === false) {
             setGuestModalShown({ display: 'block' })
             setShowGuestsStyle('expand_less')
         }
@@ -61,7 +61,7 @@ export function ReserveStay(props) {
             setShowGuestsStyle('expand_more')
             setGuestModalShown({ display: 'none' })
         }
-        setIstrue(!isTrue)
+        setIsExpanded(!isExpanded)
     }
 
     const setDatesAndPrice = (from, to) => {
@@ -113,7 +113,7 @@ export function ReserveStay(props) {
             </div>
             <div className="picker-container">
                 <DateRangeSelector place={'reserve'} startDate={filterBy.from} endDate={filterBy.to} setDatesAndPrice={setDatesAndPrice} />
-                <div onClick={() => onShowGusts(isTrue)} className="guests-pick clickable">
+                <div onClick={() => onShowGusts(isExpanded)} className="guests-pick clickable">
                     <div className="flex-col">
                         <h5 >GUESTS</h5>
                         {((reservation.adults + reservation.childrens) < 1) && <div><h4>Add guests</h4></div>}

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from "../store/actions/userActions"
-import { ReservationPreview } from "../cmps/reservation2-preview"
+import { ReservationPreview } from "../cmps/reservation-preview"
 import { ReservationPreviewMobile } from "../cmps/reservation-preview-mobile"
 import { reservationService } from "../services/reservation.service"
 import { stayService } from "../services/stay.service"
@@ -132,7 +132,7 @@ export const Host = () => {
                                 <tbody>
                                     {reservations.map(reservation =>
                                         <tr key={reservation._id}>
-                                            <ReservationPreview getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                            <ReservationPreview getReservations={getReservations} reservation={reservation} key={reservation._id} loggedInUser={loggedInUser}/>
                                         </tr>
                                     )}
                                 </tbody>
@@ -140,7 +140,7 @@ export const Host = () => {
                             <div className="reservations-mobile">
                                 {reservations.map(reservation =>
                                         <div key={reservation._id}>
-                                            <ReservationPreviewMobile getReservations={getReservations} reservation={reservation} key={reservation._id} />
+                                            <ReservationPreviewMobile getReservations={getReservations} reservation={reservation} key={reservation._id} loggedInUser={loggedInUser}/>
                                         </div>
                                     )}
                             </div>
