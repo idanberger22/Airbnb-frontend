@@ -63,7 +63,6 @@ export class _LoginSignup extends React.Component {
             this.onCloseModal()
         }
         catch {
-            console.log('sdfsdfsdf')
             this.setState({ ...this.state, invalidMsg: true }, this.resetMsg())
         }
     }
@@ -148,10 +147,12 @@ export class _LoginSignup extends React.Component {
                                 </MuiThemeProvider>
                                 <div className='center'>
                                    {this.state.invalidMsg && <h5 className='red font-light'>Invalid username/password</h5>} 
-                                </div>
-                                
+                                </div>                              
                                 <button className='reserve-button' style={{ '--mouse-x': this.state.mouseX, '--mouse-y': this.state.mouseY, margin: 'auto', marginTop: '12px' }} onMouseMove={this.onMousMove}>
                                     Continue
+                                </button>
+                                <button onClick={()=>this.onLogin({username:'demo', password:'demo'})} className='demo-user-button'>
+                                    Demo user
                                 </button>
                                 <h5 className='clickable' onClick={() => this.toggleModal(false)}>New user</h5>
                         </Form>
