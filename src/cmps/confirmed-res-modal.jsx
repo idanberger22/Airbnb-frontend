@@ -78,9 +78,6 @@ export const ConfirmedResModal = (props) => {
                         </h3>
                     </li>
                 </div>
-                {/* <span>
-                    |
-                </span> */}
                 <div>
                     <div>
                         <li>
