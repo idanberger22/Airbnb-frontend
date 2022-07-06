@@ -193,5 +193,3 @@ export const HostYourHome = () => {
     )
 }
 
-    // <UploadStay getStays={getStays} showUploadStayTogle={showUploadStayTogle} />}
-

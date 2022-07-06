@@ -6,9 +6,6 @@ import { ConfirmedResModalTrips } from "./confirmed-res-modal-trips";
 export const TripCard = ({ trip }) => {
 
     const [resModalIsOpen, setResModalIsOpen] = useState (false)
-
-
-
     const toggleModalIsOpen = () => {
         
         setResModalIsOpen(!resModalIsOpen)
@@ -36,6 +33,4 @@ export const TripCard = ({ trip }) => {
             </div>
         </section>
     </section>
-    // </Link >
-
 }

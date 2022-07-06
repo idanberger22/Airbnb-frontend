@@ -20,8 +20,6 @@ function App() {
   return (
     <Router>
       <ScrollToTop/>
-      
-
         <div className="app">
 
           <Helmet>
@@ -33,7 +31,6 @@ function App() {
           </Helmet>
 
           <AppHeader />
-          {/* <AppHeaderMobile/> */}
           <main>
             <Routes>
               <Route path='/stay/:stayId' element={<StayDetails />} />
