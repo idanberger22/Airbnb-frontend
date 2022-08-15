@@ -10,7 +10,6 @@ export function headerReducer(state = INITIAL_STATE, action) {
         case 'showLargeFilter':
             state.isLargeFilterShown = true
             state.isSmallFilterShown = false
-            // state.isSmallFilterShown = false
             return { ...state }
         case 'showSmallFilter':
             state.isLargeFilterShown = false

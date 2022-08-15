@@ -26,7 +26,6 @@ function App() {
           </Helmet>
 
           <AppHeader />
-          {/* <AppHeaderMobile/> */}
           <main>
             <Routes>
               <Route path='/stay/:stayId' element={<StayDetails />} />

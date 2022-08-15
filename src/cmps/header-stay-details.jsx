@@ -29,8 +29,6 @@ export const HeaderStayDeatails = ({ stay }) => {
                 <h4><span className="material-icons">favorite</span>Save</h4>
             </section>
         </div>
-
-
     </section>
 </section>
 
