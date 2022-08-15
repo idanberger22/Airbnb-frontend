@@ -13,23 +13,16 @@ import { HostYourHome } from './pages/host-your-home'
 import { AppHeaderMobile } from './cmps/app-header-mobile'
 import { AppFooterMobile } from './cmps/app-footer-mobile'
 
-
-
-
 function App() {
   return (
     <Router>
       <ScrollToTop/>
-      
-
         <div className="app">
-
           <Helmet>
             <meta charSet="utf-8" />
             <title>StayBnb</title>
-            <link rel="canonical" href="http://mysite.com/example" />
+            <link rel="canonical" href="https://staybnb-app.herokuapp.com" />
             <meta name="description" content="Vacation apartments rental" />
-
           </Helmet>
 
           <AppHeader />
