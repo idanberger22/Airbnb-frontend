@@ -2,6 +2,17 @@
 
 @media (max-width: 640px) {
 
+    :first-child.filterr .inpt-fillter{
+        width: 100%;
+        input{
+            width: 100%;
+        }
+    }
+
+    // .total-filter-small{
+    //     height: 40px;
+    // }
+
     .main-nav {
         width: 85%;
         margin: auto;
@@ -242,7 +253,15 @@
     }
 }
 
+// tablet
 @media (min-width: 640px) {
+
+    .main-footer{
+        *{
+
+             font-size: 0.9em !important;
+        }
+    }
 
     .main-upload-stay .container{
         flex-direction: column;
@@ -312,6 +331,13 @@
 // /* LARGE */
 
 @media (min-width: 920px) {
+
+    .main-footer{
+        *{
+
+             font-size: 1em !important;
+        }
+    }
 
     .main-upload-stay .container{
         flex-direction: row;
