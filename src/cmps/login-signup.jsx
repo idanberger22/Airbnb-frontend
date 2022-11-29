@@ -156,7 +156,7 @@ export class _LoginSignup extends React.Component {
                                 </button>
                                 <h5 className='clickable' onClick={() => this.toggleModal(false)}>New user</h5>
                         </Form>
-                    </Formik>}
+                    </Formik> }
                 </div>
             </>
         )

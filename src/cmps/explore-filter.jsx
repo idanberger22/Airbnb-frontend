@@ -15,7 +15,7 @@ export const ExploreFilter = (props) => {
         amenities: []
     })
 
-    const [checked, setChecked] = useState({ entire: true, hotel: true, private: true, shared: true });
+    const [checked, setChecked] = useState({ entire: true, hotel: true, private: true, shared: true })
     const [priceIsShown, setPriceIsShown] = useState(false)
     const [typeIsShown, setTypeIsShown] = useState(false)
     const amenities = ['Wifi', 'TV', 'Kitchen', 'Air conditioning']
