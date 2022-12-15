@@ -20,7 +20,8 @@ export const Statistics = ({ reservations, hostStays }) => {
             nights += res.nights
         })
         setTotalIncome(income)
-        setNIghtsAvg(utilService.make2digits(nights / reservations.length))
+        if(reservations.length === 0) setNIghtsAvg(0)
+        else setNIghtsAvg(utilService.make2digits(nights / reservations.length))
         hostStays.forEach(stay => rate += stay.reviewScores.value / 2)
         setAvgRate(utilService.make2digits(rate / hostStays.length))
     }

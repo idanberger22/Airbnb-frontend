@@ -31,7 +31,7 @@
     }
 
     .main-page-head {
-        background-image: url('https://kumba-app1.herokuapp.com/img/wp2.bacf91a9.jpg');
+        background-image: url('../../assets/imgs/home-main.webp');
         background-size: cover;
         background-position: 50%;
         height: 80vh;
@@ -50,7 +50,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-
     div {
         width: 100%;
         text-align: center;
@@ -59,7 +58,10 @@
 
     h1 {
         font-size: 2rem;
-        color: white;
+        color: $clrRED;
+        // background-color: white;
+        // padding: 10px;
+        // border-radius: 10px;
         font-family: Airbnb-Cereal-Book;
     }
 
