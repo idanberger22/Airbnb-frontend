@@ -7,7 +7,7 @@ AirBNB inspired, StayBNB is a responsive, end to end application that allows its
 * In the "host dashboard" page, any user who own a stay may view his/her guests reservations as well as interesting statistics like total income or average stay rating.     
 * When a guest reserve a stay, the host gets a real time notification.  
 * In order to enjoy the full experience, please sign up or simply click on the "demo user" button in the login section.  
-Link to a running version on heroku : https://staybnb-app.herokuapp.com/#/home    
+Link to a running version on render : https://staybnb.onrender.com/ 
 Link to the backend repository : https://github.com/yukellner/Airbnb-backend.git   
 
 ## Tech Stack
