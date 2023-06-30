@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 
 export const GuestPicker = (props) => {
 
@@ -20,9 +20,6 @@ export const GuestPicker = (props) => {
 
         }
     }
-
-    
-
 
     return (<section className="main-guest-qty-container">
         <div className="adults">

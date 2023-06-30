@@ -1871,11 +1871,11 @@ function getStays() {
             ],
             "_id": "622f337b75c7d36e498aab5c",
             "imgUrls": [
-                "https://a0.muscache.com/im/pictures/4af68a18-3bfb-441a-a8e2-773f73f586ed.jpg?im_w=1200",
-                "https://a0.muscache.com/im/pictures/e8013ba8-aac6-4911-bfcb-64b6cea5eb0d.jpg?im_w=720",
-                "https://a0.muscache.com/im/pictures/76105320-7c2f-4772-bac1-1387e3b0c73b.jpg?im_w=720",
-                "https://a0.muscache.com/im/pictures/b7118ad9-8f4a-4078-b5cd-b6b656cfbc20.jpg?im_w=720",
-                "https://a0.muscache.com/im/pictures/1daf6a2f-77f9-4bf0-a884-ce4169005c92.jpg?im_w=1200"
+                "https://anglerealestate.com/wp-content/uploads/2019/04/S-Ocean-MLS-4-1024x575.jpg",
+                "https://anglerealestate.com/wp-content/uploads/2019/04/S-Ocean-MLS-4-1024x575.jpg",
+                "https://anglerealestate.com/wp-content/uploads/2019/04/S-Ocean-MLS-4-1024x575.jpg",
+                "https://anglerealestate.com/wp-content/uploads/2019/04/S-Ocean-MLS-4-1024x575.jpg",
+                "https://anglerealestate.com/wp-content/uploads/2019/04/S-Ocean-MLS-4-1024x575.jpg"
             ]
         },
         {
@@ -3918,7 +3918,7 @@ function getTopRated(){
             ],
             "_id": "622f337a75c7d36e498aab22",
             "imgUrls": [
-                "https://a0.muscache.com/im/pictures/prohost-api/Hosting-599112931775380314/original/15507698-e2d5-4dac-8ce5-bddbd5f849ed.jpeg?im_w=1200",
+                "https://www.engelvoelkers.com/images/484ffb3c-746a-4220-829f-e524a5ae74aa/luxurious-apartment-next-to-the-beach-nayades",
                 "https://a0.muscache.com/im/pictures/prohost-api/Hosting-599112931775380314/original/b7462557-3ca0-4405-a063-6292aeda8ffd.jpeg?im_w=720",
                 "https://a0.muscache.com/im/pictures/prohost-api/Hosting-599112931775380314/original/a79d685b-ea3f-421e-86db-ef28b64b8260.jpeg?im_w=720",
                 "https://a0.muscache.com/im/pictures/prohost-api/Hosting-599112931775380314/original/b2cb32a7-737c-44aa-a4ac-d262a9006f54.jpeg?im_w=720",
@@ -4491,7 +4491,7 @@ function getTopRated(){
             ],
             "_id": "622f337b75c7d36e498aab5c",
             "imgUrls": [
-                "https://a0.muscache.com/im/pictures/4af68a18-3bfb-441a-a8e2-773f73f586ed.jpg?im_w=1200",
+                "https://anglerealestate.com/wp-content/uploads/2019/04/S-Ocean-MLS-4-1024x575.jpg",
                 "https://a0.muscache.com/im/pictures/e8013ba8-aac6-4911-bfcb-64b6cea5eb0d.jpg?im_w=720",
                 "https://a0.muscache.com/im/pictures/76105320-7c2f-4772-bac1-1387e3b0c73b.jpg?im_w=720",
                 "https://a0.muscache.com/im/pictures/b7118ad9-8f4a-4078-b5cd-b6b656cfbc20.jpg?im_w=720",

@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-
 export const DetailsGallery = ({ stay }) => {
     const [openImg, setOpenImg] = useState()
     const isMobile = document.body.clientWidth < 640 ? true : false

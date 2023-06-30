@@ -58,9 +58,7 @@ export const HostYourHome = () => {
                 }]
         }
     )
-    const [newAddress, setNewAddress] = useState(null)
-    const [type, setType] = useState({ entire: true, hotel: true, private: true, shared: true });
-    const [amenities, setAmenities] = useState('Wifi');
+   
     useEffect(() => {
     }, [newStay])
 

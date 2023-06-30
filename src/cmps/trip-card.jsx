@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ConfirmedResModal } from "./confirmed-res-modal";
-import { ConfirmedResModalTrips } from "./confirmed-res-modal-trips";
+import { useState } from "react"
+import { ConfirmedResModalTrips } from "./confirmed-res-modal-trips"
 
 export const TripCard = ({ trip }) => {
 

@@ -15,24 +15,13 @@ export function Explore() {
     useEffect(() => {
         getStays()
         dispatch(LogoChangeToWhite(false))
-
         document.documentElement.style.setProperty('--headerFontColor', '#000');
         document.documentElement.style.setProperty('--headerbackgroundColor', '#F7F7F7');
-        window.addEventListener('scroll', changeCss);
-
         return () => {
-
-            window.removeEventListener('scroll', changeCss);
             document.documentElement.style.setProperty('--headerbackgroundColor', 'unset');
             document.documentElement.style.setProperty('--headerFontColor', '#F7F7F7');
         }
-
     }, [filterBy])
-
-    const changeCss = () => {
-        var bodyElement = document.querySelector("body");
-        var navElement = document.querySelector(".explore-filterr");
-    }
 
     const getStays = async () => {
         const stays = await stayService.query(filterBy)

@@ -18,7 +18,6 @@ export const Home = () => {
     useEffect(() => {
         window.addEventListener('scroll', changeCss, { passive: true });
         getTopRated()
-        // dispatchFiltertoShow()
         dispatchLogoIsWhite()
         
         document.body.clientWidth < 640 ? dispatchFiltertoHide() : dispatchFiltertoShow()
@@ -60,8 +59,8 @@ export const Home = () => {
         dispatch(LogoChangeToWhite(true))
     }
 
-    const getTopRated = async () => {
-        const topStays = await stayService.getTopRated()
+    const getTopRated = () => {
+        const topStays = stayService.getTopRated()
         setTopRated([topStays])
     }
 
