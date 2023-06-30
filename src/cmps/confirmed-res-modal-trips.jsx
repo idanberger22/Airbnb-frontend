@@ -18,8 +18,6 @@ export const ConfirmedResModalTrips = (props) => {
         dispatch(ReservationConfirmed(null))
     }
 
-    // const loggedinUser = userService.getLoggedinUser()
-
     const closeModal = () => {
         setShowmodalStyling({ display: 'none' })
         props.toggleModalIsOpen()
@@ -63,9 +61,6 @@ export const ConfirmedResModalTrips = (props) => {
                             </h3>
                         </li>
                     </div>
-                    {/* <span>
-                        |
-                    </span> */}
                     <div>
                         <div>
                             <li>
@@ -80,10 +75,10 @@ export const ConfirmedResModalTrips = (props) => {
                                 </h3>
                             </li>
                             <li>
-                            <h3>
-                                11:00 AM
-                            </h3>
-                        </li>
+                                <h3>
+                                    11:00 AM
+                                </h3>
+                            </li>
                         </div>
                     </div>
                 </div>
@@ -106,14 +101,14 @@ export const ConfirmedResModalTrips = (props) => {
                         {props.reservation.stay.address.street}
                     </h3>
                 </div>
-                    <div className="price">
-                        <h2>
-                            Total Price
-                        </h2>
-                        <h3>
-                            ${utilService.getUsPrice(props.reservation.totalPrice)}
-                        </h3>
-                    </div>
+                <div className="price">
+                    <h2>
+                        Total Price
+                    </h2>
+                    <h3>
+                        ${utilService.getUsPrice(props.reservation.totalPrice)}
+                    </h3>
+                </div>
 
                 <div>
                     <NavLink className='' to='/explore' >

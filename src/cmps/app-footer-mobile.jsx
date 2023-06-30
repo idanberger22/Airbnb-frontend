@@ -13,7 +13,7 @@ export function AppFooterMobile() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setLoggedInUser(userService.getLoggedinUser())  
+        setLoggedInUser(userService.getLoggedinUser())
     }, [logged])
 
     useEffect(() => {
@@ -31,10 +31,10 @@ export function AppFooterMobile() {
 
     const getImg = () => {
         if (loggedinUser) {
-            if (loggedinUser.imgUrl) return <img src={loggedinUser.imgUrl} className='user-icon'/>
-            else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon'/>
+            if (loggedinUser.imgUrl) return <img src={loggedinUser.imgUrl} className='user-icon' />
+            else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon' />
         }
-        else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon'/>
+        else return <img src={require("../assets/imgs/user-icon.png")} className='user-icon' />
     }
 
     const resetFilterBy = () => {
@@ -61,10 +61,10 @@ export function AppFooterMobile() {
                 </li>
             </div>
 
-            <div style={{ display: menuModalShow, position:'fixed'}}>
-                    <div  className="screen" onClick={toggleModal}></div>
-                    <UserMenuModal toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser} />
-                </div>
+            <div style={{ display: menuModalShow, position: 'fixed' }}>
+                <div className="screen" onClick={toggleModal}></div>
+                <UserMenuModal toggleModal={toggleModal} removeOnLogout={removeOnLogout} loggedinUser={loggedinUser} />
+            </div>
         </div>
 
     )

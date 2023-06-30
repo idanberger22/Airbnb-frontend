@@ -14,18 +14,13 @@ export const AppHeaderMobile = () => {
 
     return (
         <header id="main-header" className="stock-margin main-header mobile-header">
-            {/* {showModalConfirmed && <ConfirmedResModal reservation={ReservationConfirmed} />} */}
             <div className="left"></div>
             <div className="stock-margin-center flex-col">
                 <nav className="grid-3-col main-nav">
                     <div onClick={openSearchDropDown} className="explore-filterr filterr small">
                         <SmallFilter />
-                        {/* <div style={smallFilterStyle} >
-                            {smallFilterShow && <SmallFilter />}
-                        </div> */}
                     </div>
                     <div style={modalIsOpen} className="search-drop-down">
-                        {/* <DateRangeSelector /> */}
                     </div>
                 </nav>
                 <UserMsg />
