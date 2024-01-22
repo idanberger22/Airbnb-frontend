@@ -8,7 +8,7 @@ AirBNB inspired, StayBNB is a responsive, end to end application that allows its
 * When a guest reserve a stay, the host gets a real time notification.  
 * In order to enjoy the full experience, please sign up or simply click on the "demo user" button in the login section.  
 Link to a running version on render : https://staybnb.onrender.com/ 
-Link to the backend repository : [https://github.com/yukellner/Airbnb-backend.git](https://github.com/idanberger22/stayBNB-backend)   
+Link to the backend repository : https://github.com/idanberger22/stayBNB-backend   
 
 ## Tech Stack
 
